@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Workout GIFs • Netflix-Style Exercise Streaming & Membership Platform</title>
+  
+  <!-- ==========================================================================
+       PROJECT CUSTOMIZATION VARIABLES (CUSTOM VARIABLES):
+       
+       NICHE: [NICHE] -> High-Performance Fitness, Biomechanics & Exercise Streaming
+       TARGET AUDIENCE AGE: [AUDIENCE_AGE] -> 20 to 50 years old (Personal Trainers, Coaches, Athletes)
+       TARGET AUDIENCE GENDER: [AUDIENCE_GENDER] -> Unisex (Female & Male Training Modules)
+       MEMBERSHIP AREA NAME: [MEMBERSHIP_NAME] -> Workout GIFs • Exercise Streaming Platform
+       VISUAL STYLE: [VISUAL_STYLE] -> Netflix Dark Cinema Premium
+       PRIMARY COLOR: [PRIMARY_COLOR] -> #E50914 (Crimson Netflix Red)
+       SECONDARY COLOR: [SECONDARY_COLOR] -> #FF5A1F (Athletic Neon Orange)
+       ========================================================================== -->
+
+  <!-- Google Fonts: Plus Jakarta Sans & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons (Free CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="ff-app-root">
+
+  <!-- ==========================================================================
+       1. CINEMATIC LOGIN SCREEN (STREAMING STYLE)
+       ========================================================================== -->
+  <div id="ff-login-screen" class="ff-login-screen">
+    <div class="ff-login-backdrop-overlay"></div>
+    
+    <div class="ff-login-topbar">
+      <div class="ff-brand-logo">
+        <i class="fa-solid fa-play" style="font-size: 20px;"></i>
+        <span>WORKOUT GIFs</span>
+        <span class="ff-badge-pro">PRO</span>
+      </div>
+      <div class="ff-login-lang-pill">
+        <i class="fa-solid fa-globe"></i>
+        <span>English (US)</span>
+      </div>
+    </div>
+
+    <div class="ff-login-card">
+      <div class="ff-login-header">
+        <div class="ff-login-tagline">
+          <i class="fa-solid fa-fire"></i>
+          <span>Streaming Education Platform</span>
+        </div>
+        <h2 class="ff-login-title">Sign In</h2>
+        <p class="ff-login-instruction">
+          Enter the email address and password used at the time of purchase.
+        </p>
+      </div>
+
+      <div id="ff-login-alert" class="ff-login-alert ff-hidden"></div>
+
+      <form id="ff-login-form" class="ff-login-form">
+        <div class="ff-form-group">
+          <label class="ff-label" for="ff-login-email">Email Address</label>
+          <div class="ff-input-wrapper">
+            <i class="fa-regular fa-envelope ff-input-icon"></i>
+            <input type="email" id="ff-login-email" class="ff-input" placeholder="name@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="ff-form-group">
+          <div class="ff-label">
+            <span>Password</span>
+            <a href="javascript:void(0)" class="ff-link" onclick="alert('Enter any email and password to access this demo membership version.')">Forgot it?</a>
+          </div>
+          <div class="ff-input-wrapper">
+            <i class="fa-solid fa-lock ff-input-icon"></i>
+            <input type="password" id="ff-login-password" class="ff-input" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" id="ff-toggle-password" class="ff-password-toggle" title="Show or hide password">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="ff-login-options">
+          <label class="ff-checkbox-label">
+            <input type="checkbox" id="ff-remember-me" checked>
+            <span>Remember my login</span>
+          </label>
+          <span style="font-size: 11px; color: var(--ff-accent-cyan);">Instant Access</span>
+        </div>
+
+        <button type="submit" id="ff-btn-submit-login" class="ff-btn-primary">
+          <span>Access Platform</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <div class="ff-login-demo-pills">
+          <span class="ff-demo-text">Quick 1-Click Demo Logins</span>
+          <div class="ff-pills-row">
+            <button type="button" id="ff-fast-login-alumno" class="ff-pill-btn">
+              ⚡ Fast Login as VIP Student
+            </button>
+            <button type="button" id="ff-fast-login-coach" class="ff-pill-btn">
+              🏋️ Fast Login as Pro Coach
+            </button>
+          </div>
+        </div>
+
+        <div class="ff-login-footer">
+          <i class="fa-solid fa-shield-halved" style="color: #22c55e;"></i>
+          <span>256-Bit Secure Access • Guaranteed Lifetime Membership</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. MAIN PLATFORM CONTAINER (STREAMING EXPERIENCE)
+       ========================================================================== -->
+  <div id="ff-main-app" class="ff-main-app ff-hidden">
+
+    <!-- TOPBAR NAVIGATION (NETFLIX NAVBAR) -->
+    <header id="ff-navbar" class="ff-navbar">
+      <div class="ff-nav-left">
+        <a href="javascript:void(0)" onclick="navigateTo('inicio')" class="ff-brand-logo">
+          <i class="fa-solid fa-play" style="font-size: 18px;"></i>
+          <span>WORKOUT GIFs</span>
+          <span class="ff-badge-pro">PRO</span>
+        </a>
+
+        <!-- Main Desktop Menu -->
+        <ul class="ff-nav-menu">
+          <li class="ff-nav-item ff-active" data-target="inicio">
+            <a href="javascript:void(0)" class="ff-nav-link">Home</a>
+          </li>
+          <li class="ff-nav-item" data-target="modulos">
+            <a href="javascript:void(0)" class="ff-nav-link">Modules</a>
+          </li>
+          <li class="ff-nav-item" data-target="clases">
+            <a href="javascript:void(0)" class="ff-nav-link">Classes</a>
+          </li>
+          <li class="ff-nav-item" data-target="bonus">
+            <a href="javascript:void(0)" class="ff-nav-link">
+              <span>Bonuses</span>
+              <span class="ff-badge-status ff-badge-nuevo" style="font-size: 9px; padding: 1px 5px;">4 FREE</span>
+            </a>
+          </li>
+          <li class="ff-nav-item" data-target="recursos">
+            <a href="javascript:void(0)" class="ff-nav-link">Resources</a>
+          </li>
+          <li class="ff-nav-item" data-target="comunidad">
+            <a href="javascript:void(0)" class="ff-nav-link">Community</a>
+          </li>
+          <li class="ff-nav-item" data-target="soporte">
+            <a href="javascript:void(0)" class="ff-nav-link">Support</a>
+          </li>
+          <li class="ff-nav-item" data-target="perfil">
+            <a href="javascript:void(0)" class="ff-nav-link">My Profile</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ff-nav-right">
+        <!-- Expandable Search Bar -->
+        <div id="ff-search-box" class="ff-search-box">
+          <button id="ff-search-btn" class="ff-search-btn" title="Search exercises or classes">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text" id="ff-search-input" class="ff-search-input" placeholder="Search exercises, muscle groups, techniques...">
+        </div>
+
+        <!-- Notifications -->
+        <div class="ff-notifications">
+          <button id="ff-notif-btn" class="ff-notif-btn" title="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="ff-notif-badge"></span>
+          </button>
+          <div id="ff-notif-dropdown" class="ff-notif-dropdown">
+            <div class="ff-notif-head">
+              <span>Recent Notifications</span>
+              <span style="font-size: 11px; color: var(--ff-primary); cursor: pointer;">Mark all as read</span>
+            </div>
+            <div class="ff-notif-item" onclick="openPlayerModal('class-1')">
+              <i class="fa-solid fa-sparkles ff-notif-icon"></i>
+              <div>
+                <strong>New MasterClass added:</strong> Squat Biomechanics in 4K.
+                <div style="font-size: 10px; color: var(--ff-text-dim);">30 minutes ago</div>
+              </div>
+            </div>
+            <div class="ff-notif-item" onclick="navigateTo('bonus')">
+              <i class="fa-solid fa-gift ff-notif-icon"></i>
+              <div>
+                <strong>Bonus unlocked:</strong> Automated Periodization Spreadsheet V3.
+                <div style="font-size: 10px; color: var(--ff-text-dim);">Today at 10:15 AM</div>
+              </div>
+            </div>
+            <div class="ff-notif-item" onclick="navigateTo('comunidad')">
+              <i class="fa-solid fa-comments ff-notif-icon"></i>
+              <div>
+                <strong>Active Community:</strong> Coach Mateo shared a new case study.
+                <div style="font-size: 10px; color: var(--ff-text-dim);">Yesterday</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Profile Dropdown -->
+        <div id="ff-profile-menu" class="ff-profile-menu">
+          <div id="ff-profile-btn" class="ff-profile-btn">
+            <div class="ff-avatar-badge ff-profile-avatar-bind">VP</div>
+            <i class="fa-solid fa-chevron-down ff-profile-arrow"></i>
+          </div>
+
+          <div id="ff-profile-dropdown" class="ff-profile-dropdown">
+            <div class="ff-profile-user-info">
+              <span class="ff-profile-name ff-profile-name-bind">VIP Athlete</span>
+              <span class="ff-profile-email ff-profile-email-bind">member@example.com</span>
+              <span class="ff-profile-plan-pill">Lifetime Pro Membership</span>
+            </div>
+            <div class="ff-dropdown-links">
+              <div class="ff-dropdown-link" onclick="navigateTo('perfil')">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile & Progress</span>
+              </div>
+              <div class="ff-dropdown-link" onclick="navigateTo('perfil')">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>My Saved Classes</span>
+              </div>
+              <div class="ff-dropdown-link" onclick="navigateTo('soporte')">
+                <i class="fa-regular fa-circle-question"></i>
+                <span>Help Center & FAQ</span>
+              </div>
+              <div class="ff-dropdown-link ff-dropdown-logout ff-action-logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sign Out</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="ff-hamburger" class="ff-hamburger" title="Open mobile navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- MOBILE OFF-CANVAS DRAWER -->
+    <div id="ff-mobile-drawer" class="ff-mobile-drawer">
+      <div id="ff-drawer-backdrop" class="ff-drawer-backdrop"></div>
+      <div class="ff-drawer-content">
+        <div class="ff-drawer-header">
+          <div class="ff-brand-logo">
+            <i class="fa-solid fa-play" style="font-size: 16px;"></i>
+            <span>WORKOUT GIFs</span>
+            <span class="ff-badge-pro">PRO</span>
+          </div>
+          <button id="ff-drawer-close" class="ff-drawer-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <ul class="ff-drawer-nav">
+          <li class="ff-drawer-item ff-active" data-target="inicio">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item" data-target="modulos">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-cubes"></i>
+              <span>Modules</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item" data-target="clases">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-film"></i>
+              <span>Classes & Videos</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item" data-target="bonus">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-gift"></i>
+              <span>4 Exclusive Bonuses</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item" data-target="recursos">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-download"></i>
+              <span>Resources & PDFs</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item" data-target="comunidad">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-users"></i>
+              <span>VIP Community</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item" data-target="soporte">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-headset"></i>
+              <span>Technical Support</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item" data-target="perfil">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-user-gear"></i>
+              <span>My Profile</span>
+            </a>
+          </li>
+        </ul>
+
+        <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--ff-border-subtle);">
+          <button class="ff-btn-secondary ff-action-logout" style="width: 100%; justify-content: center; color: #f87171; border-color: rgba(220,38,38,0.3);">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Sign Out</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA (DYNAMIC FRONT-END VIEWS)
+         ========================================================================== -->
+    <main class="ff-main-wrapper">
+
+      <!-- ========================================================================
+           A) VIEW: HOME / STREAMING FEED (#ff-view-inicio)
+           ======================================================================== -->
+      <section id="ff-view-inicio" class="ff-section-view ff-view-active">
+        
+        <!-- FEATURED HERO BANNER (NETFLIX CINEMA STYLE) -->
+        <div class="ff-hero">
+          <div class="ff-container">
+            <div class="ff-hero-content">
+              <div class="ff-hero-badges">
+                <span class="ff-hero-kicker">🔥 #1 TRENDING IN WORKOUT SCIENCE</span>
+                <span class="ff-hero-pill">4K ULTRA HD</span>
+                <span class="ff-hero-pill">MASTERCLASS</span>
+              </div>
+
+              <h1 class="ff-hero-title">
+                MASTER BIOMECHANICS: THE SCIENCE OF HYPERTROPHY & PERFECT FORM
+              </h1>
+
+              <p class="ff-hero-description">
+                Learn how to perform and coach every movement with pinpoint accuracy. Protect your joints, maximize motor unit recruitment in every set, and master the full library of 1,000+ exercise GIFs ready to share via WhatsApp.
+              </p>
+
+              <div class="ff-hero-meta">
+                <span class="ff-match-score">99% Match</span>
+                <span>2026</span>
+                <span>8 Modules</span>
+                <span>120+ Lessons</span>
+                <span class="ff-badge-status ff-badge-disponible">Cinema Quality</span>
+              </div>
+
+              <div class="ff-hero-actions">
+                <button class="ff-btn-play" onclick="openPlayerModal('class-1')">
+                  <i class="fa-solid fa-play"></i>
+                  <span>Play Now</span>
+                </button>
+                <button class="ff-btn-secondary" onclick="openPlayerModal('class-1')">
+                  <i class="fa-solid fa-circle-info"></i>
+                  <span>More Info</span>
+                </button>
+                <button class="ff-btn-icon-round" onclick="showToast('✓ Saved to your favorites list', 'fa-solid fa-bookmark')" title="Add to My List">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT ROWS / HORIZONTAL CAROUSELS -->
+        <div class="ff-feed-rows">
+          
+          <!-- ROW 1: CONTINUE LEARNING -->
+          <div class="ff-row">
+            <div class="ff-row-header">
+              <div class="ff-row-title-wrap">
+                <h3 class="ff-row-title">Continue Learning</h3>
+                <span class="ff-row-badge">In Progress</span>
+              </div>
+              <span class="ff-row-see-all" onclick="navigateTo('clases')">View All <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+            
+            <div class="ff-carousel-wrapper">
+              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-seguir-viendo" class="ff-carousel-track">
+                <!-- Injected via JS -->
+              </div>
+              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- ROW 2: START HERE (FOUNDATIONS) -->
+          <div class="ff-row">
+            <div class="ff-row-header">
+              <div class="ff-row-title-wrap">
+                <h3 class="ff-row-title">Start Here • Platform Foundations & Onboarding</h3>
+                <span class="ff-row-badge">Getting Started</span>
+              </div>
+              <span class="ff-row-see-all" onclick="navigateTo('modulos')">View Modules <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+            
+            <div class="ff-carousel-wrapper">
+              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-empieza-aqui" class="ff-carousel-track">
+                <!-- Injected via JS -->
+              </div>
+              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- ROW 3: TOP 5 MOST WATCHED (NETFLIX BIG NUMBERS) -->
+          <div class="ff-row">
+            <div class="ff-row-header">
+              <div class="ff-row-title-wrap">
+                <h3 class="ff-row-title">Top 5 Most Watched Classes This Week</h3>
+                <span class="ff-row-badge" style="background: rgba(229,9,20,0.15); color: #ff4d5a; border-color: rgba(229,9,20,0.3);">Trending</span>
+              </div>
+            </div>
+            
+            <div class="ff-carousel-wrapper">
+              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-top10" class="ff-carousel-track">
+                <!-- Injected via JS -->
+              </div>
+              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- ROW 4: RECOMMENDED FOR YOU -->
+          <div class="ff-row">
+            <div class="ff-row-header">
+              <div class="ff-row-title-wrap">
+                <h3 class="ff-row-title">Recommended For You</h3>
+                <span class="ff-row-badge">Tailored to your profile</span>
+              </div>
+              <span class="ff-row-see-all" onclick="navigateTo('clases')">Explore Library <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+            
+            <div class="ff-carousel-wrapper">
+              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-recomendados" class="ff-carousel-track">
+                <!-- Injected via JS -->
+              </div>
+              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- ROW 5: NEW RELEASES & PREMIERES -->
+          <div class="ff-row">
+            <div class="ff-row-header">
+              <div class="ff-row-title-wrap">
+                <h3 class="ff-row-title">New Releases & Exclusive Premieres</h3>
+                <span class="ff-row-badge">Updated 2026</span>
+              </div>
+              <span class="ff-row-see-all" onclick="navigateTo('clases')">View All <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+            
+            <div class="ff-carousel-wrapper">
+              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-nuevos" class="ff-carousel-track">
+                <!-- Injected via JS -->
+              </div>
+              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- VIP BONUSES PROMOTIONAL CALLOUT BANNER -->
+          <div class="ff-container" style="margin-top: 10px; margin-bottom: 20px;">
+            <div style="background: linear-gradient(135deg, rgba(229,9,20,0.2) 0%, rgba(255,90,31,0.1) 100%), #141824; border: 1px solid rgba(229,9,20,0.3); border-radius: var(--ff-radius-lg); padding: 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+              <div style="max-width: 680px;">
+                <span style="color: var(--ff-secondary); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px;">Don't forget your gifts!</span>
+                <h3 style="font-family: var(--ff-font-display); font-size: 26px; font-weight: 900; color: #fff; margin-top: 6px;">You Have 4 Exclusive Bonuses Worth $297 USD Unlocked</h3>
+                <p style="font-size: 14px; color: var(--ff-text-muted); margin-top: 8px;">Includes the Master Hypertrophy Manual, Posture Correction Guide, 150 High-Protein Recipes, and the Automated Periodization Spreadsheet.</p>
+              </div>
+              <button class="ff-btn-primary" onclick="navigateTo('bonus')" style="width: auto; padding: 14px 28px;">
+                <i class="fa-solid fa-gift"></i>
+                <span>View & Download Bonuses</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           B) VIEW: TRAINING MODULES (#ff-view-modulos)
+           ======================================================================== -->
+      <section id="ff-view-modulos" class="ff-section-view">
+        <div class="ff-page-header">
+          <span class="ff-page-kicker">Complete Learning Curriculum</span>
+          <h2 class="ff-page-title">Training Modules</h2>
+          <p class="ff-page-desc">Explore the structured step-by-step curriculum. From core biomechanical foundations to advanced loading periodization and hypertrophy techniques.</p>
+        </div>
+
+        <div id="ff-modules-grid" class="ff-modules-grid">
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           C) VIEW: CLASSES & CONTENT LIBRARY (#ff-view-clases)
+           ======================================================================== -->
+      <section id="ff-view-clases" class="ff-section-view">
+        <div class="ff-page-header">
+          <span class="ff-page-kicker">Streaming Exercise Video Library</span>
+          <h2 class="ff-page-title">Classes & Form Breakdowns</h2>
+          <p class="ff-page-desc">Filter by muscle group, difficulty level, or search directly for any exercise to view the high-definition breakdown and key coaching cues.</p>
+        </div>
+
+        <div class="ff-filter-bar">
+          <div class="ff-filter-chips">
+            <button class="ff-chip ff-active" data-category="todos">All Exercises</button>
+            <button class="ff-chip" data-category="piernas">Legs & Glutes</button>
+            <button class="ff-chip" data-category="pecho">Chest</button>
+            <button class="ff-chip" data-category="espalda">Back</button>
+            <button class="ff-chip" data-category="hombros">Shoulders & Arms</button>
+            <button class="ff-chip" data-category="funcional">Functional & HIIT</button>
+            <button class="ff-chip" data-category="movilidad">Mobility</button>
+          </div>
+
+          <div class="ff-search-filter-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="ff-class-search-input" class="ff-search-filter-input" placeholder="Filter by exercise name or technique...">
+          </div>
+        </div>
+
+        <div id="ff-classes-grid" class="ff-classes-grid">
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           D) VIEW: EXCLUSIVE BONUSES (#ff-view-bonus)
+           ======================================================================== -->
+      <section id="ff-view-bonus" class="ff-section-view">
+        <div class="ff-page-header">
+          <span class="ff-page-kicker">VIP Exclusive Materials</span>
+          <h2 class="ff-page-title">Your 4 Exclusive High-Value Bonuses</h2>
+          <p class="ff-page-desc">Advanced tools, e-books, and spreadsheets built to accelerate your results and give you an unfair competitive advantage as an athlete or fitness coach.</p>
+        </div>
+
+        <div id="ff-bonuses-grid" class="ff-bonuses-grid">
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           E) VIEW: DOWNLOADABLE RESOURCES (#ff-view-recursos)
+           ======================================================================== -->
+      <section id="ff-view-recursos" class="ff-section-view">
+        <div class="ff-page-header">
+          <span class="ff-page-kicker">Coach & Athlete Toolbox</span>
+          <h2 class="ff-page-title">Downloadable Resources, PDFs & Spreadsheets</h2>
+          <p class="ff-page-desc">Download checklists, calorie calculators, postural assessment templates, and done-for-you client forms ready to use in your coaching sessions.</p>
+        </div>
+
+        <div id="ff-resources-grid" class="ff-resources-grid">
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           F) VIEW: VIP COMMUNITY (#ff-view-comunidad)
+           ======================================================================== -->
+      <section id="ff-view-comunidad" class="ff-section-view">
+        <div class="ff-page-header">
+          <span class="ff-page-kicker">Private Student & Coach Community</span>
+          <h2 class="ff-page-title">VIP Discussion Feed</h2>
+          <p class="ff-page-desc">Connect with fellow members, share physique progress, ask biomechanics questions, and get feedback from certified coaches.</p>
+        </div>
+
+        <div class="ff-community-layout">
+          <!-- Main Feed -->
+          <div class="ff-community-feed">
+            <div class="ff-post-creator">
+              <div class="ff-creator-header">
+                <div class="ff-author-avatar ff-profile-avatar-bind">VP</div>
+                <strong style="color: #fff; font-size: 14px;">What are you training today?</strong>
+              </div>
+              <textarea id="ff-post-textarea" class="ff-creator-input" placeholder="Share your form questions, PR milestones, or client wins with the community..."></textarea>
+              <div class="ff-creator-actions">
+                <div class="ff-creator-tools">
+                  <span class="ff-tool-btn" onclick="showToast('Attach photo simulated', 'fa-solid fa-image')"><i class="fa-regular fa-image"></i> Photo</span>
+                  <span class="ff-tool-btn" onclick="showToast('Attach video simulated', 'fa-solid fa-video')"><i class="fa-solid fa-video"></i> Video</span>
+                </div>
+                <button id="ff-btn-publish-post" class="ff-btn-primary" style="width: auto; padding: 8px 20px;">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span>Post</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Posts List -->
+            <div id="ff-community-posts-list" style="display: flex; flex-direction: column; gap: 20px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Community Sidebar -->
+          <aside class="ff-community-sidebar">
+            <div class="ff-sidebar-widget">
+              <h4 class="ff-widget-title"><i class="fa-solid fa-trophy" style="color: var(--ff-accent-gold);"></i> Leaderboard</h4>
+              <div class="ff-ranking-list">
+                <div class="ff-ranking-item">
+                  <div class="ff-rank-user">
+                    <span class="ff-rank-num">1</span>
+                    <div>
+                      <div style="font-weight: 700; color: #fff;">Coach Mateo Rivas</div>
+                      <div style="font-size: 11px; color: var(--ff-text-muted);">48 classes completed</div>
+                    </div>
+                  </div>
+                  <span class="ff-rank-xp">2,450 XP</span>
+                </div>
+                <div class="ff-ranking-item">
+                  <div class="ff-rank-user">
+                    <span class="ff-rank-num">2</span>
+                    <div>
+                      <div style="font-weight: 700; color: #fff;">Valeria Gomez</div>
+                      <div style="font-size: 11px; color: var(--ff-text-muted);">42 classes completed</div>
+                    </div>
+                  </div>
+                  <span class="ff-rank-xp">2,100 XP</span>
+                </div>
+                <div class="ff-ranking-item">
+                  <div class="ff-rank-user">
+                    <span class="ff-rank-num">3</span>
+                    <div>
+                      <div style="font-weight: 700; color: #fff;">Carlos Mendez</div>
+                      <div style="font-size: 11px; color: var(--ff-text-muted);">36 classes completed</div>
+                    </div>
+                  </div>
+                  <span class="ff-rank-xp">1,820 XP</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ff-sidebar-widget">
+              <h4 class="ff-widget-title"><i class="fa-solid fa-shield-halved" style="color: var(--ff-primary);"></i> Community Guidelines</h4>
+              <ul style="font-size: 13px; color: var(--ff-text-muted); list-style: none; display: flex; flex-direction: column; gap: 8px;">
+                <li>✓ Mutual respect and constructive feedback.</li>
+                <li>✓ High-quality discussions on biomechanics and training.</li>
+                <li>✓ No spam or unauthorized external promotions.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           G) VIEW: SUPPORT & FAQ (#ff-view-soporte)
+           ======================================================================== -->
+      <section id="ff-view-soporte" class="ff-section-view">
+        <div class="ff-page-header">
+          <span class="ff-page-kicker">Student Help Center</span>
+          <h2 class="ff-page-title">Technical Support & Frequently Asked Questions</h2>
+          <p class="ff-page-desc">Find instant answers to common questions or reach out directly to our dedicated support team.</p>
+        </div>
+
+        <div class="ff-support-layout">
+          <!-- Support Channels -->
+          <div class="ff-support-cards-row">
+            <div class="ff-support-channel-card">
+              <div class="ff-channel-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 style="font-size: 18px; font-weight: 800; color: #fff;">WhatsApp Support</h3>
+              <p style="font-size: 13px; color: var(--ff-text-muted);">Direct priority assistance Monday to Saturday from 9:00 AM to 8:00 PM for login issues and immediate guidance.</p>
+              <button class="ff-btn-primary" style="margin-top: 8px; width: 100%; background: #16a34a;" onclick="showToast('Connecting with technical support on WhatsApp...', 'fa-brands fa-whatsapp')">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Chat on WhatsApp</span>
+              </button>
+            </div>
+
+            <div class="ff-support-channel-card">
+              <div class="ff-channel-icon ff-email-icon">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <h3 style="font-size: 18px; font-weight: 800; color: #fff;">Email Support</h3>
+              <p style="font-size: 13px; color: var(--ff-text-muted);">Write to us at support@workoutgifs.com for technical inquiries, credential changes, or billing questions.</p>
+              <button class="ff-btn-secondary" style="margin-top: 8px; width: 100%;" onclick="showToast('Opening your default email client...', 'fa-solid fa-envelope')">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Send an Email</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Video Walkthrough -->
+          <div style="background: var(--ff-bg-card); border: 1px solid var(--ff-border-subtle); border-radius: var(--ff-radius-md); padding: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+            <div>
+              <span class="ff-badge-status ff-badge-nuevo" style="margin-bottom: 6px; display: inline-block;">Onboarding Tutorial</span>
+              <h3 style="font-size: 18px; font-weight: 800; color: #fff;">How to send GIFs to your clients in 3 taps?</h3>
+              <p style="font-size: 13px; color: var(--ff-text-muted); margin-top: 4px;">Watch this quick 3-minute video showing you how to navigate the library directly from your smartphone.</p>
+            </div>
+            <button class="ff-btn-secondary" onclick="openPlayerModal('class-1')">
+              <i class="fa-solid fa-play"></i>
+              <span>Watch Video Tutorial</span>
+            </button>
+          </div>
+
+          <!-- FAQ Accordion -->
+          <div>
+            <h3 style="font-family: var(--ff-font-display); font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 16px;">
+              Frequently Asked Questions
+            </h3>
+            <div id="ff-faq-list" class="ff-faq-list">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================================
+           H) VIEW: MY PROFILE & PROGRESS (#ff-view-perfil)
+           ======================================================================== -->
+      <section id="ff-view-perfil" class="ff-section-view">
+        <div class="ff-page-header">
+          <span class="ff-page-kicker">Your Account</span>
+          <h2 class="ff-page-title">My Profile & Learning Progress</h2>
+          <p class="ff-page-desc">Track your study metrics, completed lessons, daily streak, and manage your saved video collection.</p>
+        </div>
+
+        <div class="ff-profile-layout">
+          <!-- Profile Hero Card -->
+          <div class="ff-profile-hero-card">
+            <div class="ff-profile-details">
+              <div class="ff-profile-avatar-big ff-profile-avatar-bind">VP</div>
+              <div class="ff-profile-title-wrap">
+                <h3 class="ff-profile-username ff-profile-name-bind">VIP Athlete</h3>
+                <span class="ff-profile-useremail ff-profile-email-bind">member@example.com</span>
+                <span class="ff-profile-plan-pill" style="margin-top: 6px;">Lifetime Pro Membership Active</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px;">
+              <button class="ff-btn-secondary" onclick="showToast('User data synchronized', 'fa-solid fa-arrows-rotate')">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Sync</span>
+              </button>
+              <button class="ff-btn-primary ff-action-logout" style="width: auto; background: rgba(220,38,38,0.2); border: 1px solid rgba(220,38,38,0.4); color: #fca5a5;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sign Out</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Gamified Statistics -->
+          <div class="ff-stats-grid">
+            <div class="ff-stat-card">
+              <span class="ff-stat-label">Overall Progress</span>
+              <div id="ff-profile-progress-percent" class="ff-stat-num ff-accent">50%</div>
+              <span style="font-size: 11px; color: var(--ff-text-dim);">Of total curriculum</span>
+            </div>
+            <div class="ff-stat-card">
+              <span class="ff-stat-label">Completed Classes</span>
+              <div id="ff-profile-completed-count" class="ff-stat-num">4 / 9</div>
+              <span style="font-size: 11px; color: var(--ff-text-dim);">Logged on your account</span>
+            </div>
+            <div class="ff-stat-card">
+              <span class="ff-stat-label">Training Hours</span>
+              <div class="ff-stat-num" style="color: var(--ff-secondary);">18.5 hrs</div>
+              <span style="font-size: 11px; color: var(--ff-text-dim);">Total watch time</span>
+            </div>
+            <div class="ff-stat-card">
+              <span class="ff-stat-label">Study Streak</span>
+              <div class="ff-stat-num" style="color: var(--ff-accent-gold);">5 Days 🔥</div>
+              <span style="font-size: 11px; color: var(--ff-text-dim);">Keep up the momentum!</span>
+            </div>
+          </div>
+
+          <!-- Saved Classes (My List) -->
+          <div>
+            <h3 style="font-family: var(--ff-font-display); font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 16px;">
+              <i class="fa-solid fa-bookmark" style="color: var(--ff-primary);"></i> My Saved Classes
+            </h3>
+            <div id="ff-profile-saved-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========================================================================
+         CINEMATIC LESSON PLAYER MODAL (#ff-player-modal)
+         ======================================================================== -->
+    <div id="ff-player-modal" class="ff-player-modal">
+      <div class="ff-player-dialog">
+        <button id="ff-player-close" class="ff-player-close-btn" title="Close player">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Video Stage -->
+        <div class="ff-video-stage">
+          <video id="ff-modal-video" controls loop playsinline></video>
+        </div>
+
+        <!-- Class Metadata & Body -->
+        <div class="ff-player-body">
+          <div class="ff-player-title-row">
+            <div>
+              <span id="ff-modal-category" style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--ff-secondary); letter-spacing: 0.8px;">Module 01 • Legs</span>
+              <h2 id="ff-modal-title" class="ff-player-title">Barbell Squat vs. Hack Squat</h2>
+              <div style="display: flex; gap: 14px; align-items: center; margin-top: 6px; font-size: 13px; color: var(--ff-text-muted);">
+                <span id="ff-modal-rating" style="color: var(--ff-accent-gold); font-weight: 700;">4.9 ★★★★★</span>
+                <span id="ff-modal-duration"><i class="fa-regular fa-clock"></i> 14:20 min</span>
+                <span class="ff-badge-status ff-badge-nuevo">1080p Full HD</span>
+              </div>
+            </div>
+
+            <div class="ff-player-actions">
+              <button id="ff-modal-btn-complete" class="ff-btn-complete">
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Mark as Completed</span>
+              </button>
+              <button id="ff-modal-btn-fav" class="ff-btn-secondary" style="padding: 9px 16px;">
+                <i class="fa-regular fa-bookmark"></i>
+                <span>My List</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interaction Tabs -->
+          <div class="ff-player-tabs">
+            <button class="ff-tab-btn ff-tab-active" data-tab="desc">Key Takeaways & Form Cues</button>
+            <button class="ff-tab-btn" data-tab="next">Next Lessons</button>
+            <button class="ff-tab-btn" data-tab="notes">My Personal Notes</button>
+            <button class="ff-tab-btn" data-tab="qa">Student Q&A</button>
+          </div>
+
+          <!-- Tab 1: Key Takeaways & Description -->
+          <div id="ff-tab-desc" class="ff-tab-pane ff-pane-active">
+            <p id="ff-modal-desc" style="font-size: 14px; color: var(--ff-text-muted); line-height: 1.6; margin-bottom: 16px;">
+              Detailed biomechanical analysis of the movement.
+            </p>
+            <h4 style="font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 10px;">Critical Coaching Cues:</h4>
+            <ul id="ff-modal-keypoints" style="list-style: none; font-size: 13px; color: var(--ff-text-muted);">
+              <!-- Injected via JS -->
+            </ul>
+            <div style="margin-top: 16px; padding: 12px 16px; background: rgba(255,255,255,0.03); border-radius: var(--ff-radius-sm); border: 1px solid var(--ff-border-subtle); display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 13px; color: #fff;"><i class="fa-solid fa-paperclip" style="color: var(--ff-primary); margin-right: 8px;"></i> Attached cheat sheet: <strong id="ff-modal-materials">CheatSheet.pdf</strong></span>
+              <button class="ff-btn-download" onclick="downloadResource('Technical Class Cheat Sheet')"><i class="fa-solid fa-download"></i> Download</button>
+            </div>
+          </div>
+
+          <!-- Tab 2: Next Lessons Playlist -->
+          <div id="ff-tab-next" class="ff-tab-pane">
+            <div id="ff-modal-next-lessons" style="display: flex; flex-direction: column; gap: 8px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Tab 3: Personal Notes (Auto-saved) -->
+          <div id="ff-tab-notes" class="ff-tab-pane">
+            <p style="font-size: 13px; color: var(--ff-text-muted); margin-bottom: 10px;">Type your private notes for this lesson. They are automatically saved to your browser.</p>
+            <textarea id="ff-modal-notes-textarea" class="ff-creator-input" style="min-height: 120px;" placeholder="e.g. Set bench to 75 degrees to isolate the anterior deltoid and prevent impingement..."></textarea>
+            <span style="font-size: 11px; color: var(--ff-accent-green); margin-top: 6px; display: inline-block;">✓ Auto-save active</span>
+          </div>
+
+          <!-- Tab 4: Student Q&A -->
+          <div id="ff-tab-qa" class="ff-tab-pane">
+            <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+              <input type="text" id="ff-qa-input" class="ff-input" placeholder="Ask the coaching team a question about this lesson..." style="padding-left: 16px;">
+              <button class="ff-btn-primary" style="width: auto; padding: 10px 20px;" onclick="showToast('Question submitted to coaching staff', 'fa-solid fa-paper-plane')">Submit</button>
+            </div>
+            <div style="font-size: 13px; color: var(--ff-text-muted); border-left: 3px solid var(--ff-secondary); padding-left: 12px;">
+              <strong style="color: #fff;">Featured Question:</strong> If my client has tight calves, should I elevate their heels on small plates?<br>
+              <em style="color: var(--ff-text-dim);">Coach Answer: Yes, slightly elevating the heels helps maintain an upright torso while you concurrently work on ankle dorsiflexion mobility drills.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOATING TOAST NOTIFICATIONS CONTAINER -->
+    <div id="ff-toast-container" class="ff-toast-container"></div>
+
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="./app.js"></script>
+</body>
+</html>
