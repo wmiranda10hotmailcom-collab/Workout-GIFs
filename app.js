@@ -31,324 +31,1120 @@ const MEMBERSHIP_CONFIG = {
    IN-MEMORY DATABASE (100% FRONT-END IN ENGLISH)
    ========================================================================== */
 
-// 1. Program Modules
+// 1. Program Modules / Equipment Suites
 const MODULES_DATA = [
   {
-    id: "mod-1",
-    num: "Module 01",
-    title: "Biomechanics Foundations & Motor Patterns",
-    subtitle: "The science behind every compound lift",
-    desc: "Learn anatomical axes, moment arms, and correct joint alignment to maximize muscle hypertrophy while completely eliminating injury risks for your clients.",
-    badge: "Available",
+    id: "mod-barbell",
+    num: "Suite 01",
+    title: "Barbell Exercises (Exercícios com Barras)",
+    subtitle: "Heavy compounds & biomechanics with free weights",
+    desc: "Complete barbell demonstration library: Abs, Forearms, Biceps, Chest, Back, Shoulders, Legs, and Triceps. Direct access to the Drive folder.",
+    badge: "Drive Connected",
     badgeType: "disponible",
-    lessonsCount: 12,
-    duration: "3h 40m",
-    progress: 100,
-    cover: "./assets/carousel-1.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "mod-2",
-    num: "Module 02",
-    title: "Upper Body Hypertrophy: Chest, Back & Arms",
-    subtitle: "Pinpoint technique for compound pushes & pulls",
-    desc: "Master the barbell bench press, lat pulldowns, pull-ups, and advanced cable/dumbbell variations with our comprehensive video & GIF demonstration library.",
-    badge: "Available",
-    badgeType: "disponible",
-    lessonsCount: 18,
-    duration: "5h 15m",
-    progress: 65,
-    cover: "./assets/carousel-2.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "mod-3",
-    num: "Module 03",
-    title: "Lower Body Mastery & Glute Dominance",
-    subtitle: "Deep squats, hip hinges, and glute thrusts",
-    desc: "Optimize muscle recruitment across quads, hamstrings, and glutes. Biomechanical adjustments tailored to femur length and ankle dorsiflexion mobility.",
-    badge: "Available",
-    badgeType: "disponible",
-    lessonsCount: 16,
-    duration: "4h 50m",
-    progress: 40,
-    cover: "./assets/carousel-3.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "mod-4",
-    num: "Module 04",
-    title: "Functional Training, HIIT & Calisthenics",
-    subtitle: "Power, coordination, and high caloric expenditure",
-    desc: "High-density metabolic circuits designed for home workouts, outdoor sessions, or functional boxes utilizing bodyweight and kettlebells.",
-    badge: "Available",
-    badgeType: "disponible",
-    lessonsCount: 14,
-    duration: "3h 25m",
-    progress: 15,
-    cover: "./assets/carousel-4.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "mod-5",
-    num: "Module 05",
-    title: "Load Periodization & Injury Prevention",
-    subtitle: "How to program week-over-week progression",
-    desc: "Managing volume landmarks, RPE, RIR (reps in reserve), strategic deloads, and preventing central nervous system fatigue in athletes and beginners.",
-    badge: "New",
-    badgeType: "nuevo",
-    lessonsCount: 10,
-    duration: "2h 45m",
-    progress: 0,
-    cover: "./assets/carousel-5.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "mod-6",
-    num: "Module 06",
-    title: "Anabolic Nutrition & Body Recomposition",
-    subtitle: "Macronutrient splits, surplus & fat loss protocols",
-    desc: "Practical nutrition strategies to sync calorie intake with heavy training days, accelerate protein synthesis, and optimize recovery speed.",
-    badge: "New",
-    badgeType: "nuevo",
-    lessonsCount: 11,
-    duration: "3h 10m",
-    progress: 0,
-    cover: "./assets/bonus-3-recipes.png",
-    fallbackCover: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "mod-7",
-    num: "Module 07",
-    title: "Online Coaching Business & Client Acquisition",
-    subtitle: "How to package and sell high-ticket training plans",
-    desc: "The complete workflow to deliver workout routines and GIF demonstrations via WhatsApp, structure consultations, and charge premium rates.",
-    badge: "New",
-    badgeType: "nuevo",
     lessonsCount: 8,
-    duration: "2h 15m",
-    progress: 0,
-    cover: "./assets/offer-mockup.png",
-    fallbackCover: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+    duration: "150+ GIFs",
+    progress: 100,
+    cover: "./assets/gifs/barbell-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR"
   },
   {
-    id: "mod-8",
-    num: "Module 08",
-    title: "Exclusive MasterClasses with Pro Athletes",
-    subtitle: "Stage secrets and elite bodybuilding preparations",
-    desc: "Live breakdown recordings with elite conditioning coaches analyzing real client plateau breakthroughs and contest preparations.",
-    badge: "Coming Soon",
-    badgeType: "proximamente",
+    id: "mod-dumbbell",
+    num: "Suite 02",
+    title: "Dumbbell Exercises (Exercícios com Halteres)",
+    subtitle: "Symmetry, hypertrophy & unilateral motion",
+    desc: "Target each side independently to eliminate strength imbalances. Features Biceps, Shoulders, Chest, Back, Triceps, Legs, Forearms, and Abs.",
+    badge: "Drive Connected",
+    badgeType: "disponible",
+    lessonsCount: 8,
+    duration: "180+ GIFs",
+    progress: 75,
+    cover: "./assets/gifs/dumbbell-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv"
+  },
+  {
+    id: "mod-machine",
+    num: "Suite 03",
+    title: "Machine, Hack & Bench (Máquina, Hack, Banco)",
+    subtitle: "Fixed trajectories, pure isolation & safety",
+    desc: "Push sets beyond failure safely. Features 45° Leg Press, Hack Squats, Lat Pulldowns, Seated Chest Press, Rear Pec Deck, and Ab Machines.",
+    badge: "Drive Connected",
+    badgeType: "disponible",
+    lessonsCount: 5,
+    duration: "140+ GIFs",
+    progress: 50,
+    cover: "./assets/gifs/machine-legs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI"
+  },
+  {
+    id: "mod-cable",
+    num: "Suite 04",
+    title: "Cable & Pulley Exercises (Cabo ou Polia)",
+    subtitle: "Continuous tension & peak muscle contraction",
+    desc: "Zero dead spots in the strength curve. Complete collection of Triceps Pushdowns, Bicep Curls, High-to-Low Flyes, Face Pulls, and Cable Crunches.",
+    badge: "Drive Connected",
+    badgeType: "disponible",
     lessonsCount: 6,
-    duration: "1h 50m",
-    progress: 0,
-    cover: "./assets/action-demo.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80"
+    duration: "120+ GIFs",
+    progress: 40,
+    cover: "./assets/gifs/cable-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1"
+  },
+  {
+    id: "mod-functional",
+    num: "Suite 05",
+    title: "Functional & Bodyweight Training (Funcional)",
+    subtitle: "Athletic conditioning, core strength & mobility",
+    desc: "Comprehensive 28-category athletic suite: Abs, Cardio, Agility, Bodyweight Calisthenics, Mobility, Battle Rope, and TRX Suspension.",
+    badge: "28 Subcategories",
+    badgeType: "nuevo",
+    lessonsCount: 7,
+    duration: "300+ GIFs",
+    progress: 20,
+    cover: "./assets/gifs/functional-abs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh"
+  },
+  {
+    id: "mod-kettlebell",
+    num: "Suite 06",
+    title: "Kettlebell & Superband (Kettlebell e Elásticos)",
+    subtitle: "Explosive hip hinges, power & joint activation",
+    desc: "Dynamic ballistic conditioning and elastic resistance: Kettlebell Swings, Turkish Get-Ups, Windmills, Band Monster Walks, and Pull-Aparts.",
+    badge: "Drive Connected",
+    badgeType: "disponible",
+    lessonsCount: 2,
+    duration: "80+ GIFs",
+    progress: 10,
+    cover: "./assets/gifs/kettlebell-swing.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1OeDXqZIkmWgmUuwUxL6qIzfc_0auxQPa"
   }
 ];
 
-// 2. Video Lessons / Classes
+// 2. Video Lessons / Exercise GIF Demos
 const CLASSES_DATA = [
+  // --- ROW 1: BARBELL EXERCISES ---
   {
-    id: "class-1",
-    moduleId: "mod-1",
-    moduleName: "Module 01",
-    title: "Barbell Back Squat vs. Hack Squat: Biomechanics Breakdown",
-    desc: "Detailed comparison of knee vs. hip moment arms to maximize quad hypertrophy without putting excessive shear load on the lumbar spine.",
-    category: "Legs & Glutes",
-    categoryKey: "piernas",
-    duration: "14:20 min",
-    difficulty: "Intermediate",
-    badge: "4K HD",
-    videoSrc: "./assets/web-gif-1.mp4",
-    cover: "./assets/carousel-1.webp",
+    id: "barbell-abs",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Abs & Core: Barbell Twists & Rollouts",
+    desc: "Seated barbell twists, standing rotations, and kneeling barbell rollouts for rotational core stability.",
+    category: "Barbell • Abs & Core",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "15+ GIFs",
+    difficulty: "All Levels",
+    badge: "Barbell Core",
+    videoSrc: "./assets/gifs/barbell-abs.gif",
+    cover: "./assets/gifs/barbell-abs.gif",
     fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
     rating: "4.9 ★★★★★",
-    progress: 75,
+    progress: 0,
     keyTakeaways: [
-      "The Hack squat shifts the torque predominantly onto the patellofemoral joint.",
-      "Greater ankle dorsiflexion leads to deeper knee flexion and vastus lateralis activation.",
-      "Safe depth cues: keeping a neutral spine and full eccentric tempo control."
+      "Keep pelvis neutral and rotate exclusively through thoracic spine.",
+      "Engage the transverse abdominis and brace before initiating movement.",
+      "Control the eccentric return speed with zero momentum."
     ],
-    materials: "Squat_Biomechanics_CheatSheet.pdf (2.4 MB)"
+    materials: "Barbell_Core_Index.pdf (Google Drive Connected)"
   },
   {
-    id: "class-2",
-    moduleId: "mod-2",
-    moduleName: "Module 02",
-    title: "Seated Dumbbell Overhead Press: Scapular Plane & ROM",
-    desc: "Discover why setting the bench at 75° and pressing along the scapular plane isolates the anterior deltoid while completely preventing shoulder impingement.",
-    category: "Shoulders & Arms",
-    categoryKey: "hombros",
-    duration: "11:45 min",
+    id: "barbell-forearms",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Forearms: Behind-the-Back Wrist Curls",
+    desc: "Behind-the-back wrist curls, finger curls, and reverse curls for crushing grip strength and forearm mass.",
+    category: "Barbell • Forearms & Grip",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Forearms",
+    muscleKey: "arms",
+    duration: "12+ GIFs",
     difficulty: "All Levels",
-    badge: "Popular",
-    videoSrc: "./assets/web-gif-2.mp4",
-    cover: "./assets/carousel-2.webp",
+    badge: "Forearms",
+    videoSrc: "./assets/gifs/barbell-forearms.gif",
+    cover: "./assets/gifs/barbell-forearms.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    rating: "5.0 ★★★★★",
-    progress: 30,
-    keyTakeaways: [
-      "Avoid flaring elbows in a pure frontal plane to protect the rotator cuff.",
-      "Do not violently lock out elbows at the top; maintain constant tension.",
-      "Keep forearms perpendicular to the floor throughout the entire movement."
-    ],
-    materials: "Scapular_Plane_Guide.pdf (1.8 MB)"
-  },
-  {
-    id: "class-3",
-    moduleId: "mod-3",
-    moduleName: "Module 03",
-    title: "Barbell Hip Thrust: Peak Gluteus Maximus Activation",
-    desc: "Pelvic positioning, posterior pelvic tilt at lockout, and foot placement to prevent hamstring strains and lower back hyperextension.",
-    category: "Legs & Glutes",
-    categoryKey: "piernas",
-    duration: "16:10 min",
-    difficulty: "Advanced",
-    badge: "Top 1",
-    videoSrc: "./assets/web-gif-3.mp4",
-    cover: "./assets/carousel-3.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-    rating: "4.9 ★★★★★",
-    progress: 85,
-    keyTakeaways: [
-      "Peak glute contraction occurs in full hip extension with posterior pelvic tilt.",
-      "Keep your chin tucked and gaze forward to protect the spine.",
-      "Foot stance should match shoulder width with a slight 15° outward flare."
-    ],
-    materials: "Glute_Biomechanics_Blueprint.pdf (3.1 MB)"
-  },
-  {
-    id: "class-4",
-    moduleId: "mod-2",
-    moduleName: "Module 02",
-    title: "Lat Pulldown vs. Pull-Ups: Latissimus Dorsi Recruitment",
-    desc: "Comparison of neutral, pronated, and supinated grips. Learn how to actively depress and retract the scapulae prior to initiating the pull.",
-    category: "Chest & Back",
-    categoryKey: "espalda",
-    duration: "13:30 min",
-    difficulty: "Intermediate",
-    badge: "Recommended",
-    videoSrc: "./assets/web-gif-4.mp4",
-    cover: "./assets/carousel-4.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    rating: "4.8 ★../../★★★",
-    progress: 0,
-    keyTakeaways: [
-      "The lats have superior mechanical leverage when pulling with elbows driving toward the hips.",
-      "Using lifting straps reduces grip fatigue and dramatically enhances mind-muscle connection."
-    ],
-    materials: "Pulldown_Scapular_Cues.pdf (2.0 MB)"
-  },
-  {
-    id: "class-5",
-    moduleId: "mod-2",
-    moduleName: "Module 02",
-    title: "Flat Barbell Bench Press: Scapular Retraction & 'J-Curve' Bar Path",
-    desc: "Demystifying the powerlifting arch vs. unsafe arching. Strict execution cues for pure pectoral stimulation without anterior shoulder pain.",
-    category: "Chest & Back",
-    categoryKey: "pecho",
-    duration: "18:05 min",
-    difficulty: "All Levels",
-    badge: "4K HD",
-    videoSrc: "./assets/web-gif-5.mp4",
-    cover: "./assets/carousel-5.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    rating: "5.0 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "The bar should never travel in a straight vertical line; use an efficient curved path toward the lower sternum.",
-      "Leg drive locks your upper back into the bench, providing an unshakeable base of support."
-    ],
-    materials: "Bench_Press_Master_Checklist.pdf (1.5 MB)"
-  },
-  {
-    id: "class-6",
-    moduleId: "mod-4",
-    moduleName: "Module 04",
-    title: "Kettlebell Swing & Snatch: Explosive Hip Extension",
-    desc: "Dynamic hip hinge pattern. How to transfer force directly from glutes and hamstrings without lifting with your arms or hyperextending your lower back.",
-    category: "Functional & HIIT",
-    categoryKey: "funcional",
-    duration: "10:50 min",
-    difficulty: "Intermediate",
-    badge: "New",
-    videoSrc: "./assets/web-gif-6.mp4",
-    cover: "./assets/action-demo.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "The kettlebell swing is an explosive hip hinge, never a squat-and-front-raise.",
-      "Brace core and lock out glutes firmly at the top of every repetition."
-    ],
-    materials: "Kettlebell_Pro_Manual.pdf (2.2 MB)"
-  },
-  {
-    id: "class-7",
-    moduleId: "mod-3",
-    moduleName: "Module 03",
-    title: "Dumbbell Romanian Deadlift (RDL): Deep Hamstring Stretch",
-    desc: "Clear distinction between conventional, Romanian, and stiff-leg deadlifts. Focus on loaded stretch, hip hinge depth, and RPE pacing.",
-    category: "Legs & Glutes",
-    categoryKey: "piernas",
-    duration: "15:20 min",
-    difficulty: "Intermediate",
-    badge: "Favorite",
-    videoSrc: "./assets/web-gif-1.mp4",
-    cover: "./assets/carousel-2.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "The bottom range of motion is determined by your hamstring flexibility, not the floor.",
-      "Keep dumbbells grazing your thighs and shins at all times to minimize shear force."
-    ],
-    materials: "RDL_Hamstring_Tension_Sheet.pdf (1.9 MB)"
-  },
-  {
-    id: "class-8",
-    moduleId: "mod-1",
-    moduleName: "Module 01",
-    title: "7-Minute Joint Mobility & Pre-Workout Warm-Up Protocol",
-    desc: "Express routine to lubricate shoulder, hip, and ankle articular capsules prior to heavy resistance training.",
-    category: "Mobility & Health",
-    categoryKey: "movilidad",
-    duration: "08:15 min",
-    difficulty: "Beginner",
-    badge: "Essential",
-    videoSrc: "./assets/web-gif-3.mp4",
-    cover: "./assets/carousel-4.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    rating: "5.0 ★★★★★",
-    progress: 100,
-    keyTakeaways: [
-      "Dynamic warm-ups elevate core temperature and promote synovial fluid flow.",
-      "Avoid long static passive stretching immediately prior to heavy compound sets."
-    ],
-    materials: "7Min_Warmup_CheatSheet.pdf (1.2 MB)"
-  },
-  {
-    id: "class-9",
-    moduleId: "mod-5",
-    moduleName: "Module 05",
-    title: "How to Calibrate RPE & RIR for Intermediate Trainees",
-    desc: "Learn how to accurately gauge reps in reserve to train with authentic hypertrophy intensity without frying the central nervous system.",
-    category: "Coaching & Strength",
-    categoryKey: "coaching",
-    duration: "12:10 min",
-    difficulty: "Advanced",
-    badge: "New",
-    videoSrc: "./assets/web-gif-5.mp4",
-    cover: "./assets/carousel-1.webp",
-    fallbackCover: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
     rating: "4.8 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Most beginners confuse standard metabolic lactic burn with true muscular failure.",
-      "The sweet spot for maximum sustainable hypertrophy lies between RIR 1 and RIR 3."
+      "Allow bar to roll down to fingertips for maximum wrist flexor stretch.",
+      "Squeeze wrists hard at the peak for full contraction.",
+      "Keep elbows locked in extension to isolate the forearms."
     ],
-    materials: "RPE_Borg_Scale_Table.pdf (1.1 MB)"
+    materials: "Forearm_Hypertrophy_Protocol.pdf"
+  },
+  {
+    id: "barbell-biceps",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Biceps: Standing Curls & 21s Protocol",
+    desc: "Strict barbell curls, EZ-bar curls, drag curls, and 21s protocol for maximum bicep peak and brachialis recruitment.",
+    category: "Barbell • Biceps",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Biceps",
+    muscleKey: "arms",
+    duration: "18+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Biceps",
+    videoSrc: "./assets/gifs/barbell-biceps.gif",
+    cover: "./assets/gifs/barbell-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Pin elbows to ribcage and eliminate torso swing.",
+      "Supinate forcefully against the bar during the concentric phase.",
+      "Control the eccentric lowering phase for 2 to 3 seconds."
+    ],
+    materials: "Bicep_Peak_Mastery.pdf"
+  },
+  {
+    id: "barbell-chest",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Chest: Flat Bench & Incline Press",
+    desc: "Classic flat barbell bench press, 30° incline press, and banded bench presses for maximum pectoral hypertrophy.",
+    category: "Barbell • Chest & Pecs",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "20+ GIFs",
+    difficulty: "All Levels",
+    badge: "Chest",
+    videoSrc: "./assets/gifs/barbell-chest.gif",
+    cover: "./assets/gifs/barbell-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Retract and depress scapulae to create a stable pressing shelf.",
+      "Follow a curved J-bar path from sternum to upper chest lockout.",
+      "Keep feet planted firmly for leg drive and spinal stability."
+    ],
+    materials: "Bench_Press_Biomechanics.pdf"
+  },
+  {
+    id: "barbell-back",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Back: Bent-Over Rows & Deadlifts",
+    desc: "Bent-over barbell rows, Pendlay rows, deficit deadlifts, and Yates rows to build a thick, dense back and wide lats.",
+    category: "Barbell • Back & Lats",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "22+ GIFs",
+    difficulty: "Advanced",
+    badge: "Back",
+    videoSrc: "./assets/gifs/barbell-back.gif",
+    cover: "./assets/gifs/barbell-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Hinge hips backward with neutral spine and engaged hamstrings.",
+      "Pull elbows toward your pockets to maximize latissimus dorsi recruitment.",
+      "Pause for a fraction of a second at peak contraction."
+    ],
+    materials: "Back_Thickness_Blueprint.pdf"
+  },
+  {
+    id: "barbell-shoulders",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Shoulders: Military Press & Front Raises",
+    desc: "Strict standing overhead press, push press, and barbell front raises to develop broad 3D anterior and medial deltoids.",
+    category: "Barbell • Shoulders",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "16+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Delts",
+    videoSrc: "./assets/gifs/barbell-shoulders.gif",
+    cover: "./assets/gifs/barbell-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Squeeze glutes and core to prevent lumbar hyperextension.",
+      "Press the bar directly overhead with head moving slightly through window.",
+      "Keep forearms vertically stacked directly under the bar."
+    ],
+    materials: "Shoulder_Press_Safety_Rules.pdf"
+  },
+  {
+    id: "barbell-legs",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Legs: Back Squats & Romanian Deadlifts",
+    desc: "High-bar and low-bar back squats, front squats, and Romanian deadlifts (RDL) for quad tear drops and posterior chain power.",
+    category: "Barbell • Lower Body",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Legs",
+    muscleKey: "legs",
+    duration: "24+ GIFs",
+    difficulty: "All Levels",
+    badge: "Quads & Glutes",
+    videoSrc: "./assets/gifs/barbell-legs.gif",
+    cover: "./assets/gifs/barbell-legs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Maintain tripod foot pressure and track knees over toes.",
+      "Descend smoothly to parallel or below while keeping thoracic extension.",
+      "Push through midfoot and drive hips upward simultaneously."
+    ],
+    materials: "Squat_Mastery_Checklist.pdf"
+  },
+  {
+    id: "barbell-triceps",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Suite",
+    title: "Triceps: Skull Crushers & Close-Grip Bench",
+    desc: "Lying EZ-bar skull crushers, close-grip bench press, and overhead barbell extensions for complete triceps horseshoe development.",
+    category: "Barbell • Triceps",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "14+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Triceps",
+    videoSrc: "./assets/gifs/barbell-triceps.gif",
+    cover: "./assets/gifs/barbell-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Keep elbows slightly angled backward rather than purely vertical to protect joints.",
+      "Lower bar smoothly to hairline or top of bench for deep long head stretch.",
+      "Lock out triceps with control at the peak."
+    ],
+    materials: "Triceps_Horseshoe_Guide.pdf"
+  },
+
+  // --- ROW 2: DUMBBELL EXERCISES ---
+  {
+    id: "dumbbell-biceps",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Biceps: Incline & Hammer Curls",
+    desc: "Incline dumbbell curls, standing hammer curls, concentration curls, and Zottman curls for full biceps and brachioradialis.",
+    category: "Dumbbells • Biceps",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Biceps",
+    muscleKey: "arms",
+    duration: "20+ GIFs",
+    difficulty: "All Levels",
+    badge: "Biceps",
+    videoSrc: "./assets/gifs/dumbbell-biceps.gif",
+    cover: "./assets/gifs/dumbbell-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Perform curls on a 60° incline bench to place long head in extreme stretch.",
+      "Supinate pinkies aggressively outward at the peak.",
+      "Neutral grip hammer curls heavily stimulate the brachialis muscle."
+    ],
+    materials: "Dumbbell_Arm_Hypertrophy.pdf"
+  },
+  {
+    id: "dumbbell-shoulders",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Shoulders: Lateral Raises & Arnold Press",
+    desc: "Side lateral raises with controlled eccentrics, Arnold press, rear delt flyes, and dumbbell shrugs.",
+    category: "Dumbbells • Shoulders",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "22+ GIFs",
+    difficulty: "All Levels",
+    badge: "Delts",
+    videoSrc: "./assets/gifs/dumbbell-shoulders.gif",
+    cover: "./assets/gifs/dumbbell-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Lead lateral raises with elbows and slight forward torso lean (scapular plane).",
+      "Do not shrug traps during the raise; keep shoulders depressed.",
+      "Control the descent for 3 seconds to trigger maximum mechanical tension."
+    ],
+    materials: "3D_Deltoids_Protocol.pdf"
+  },
+  {
+    id: "dumbbell-chest",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Chest: Flat Press & Incline Flyes",
+    desc: "Flat dumbbell bench press, incline presses at 30°, deep dumbbell push-ups, and flat dumbbell flyes.",
+    category: "Dumbbells • Chest",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "18+ GIFs",
+    difficulty: "All Levels",
+    badge: "Chest",
+    videoSrc: "./assets/gifs/dumbbell-chest.gif",
+    cover: "./assets/gifs/dumbbell-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Dumbbells allow greater range of motion and stretch than barbells.",
+      "Angle dumbbells slightly in a 45° arrow shape to spare rotator cuffs.",
+      "Drive hands toward each other at top without clanking dumbbells."
+    ],
+    materials: "Chest_Isolation_Blueprint.pdf"
+  },
+  {
+    id: "dumbbell-back",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Back: Single-Arm Rows & Pullovers",
+    desc: "Supported single-arm dumbbell rows, chest-supported incline rows, and dumbbell pullovers for serratus and lat flare.",
+    category: "Dumbbells • Back & Lats",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "16+ GIFs",
+    difficulty: "All Levels",
+    badge: "Lats",
+    videoSrc: "./assets/gifs/dumbbell-back.gif",
+    cover: "./assets/gifs/dumbbell-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Pull the dumbbell toward your hip crease rather than straight up to the chest.",
+      "Allow full protraction of the scapula at bottom for extreme stretch.",
+      "Do not twist torso; keep chest parallel to the floor."
+    ],
+    materials: "Unilateral_Back_Guide.pdf"
+  },
+  {
+    id: "dumbbell-triceps",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Triceps: Overhead Extensions & Dips",
+    desc: "Two-handed overhead dumbbell triceps extension, kickbacks, and bench dips with feet elevated.",
+    category: "Dumbbells • Triceps",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "14+ GIFs",
+    difficulty: "All Levels",
+    badge: "Triceps",
+    videoSrc: "./assets/gifs/dumbbell-triceps.gif",
+    cover: "./assets/gifs/dumbbell-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "4.7 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Overhead positioning targets the triceps long head in its most lengthened position.",
+      "Keep upper arms pointing up and flare elbows only slightly.",
+      "Full extension at top without hyperextending elbows."
+    ],
+    materials: "Triceps_Extension_Cues.pdf"
+  },
+  {
+    id: "dumbbell-legs",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Legs: Bulgarian Split Squats & Lunges",
+    desc: "Bulgarian split squats with foot elevated, walking dumbbell lunges, and heavy goblet squats.",
+    category: "Dumbbells • Lower Body",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Legs",
+    muscleKey: "legs",
+    duration: "20+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Quads & Glutes",
+    videoSrc: "./assets/gifs/dumbbell-legs.gif",
+    cover: "./assets/gifs/dumbbell-legs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Lean forward slightly at the torso to load glutes and reduce lumbar strain.",
+      "Keep 80% of weight on the front working leg.",
+      "Descend until front thigh is at least parallel to the floor."
+    ],
+    materials: "Unilateral_Leg_Hypertrophy.pdf"
+  },
+  {
+    id: "dumbbell-forearms",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Forearms: Wrist Curls & Grip Holds",
+    desc: "Palms-up wrist curls, palms-down reverse wrist curls, and farmer's walks for forearms.",
+    category: "Dumbbells • Forearms",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Forearms",
+    muscleKey: "arms",
+    duration: "10+ GIFs",
+    difficulty: "All Levels",
+    badge: "Forearms",
+    videoSrc: "./assets/gifs/dumbbell-forearms.gif",
+    cover: "./assets/gifs/dumbbell-forearms.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "4.7 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Rest forearms on thighs or a flat bench for isolation.",
+      "Flex wrists upward with high reps and brief pauses.",
+      "Alternate between pronated and supinated grips."
+    ],
+    materials: "Grip_Strength_Guide.pdf"
+  },
+  {
+    id: "dumbbell-abs",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Suite",
+    title: "Abs & Core: Russian Twists & Side Bends",
+    desc: "Weighted dumbbell Russian twists, dumbbell side bends, and dumbbell plank pull-throughs.",
+    category: "Dumbbells • Core & Waist",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "14+ GIFs",
+    difficulty: "All Levels",
+    badge: "Core",
+    videoSrc: "./assets/gifs/dumbbell-abs.gif",
+    cover: "./assets/gifs/dumbbell-abs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Rotate through shoulders, not just moving arms side to side.",
+      "Maintain a 45° angle with torso off the ground in V-sit.",
+      "Keep core actively braced throughout every rotation."
+    ],
+    materials: "Oblique_Conditioning_Plan.pdf"
+  },
+
+  // --- ROW 3: MACHINE, HACK & BENCH EXERCISES ---
+  {
+    id: "machine-legs",
+    moduleId: "mod-machine",
+    moduleName: "Machine Suite",
+    title: "Legs: 45° Leg Press & Hack Squats",
+    desc: "45° heavy leg press, plate-loaded hack squats, lying hamstring curls, and 45° hyperextensions.",
+    category: "Machines • Lower Body",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Legs",
+    muscleKey: "legs",
+    duration: "24+ GIFs",
+    difficulty: "All Levels",
+    badge: "Legs",
+    videoSrc: "./assets/gifs/machine-legs.gif",
+    cover: "./assets/gifs/machine-legs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Do not let lower back or hips lift off the seat during deep leg presses.",
+      "Place feet lower on platform to emphasize quads, higher for glutes/hams.",
+      "Never lock out knees aggressively under heavy machine loads."
+    ],
+    materials: "Leg_Press_Setup_Blueprint.pdf"
+  },
+  {
+    id: "machine-chest",
+    moduleId: "mod-machine",
+    moduleName: "Machine Suite",
+    title: "Chest: Machine Press & Pec Deck",
+    desc: "Seated chest press machine, Pec Deck machine flyes, and converge-incline lever press for peak pectoral contractions.",
+    category: "Machines • Chest",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "18+ GIFs",
+    difficulty: "All Levels",
+    badge: "Chest",
+    videoSrc: "./assets/gifs/machine-chest.gif",
+    cover: "./assets/gifs/machine-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Adjust seat height so handles align directly with the mid-to-lower sternum.",
+      "Keep chest puffed and shoulder blades pressed firmly against the pad.",
+      "Squeeze pectorals together for a full 1-second pause at maximum contraction."
+    ],
+    materials: "Machine_Chest_Isolation.pdf"
+  },
+  {
+    id: "machine-back",
+    moduleId: "mod-machine",
+    moduleName: "Machine Suite",
+    title: "Back: Lat Pulldowns & Seated Rows",
+    desc: "Wide-grip lat pulldowns, neutral close-grip seated machine rows, and archer pull-ups.",
+    category: "Machines • Back & Lats",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "20+ GIFs",
+    difficulty: "All Levels",
+    badge: "Lats",
+    videoSrc: "./assets/gifs/machine-back.gif",
+    cover: "./assets/gifs/machine-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Depress and tuck shoulder blades before pulling the bar down.",
+      "Drive elbows down and slightly back toward your ribcage.",
+      "Avoid excessive backward leaning during pulldowns."
+    ],
+    materials: "Lat_Pulldown_Technique.pdf"
+  },
+  {
+    id: "machine-shoulders",
+    moduleId: "mod-machine",
+    moduleName: "Machine Suite",
+    title: "Shoulders: Overhead Press & Rear Pec Deck",
+    desc: "Plate-loaded shoulder press machine, reverse pec deck rear delt flyes, and decline diamond pike push-ups.",
+    category: "Machines • Shoulders",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "16+ GIFs",
+    difficulty: "All Levels",
+    badge: "Delts",
+    videoSrc: "./assets/gifs/machine-shoulders.gif",
+    cover: "./assets/gifs/machine-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "On reverse pec deck, adjust seat so arms are parallel to the floor.",
+      "Lead movement with rear elbows without squeezing shoulder blades excessively.",
+      "Eliminate momentum for surgical rear deltoid isolation."
+    ],
+    materials: "Rear_Delt_Specialization.pdf"
+  },
+  {
+    id: "machine-abs",
+    moduleId: "mod-machine",
+    moduleName: "Machine Suite",
+    title: "Abs & Core: 45° Twisting Crunch & Ab Machine",
+    desc: "45-degree bicycle twisting crunches, seated abdominal crunch machines, and Roman chair knee raises.",
+    category: "Machines • Core",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "15+ GIFs",
+    difficulty: "All Levels",
+    badge: "Core",
+    videoSrc: "./assets/gifs/machine-abs.gif",
+    cover: "./assets/gifs/machine-abs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Curl your ribcage down toward your pelvis rather than just bending at hips.",
+      "Exhale completely during contraction to hollow out the abdominal wall.",
+      "Keep neck relaxed and let the core muscles do 100% of the work."
+    ],
+    materials: "Ab_Machine_Form_Cues.pdf"
+  },
+
+  // --- ROW 4: CABLE & PULLEY EXERCISES ---
+  {
+    id: "cable-triceps",
+    moduleId: "mod-cable",
+    moduleName: "Cable Suite",
+    title: "Triceps: Rope & Straight-Bar Pushdowns",
+    desc: "Cable alternate triceps extensions, rope pushdowns with peak flare, straight-bar pushdowns, and overhead extensions.",
+    category: "Cables • Triceps",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "18+ GIFs",
+    difficulty: "All Levels",
+    badge: "Triceps",
+    videoSrc: "./assets/gifs/cable-triceps.gif",
+    cover: "./assets/gifs/cable-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Keep upper arms pinned immovably against your torso.",
+      "Spread the rope handles outward at the bottom of the movement.",
+      "Allow full elbow flexion at the top for complete triceps stretch."
+    ],
+    materials: "Cable_Triceps_Execution.pdf"
+  },
+  {
+    id: "cable-biceps",
+    moduleId: "mod-cable",
+    moduleName: "Cable Suite",
+    title: "Biceps: Low Pulley & SZ-Bar Curls",
+    desc: "Low pulley cable curls with SZ-bar, rope hammer curls, and high cable Hercules curls for continuous tension.",
+    category: "Cables • Biceps",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Biceps",
+    muscleKey: "arms",
+    duration: "16+ GIFs",
+    difficulty: "All Levels",
+    badge: "Biceps",
+    videoSrc: "./assets/gifs/cable-biceps.gif",
+    cover: "./assets/gifs/cable-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Cables provide non-stop resistance even at the top of the curl.",
+      "Step back slightly from pulley to maintain tension in start position.",
+      "Do not lean backward or use hips to jerk weight up."
+    ],
+    materials: "Cable_Curl_Variations.pdf"
+  },
+  {
+    id: "cable-chest",
+    moduleId: "mod-cable",
+    moduleName: "Cable Suite",
+    title: "Chest: High-to-Low Flyes & Crossovers",
+    desc: "High-to-low cable crossovers, mid-chest cable flyes, and low-to-high upper chest cable flyes.",
+    category: "Cables • Chest",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "20+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Chest",
+    videoSrc: "./assets/gifs/cable-chest.gif",
+    cover: "./assets/gifs/cable-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Maintain a slight bend at the elbows like hugging a wide barrel.",
+      "Bring hands together along the line of lower pec fibers.",
+      "Cross hands slightly at peak for extreme adduction tension."
+    ],
+    materials: "Cable_Fly_Angles_Chart.pdf"
+  },
+  {
+    id: "cable-back",
+    moduleId: "mod-cable",
+    moduleName: "Cable Suite",
+    title: "Back: Straight-Arm Pulldowns & Face Pulls",
+    desc: "Cable 45-degree reverse flyes, straight-arm lat pulldowns, and face pulls to train the rear delts and mid traps.",
+    category: "Cables • Back",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "18+ GIFs",
+    difficulty: "All Levels",
+    badge: "Lats",
+    videoSrc: "./assets/gifs/cable-back.gif",
+    cover: "./assets/gifs/cable-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Straight-arm pulldowns isolate lats without biceps taking over.",
+      "Face pulls externally rotate shoulders for health and posture.",
+      "Pull rope directly toward eye level with thumbs facing backward."
+    ],
+    materials: "Face_Pull_Posture_Guide.pdf"
+  },
+  {
+    id: "cable-shoulders",
+    moduleId: "mod-cable",
+    moduleName: "Cable Suite",
+    title: "Shoulders: Cable Lateral & Forward Raises",
+    desc: "Single-arm cable lateral raises behind the back, forward cable raises, and cable Y-raises for round shoulders.",
+    category: "Cables • Shoulders",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "16+ GIFs",
+    difficulty: "All Levels",
+    badge: "Delts",
+    videoSrc: "./assets/gifs/cable-shoulders.gif",
+    cover: "./assets/gifs/cable-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Set pulley at hand height when arm is down for best resistance curve.",
+      "Raise arm in scapular plane 30° in front of the body.",
+      "Smooth tempo without leaning away violently."
+    ],
+    materials: "Cable_Lateral_Raise_Setup.pdf"
+  },
+  {
+    id: "cable-abs",
+    moduleId: "mod-cable",
+    moduleName: "Cable Suite",
+    title: "Abs & Core: Decline Crunches & Woodchoppers",
+    desc: "Cable decline crunches, kneeling rope crunches, and rotational cable woodchoppers.",
+    category: "Cables • Core",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "15+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Core",
+    videoSrc: "./assets/gifs/cable-abs.gif",
+    cover: "./assets/gifs/cable-abs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "On kneeling cable crunches, fix hips in place and curl spine down.",
+      "Do not sit back onto your heels during contraction.",
+      "Exhale hard as elbows drive toward your knees."
+    ],
+    materials: "Kneeling_Crunch_Guide.pdf"
+  },
+
+  // --- ROW 5: FUNCTIONAL & BODYWEIGHT TRAINING ---
+  {
+    id: "functional-abs",
+    moduleId: "mod-functional",
+    moduleName: "Functional Suite",
+    title: "Abs & Core: 3/4 Sit-ups & Hollow Body",
+    desc: "3/4 sit-ups, dynamic plank variations, mountain climbers, and hollow body holds for deep core stability.",
+    category: "Functional • Core Conditioning",
+    categoryKey: "functional",
+    equipment: "Functional",
+    equipmentKey: "functional",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "30+ GIFs",
+    difficulty: "All Levels",
+    badge: "Core",
+    videoSrc: "./assets/gifs/functional-abs.gif",
+    cover: "./assets/gifs/functional-abs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1s_uYON4pcMbZoTn9au5EbR2mtajaQ_Wx",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Press lower back flush against the mat before flexing upward.",
+      "Engage the deep transverse abdominis on every repetition.",
+      "Control the eccentric descent; do not drop flat onto the ground."
+    ],
+    materials: "Functional_Core_Index.pdf (Google Drive Connected)"
+  },
+  {
+    id: "functional-cardio",
+    moduleId: "mod-functional",
+    moduleName: "Functional Suite",
+    title: "Cardio & HIIT: High Knees & Jump Squats",
+    desc: "High-knee squats, high-speed shuttle runs, jumping jacks, and sprint intervals for conditioning.",
+    category: "Functional • Cardio & HIIT",
+    categoryKey: "functional",
+    equipment: "Functional",
+    equipmentKey: "functional",
+    muscleGroup: "Cardio",
+    muscleKey: "cardio",
+    duration: "25+ GIFs",
+    difficulty: "All Levels",
+    badge: "HIIT",
+    videoSrc: "./assets/gifs/functional-cardio.gif",
+    cover: "./assets/gifs/functional-cardio.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Land softly on balls of feet with knees absorbing impact.",
+      "Maintain rhythmic breathing patterns during high intensity intervals.",
+      "Keep athletic posture and upright chest during sprints and high knees."
+    ],
+    materials: "HIIT_Protocol_Matrix.pdf"
+  },
+  {
+    id: "functional-agility",
+    moduleId: "mod-functional",
+    moduleName: "Functional Suite",
+    title: "Agility: Step Drills & Footwork",
+    desc: "Alternate forward step arm swings, agility ladder quick-feet routines, and multi-directional bounds.",
+    category: "Functional • Agility & Speed",
+    categoryKey: "functional",
+    equipment: "Functional",
+    equipmentKey: "functional",
+    muscleGroup: "Agility",
+    muscleKey: "agility",
+    duration: "20+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Agility",
+    videoSrc: "./assets/gifs/functional-agility.gif",
+    cover: "./assets/gifs/functional-agility.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
+    rating: "4.8 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Stay light on forefoot and keep center of gravity low.",
+      "Coordinate arm drive symmetrically with foot cadence.",
+      "Train decelerations before accelerations for joint safety."
+    ],
+    materials: "Footwork_Agility_Patterns.pdf"
+  },
+  {
+    id: "functional-bodyweight",
+    moduleId: "mod-functional",
+    moduleName: "Functional Suite",
+    title: "Bodyweight: Burpees & Calisthenics",
+    desc: "Burpee alternate arm-leg raises, strict push-ups, explosive plyo push-ups, and pull-ups.",
+    category: "Functional • Calisthenics",
+    categoryKey: "functional",
+    equipment: "Functional",
+    equipmentKey: "functional",
+    muscleGroup: "Full Body",
+    muscleKey: "bodyweight",
+    duration: "28+ GIFs",
+    difficulty: "All Levels",
+    badge: "Calisthenics",
+    videoSrc: "./assets/gifs/functional-bodyweight.gif",
+    cover: "./assets/gifs/functional-bodyweight.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Maintain a straight hollow-body line from head to heels.",
+      "Full chest-to-deck range of motion on push-ups and burpees.",
+      "Explosive push through palms with active shoulder blade control."
+    ],
+    materials: "Calisthenics_Progression_Tree.pdf"
+  },
+  {
+    id: "functional-mobility",
+    moduleId: "mod-functional",
+    moduleName: "Functional Suite",
+    title: "Mobility: Joint Openers & Knee Circles",
+    desc: "Circle knee stretches, deep squat holds, 90/90 hip flow, and thoracic spine rotational mobility.",
+    category: "Functional • Mobility & Recovery",
+    categoryKey: "functional",
+    equipment: "Functional",
+    equipmentKey: "functional",
+    muscleGroup: "Mobility",
+    muscleKey: "mobility",
+    duration: "25+ GIFs",
+    difficulty: "All Levels",
+    badge: "Mobility",
+    videoSrc: "./assets/gifs/functional-mobility.gif",
+    cover: "./assets/gifs/functional-mobility.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Breathe slowly and deeply into areas of tension.",
+      "Perform active mobility rather than passive, limp stretches.",
+      "Expand joint capsule freedom before heavy lifting sessions."
+    ],
+    materials: "Joint_Mobility_Daily_Flow.pdf"
+  },
+  {
+    id: "functional-battle-rope",
+    moduleId: "mod-functional",
+    moduleName: "Functional Suite",
+    title: "Battle Rope: Alternate Arms Jump Squat",
+    desc: "Battling ropes alternate arms jump squats, power slams, double waves, and rotational whips.",
+    category: "Functional • Battle Rope",
+    categoryKey: "functional",
+    equipment: "Functional",
+    equipmentKey: "functional",
+    muscleGroup: "Full Body",
+    muscleKey: "power",
+    duration: "15+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Battle Rope",
+    videoSrc: "./assets/gifs/functional-battle-rope.gif",
+    cover: "./assets/gifs/functional-battle-rope.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Keep athletic base with knees bent and chest up.",
+      "Generate power from hips and core, channeling it down through arms.",
+      "Slam ropes all the way to anchor point without slack."
+    ],
+    materials: "Battle_Rope_Conditioning.pdf"
+  },
+  {
+    id: "functional-trx",
+    moduleId: "mod-functional",
+    moduleName: "Functional Suite",
+    title: "TRX & Suspension: Fallouts & Rows",
+    desc: "Suspended abdominal fallouts, inverted TRX rows, suspension push-ups, and TRX pikes.",
+    category: "Functional • Suspension Training",
+    categoryKey: "functional",
+    equipment: "Functional",
+    equipmentKey: "functional",
+    muscleGroup: "Core & Stability",
+    muscleKey: "trx",
+    duration: "20+ GIFs",
+    difficulty: "Intermediate",
+    badge: "TRX",
+    videoSrc: "./assets/gifs/functional-trx.gif",
+    cover: "./assets/gifs/functional-trx.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Adjust body angle relative to floor to instantly scale resistance.",
+      "Keep straps taut with zero slack at any point in the movement.",
+      "Maintain active core bracing so hips do not sag or pike."
+    ],
+    materials: "TRX_Suspension_Mastery.pdf"
+  },
+
+  // --- ROW 6: KETTLEBELL & SUPERBAND ---
+  {
+    id: "kettlebell-swings",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Suite",
+    title: "Kettlebell: Advanced Windmills & Swings",
+    desc: "Kettlebell advanced windmills, Russian hip hinge swings, Turkish get-ups, and clean & press.",
+    category: "Kettlebell • Power",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Full Body",
+    muscleKey: "kettlebell",
+    duration: "20+ GIFs",
+    difficulty: "Intermediate",
+    badge: "Kettlebell",
+    videoSrc: "./assets/gifs/kettlebell-swing.gif",
+    cover: "./assets/gifs/kettlebell-swing.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1OeDXqZIkmWgmUuwUxL6qIzfc_0auxQPa",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "The swing is a pure hip hinge, not a squat with arms lifting.",
+      "Snap hips forward explosively at lockout with glutes squeezed.",
+      "Keep eyes focused on the bell during overhead windmills."
+    ],
+    materials: "Kettlebell_Power_Biomechanics.pdf"
+  },
+  {
+    id: "superband-activation",
+    moduleId: "mod-kettlebell",
+    moduleName: "Superband Suite",
+    title: "Superband: Banded Bicycle Crunches & Mobility",
+    desc: "Band bicycle crunches, monster walks, band pull-aparts, and banded deadlifts for muscle activation.",
+    category: "Superband • Elastic Resistance",
+    categoryKey: "kettlebell",
+    equipment: "Superband",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Activation",
+    muscleKey: "superband",
+    duration: "18+ GIFs",
+    difficulty: "All Levels",
+    badge: "Superband",
+    videoSrc: "./assets/gifs/superband-activation.gif",
+    cover: "./assets/gifs/superband-activation.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1DZkIlOfRugbT62yKl1T-uCVTifhsTTXb",
+    rating: "4.9 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Maintain continuous tension in band without allowing it to go slack.",
+      "Use lighter bands for high-rep motor recruitment warmups.",
+      "Control the eccentric return against elastic resistance."
+    ],
+    materials: "Elastic_Band_Activation_Protocols.pdf"
   }
 ];
 
@@ -898,44 +1694,48 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProfileSavedList();
   }
   
-  // RENDER: Home Rows (Carousels)
+    // RENDER: Home Rows (Carousels)
   function renderHomeCarousels() {
-    // 1. Continue Learning
-    const trackSeguir = document.getElementById('ff-track-seguir-viendo');
-    if (trackSeguir) {
-      const inProgressClasses = CLASSES_DATA.filter(c => c.progress > 0);
-      trackSeguir.innerHTML = inProgressClasses.map(c => createCardHtml(c, true)).join('');
+    // 1. Barbell Exercises
+    const trackBarbell = document.getElementById('ff-track-barbell');
+    if (trackBarbell) {
+      const barbellClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'barbell');
+      trackBarbell.innerHTML = barbellClasses.map(c => createCardHtml(c)).join('');
     }
     
-    // 2. Start Here (Foundations)
-    const trackEmpieza = document.getElementById('ff-track-empieza-aqui');
-    if (trackEmpieza) {
-      const basicClasses = CLASSES_DATA.filter(c => c.moduleId === 'mod-1' || c.difficulty === 'Beginner');
-      trackEmpieza.innerHTML = basicClasses.map(c => createCardHtml(c)).join('');
+    // 2. Dumbbell Exercises
+    const trackDumbbell = document.getElementById('ff-track-dumbbell');
+    if (trackDumbbell) {
+      const dumbbellClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'dumbbell');
+      trackDumbbell.innerHTML = dumbbellClasses.map(c => createCardHtml(c)).join('');
     }
     
-    // 3. Recommended For You
-    const trackRecomendados = document.getElementById('ff-track-recomendados');
-    if (trackRecomendados) {
-      trackRecomendados.innerHTML = CLASSES_DATA.slice(0, 6).map(c => createCardHtml(c)).join('');
+    // 3. Machine Exercises
+    const trackMachine = document.getElementById('ff-track-machine');
+    if (trackMachine) {
+      const machineClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'machine');
+      trackMachine.innerHTML = machineClasses.map(c => createCardHtml(c)).join('');
     }
     
-    // 4. Top 5 Most Watched (Netflix Numbers)
-    const trackTop10 = document.getElementById('ff-track-top10');
-    if (trackTop10) {
-      trackTop10.innerHTML = CLASSES_DATA.slice(0, 5).map((c, idx) => `
-        <div class="ff-card-top10">
-          <span class="ff-top10-number">${idx + 1}</span>
-          ${createCardHtml(c)}
-        </div>
-      `).join('');
+    // 4. Cable Exercises
+    const trackCable = document.getElementById('ff-track-cable');
+    if (trackCable) {
+      const cableClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'cable');
+      trackCable.innerHTML = cableClasses.map(c => createCardHtml(c)).join('');
     }
     
-    // 5. New Releases & Premieres
-    const trackNuevos = document.getElementById('ff-track-nuevos');
-    if (trackNuevos) {
-      const newClasses = CLASSES_DATA.filter(c => c.badge === 'New' || c.badge === '4K HD');
-      trackNuevos.innerHTML = newClasses.map(c => createCardHtml(c)).join('');
+    // 5. Functional & Bodyweight Exercises
+    const trackFunctional = document.getElementById('ff-track-functional');
+    if (trackFunctional) {
+      const functionalClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'functional');
+      trackFunctional.innerHTML = functionalClasses.map(c => createCardHtml(c)).join('');
+    }
+    
+    // 6. Kettlebell & Superband
+    const trackKettlebell = document.getElementById('ff-track-kettlebell');
+    if (trackKettlebell) {
+      const kettlebellClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'kettlebell');
+      trackKettlebell.innerHTML = kettlebellClasses.map(c => createCardHtml(c)).join('');
     }
     
     setupCarouselArrows();
@@ -952,12 +1752,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="ff-card" data-lesson-id="${item.id}">
         <div class="ff-card-media">
           <img class="ff-card-img" src="${item.cover}" alt="${item.title}" onerror="this.onerror=null;this.src='${item.fallbackCover}';">
-          <video class="ff-card-video-preview" src="${item.videoSrc}" loop muted playsinline preload="none"></video>
           <div class="ff-card-overlay-gradient"></div>
           
           <div class="ff-card-top-tags">
-            <span class="ff-badge-status ff-badge-disponible">${isCompleted ? '✓ Completed' : item.badge || 'Available'}</span>
-            <span class="ff-badge-duration"><i class="fa-regular fa-clock"></i> ${item.duration}</span>
+            <span class="ff-badge-status ff-badge-disponible">${item.badge || item.equipment || 'GIF'}</span>
+            <span class="ff-badge-duration"><i class="fa-solid fa-folder"></i> Drive</span>
           </div>
           
           <div class="ff-card-play-hover">
@@ -970,14 +1769,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <h4 class="ff-card-title">${item.title}</h4>
           <p class="ff-card-desc">${item.desc}</p>
           
-          ${showProgress || progressVal > 0 ? `
+          ${showProgress && progressVal > 0 ? `
             <div class="ff-card-progress-bar">
               <div class="ff-card-progress-fill" style="width: ${progressVal}%"></div>
             </div>
           ` : ''}
           
           <div class="ff-card-footer">
-            <span class="ff-card-cta-btn"><i class="fa-solid fa-play"></i> Watch class</span>
+            <span class="ff-card-cta-btn"><i class="fa-solid fa-play"></i> Preview GIF</span>
+            <a href="${item.driveUrl}" target="_blank" rel="noopener noreferrer" class="ff-card-drive-btn" title="Open Google Drive folder" onclick="event.stopPropagation();">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Drive ↗
+            </a>
             <button class="ff-card-fav-btn ${isSaved ? 'ff-saved' : ''}" data-fav-id="${item.id}" title="${isSaved ? 'Remove from My List' : 'Save to My List'}">
               <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
             </button>
@@ -1110,7 +1912,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (category.startsWith('mod-')) {
         filtered = filtered.filter(c => c.moduleId === category);
       } else {
-        filtered = filtered.filter(c => c.categoryKey === category);
+        filtered = filtered.filter(c => 
+          c.categoryKey === category || 
+          c.equipmentKey === category || 
+          c.muscleKey === category
+        );
       }
     }
     
@@ -1118,7 +1924,9 @@ document.addEventListener('DOMContentLoaded', () => {
       filtered = filtered.filter(c => 
         c.title.toLowerCase().includes(query) || 
         c.desc.toLowerCase().includes(query) ||
-        c.category.toLowerCase().includes(query)
+        c.category.toLowerCase().includes(query) ||
+        (c.equipment && c.equipment.toLowerCase().includes(query)) ||
+        (c.muscleGroup && c.muscleGroup.toLowerCase().includes(query))
       );
     }
     
@@ -1127,8 +1935,8 @@ document.addEventListener('DOMContentLoaded', () => {
       : `
         <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--ff-text-muted);">
           <i class="fa-solid fa-magnifying-glass" style="font-size: 40px; margin-bottom: 14px; opacity: 0.4;"></i>
-          <h3>No matching results</h3>
-          <p style="font-size: 13px; margin-top: 6px;">Try another keyword or reset the category filter.</p>
+          <h3>No matching exercise GIFs found</h3>
+          <p style="font-size: 13px; margin-top: 6px;">Try another keyword or select a different category.</p>
         </div>
       `;
     attachCardEvents();
@@ -1363,10 +2171,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // LESSON PLAYER MODAL
+    // LESSON PLAYER MODAL
   const playerModal = document.getElementById('ff-player-modal');
   const playerCloseBtn = document.getElementById('ff-player-close');
   const modalVideo = document.getElementById('ff-modal-video');
+  const modalGif = document.getElementById('ff-modal-gif');
   const modalTitle = document.getElementById('ff-modal-title');
   const modalCategory = document.getElementById('ff-modal-category');
   const modalRating = document.getElementById('ff-modal-rating');
@@ -1378,6 +2187,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalNotesTextarea = document.getElementById('ff-modal-notes-textarea');
   const modalBtnComplete = document.getElementById('ff-modal-btn-complete');
   const modalBtnFav = document.getElementById('ff-modal-btn-fav');
+  const modalBtnDrive = document.getElementById('ff-modal-btn-drive');
+  const modalBtnCopyDrive = document.getElementById('ff-modal-btn-copy-drive');
+  const modalBtnDownloadGif = document.getElementById('ff-modal-btn-download-gif');
   
   window.openPlayerModal = function(lessonId) {
     const lesson = CLASSES_DATA.find(c => c.id === lessonId);
@@ -1392,11 +2204,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalDuration) modalDuration.textContent = lesson.duration;
     if (modalDesc) modalDesc.textContent = lesson.desc;
     
-    // Video setup
-    if (modalVideo) {
+    // Media setup (GIF vs Video)
+    if (lesson.cover && (lesson.cover.endsWith('.gif') || lesson.cover.endsWith('.webp') || lesson.cover.endsWith('.png'))) {
+      if (modalGif) {
+        modalGif.src = lesson.cover;
+        modalGif.style.display = 'block';
+      }
+      if (modalVideo) {
+        modalVideo.style.display = 'none';
+        modalVideo.pause();
+      }
+    } else if (modalVideo) {
+      if (modalGif) modalGif.style.display = 'none';
+      modalVideo.style.display = 'block';
       modalVideo.src = lesson.videoSrc;
       modalVideo.poster = lesson.cover;
       modalVideo.play().catch(() => {});
+    }
+    
+    // Google Drive Links & Download
+    if (modalBtnDrive) {
+      modalBtnDrive.href = lesson.driveUrl;
+    }
+    if (modalBtnDownloadGif) {
+      modalBtnDownloadGif.href = lesson.cover;
+      modalBtnDownloadGif.setAttribute('download', `${lesson.id}.gif`);
+    }
+    if (modalBtnCopyDrive) {
+      modalBtnCopyDrive.onclick = () => {
+        navigator.clipboard.writeText(lesson.driveUrl);
+        showToast('Google Drive link copied to clipboard!', 'fa-solid fa-copy');
+      };
     }
     
     // Key Takeaways
@@ -1418,7 +2256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalNextList) {
       const otherLessons = CLASSES_DATA.filter(c => c.id !== lesson.id).slice(0, 4);
       modalNextList.innerHTML = otherLessons.map(next => `
-        <div class="ff-notif-item" onclick="openPlayerModal('${next.id}')" style="display: flex; gap: 12px; align-items: center; padding: 10px;">
+        <div class="ff-notif-item" onclick="openPlayerModal('${next.id}')" style="display: flex; gap: 12px; align-items: center; padding: 10px; cursor: pointer;">
           <img src="${next.cover}" style="width: 70px; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--ff-radius-sm);" alt="">
           <div style="flex: 1;">
             <div style="font-weight: 700; color: #fff; font-size: 13px;">${next.title}</div>
@@ -1433,9 +2271,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalNotesTextarea) {
       modalNotesTextarea.value = AppState.userNotes[lesson.id] || '';
     }
-    
-    // Completion state
-    updateModalCompleteButton(lesson.id);
     
     // Saved state
     updateModalFavButton(lesson.id);

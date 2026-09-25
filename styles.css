@@ -1454,6 +1454,34 @@
   transform: scale(1.2);
 }
 
+.ff-card-drive-btn {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ff4d5a;
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid rgba(229, 9, 20, 0.35);
+  border-radius: 4px;
+  padding: 3px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--ff-transition-fast);
+}
+
+.ff-card-drive-btn:hover {
+  background: var(--ff-primary);
+  color: #ffffff;
+  border-color: var(--ff-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.4);
+}
+
+a.ff-row-see-all {
+  text-decoration: none;
+}
+
 /* TARJETA TOP 10 (ESTILO NÚMERO GIGANTE NETFLIX) */
 .ff-card-top10 {
   flex: 0 0 320px;
@@ -2431,10 +2459,13 @@
   overflow: hidden;
 }
 
-.ff-video-stage video {
+.ff-video-stage video,
+.ff-video-stage img,
+.ff-video-stage .ff-modal-gif {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 .ff-video-controls-overlay {

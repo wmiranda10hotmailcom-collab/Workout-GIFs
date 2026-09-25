@@ -173,6 +173,12 @@
           <input type="text" id="ff-search-input" class="ff-search-input" placeholder="Search exercises, muscle groups, techniques...">
         </div>
 
+        <!-- Google Drive Vault Quick Access -->
+        <a href="https://drive.google.com/drive/folders/1gHrmIU6NWrO8olL4TYRAGpLpXHx_tzbT" target="_blank" rel="noopener noreferrer" class="ff-btn-primary" style="padding: 7px 14px; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; border-radius: var(--ff-radius-sm);">
+          <i class="fa-brands fa-google-drive"></i>
+          <span>Drive Vault ↗</span>
+        </a>
+
         <!-- Notifications -->
         <div class="ff-notifications">
           <button id="ff-notif-btn" class="ff-notif-btn" title="Notifications">
@@ -339,35 +345,35 @@
           <div class="ff-container">
             <div class="ff-hero-content">
               <div class="ff-hero-badges">
-                <span class="ff-hero-kicker">🔥 #1 TRENDING IN WORKOUT SCIENCE</span>
-                <span class="ff-hero-pill">4K ULTRA HD</span>
-                <span class="ff-hero-pill">MASTERCLASS</span>
+                <span class="ff-hero-kicker">🔥 #1 EXERCISE GIF STREAMING LIBRARY</span>
+                <span class="ff-hero-pill">1,000+ HD EXERCISES</span>
+                <span class="ff-hero-pill">GOOGLE DRIVE VAULT</span>
               </div>
 
               <h1 class="ff-hero-title">
-                MASTER BIOMECHANICS: THE SCIENCE OF HYPERTROPHY & PERFECT FORM
+                WORKOUT GIFS VAULT: PINPOINT BIOMECHANICS & EXERCISE DEMOS
               </h1>
 
               <p class="ff-hero-description">
-                Learn how to perform and coach every movement with pinpoint accuracy. Protect your joints, maximize motor unit recruitment in every set, and master the full library of 1,000+ exercise GIFs ready to share via WhatsApp.
+                Instant visual demonstrations for every muscle group and piece of equipment. Explore the complete Barbell, Dumbbell, Machine, Cable, and Functional exercise collection directly in Google Drive with one click.
               </p>
 
               <div class="ff-hero-meta">
-                <span class="ff-match-score">99% Match</span>
-                <span>2026</span>
-                <span>8 Modules</span>
-                <span>120+ Lessons</span>
-                <span class="ff-badge-status ff-badge-disponible">Cinema Quality</span>
+                <span class="ff-match-score">100% Match</span>
+                <span>2026 Vault</span>
+                <span>6 Equipment Suites</span>
+                <span>1,000+ GIFs</span>
+                <span class="ff-badge-status ff-badge-disponible">Google Drive Connected</span>
               </div>
 
               <div class="ff-hero-actions">
-                <button class="ff-btn-play" onclick="openPlayerModal('class-1')">
+                <a href="https://drive.google.com/drive/folders/1gHrmIU6NWrO8olL4TYRAGpLpXHx_tzbT" target="_blank" rel="noopener noreferrer" class="ff-btn-play" style="text-decoration: none;">
+                  <i class="fa-brands fa-google-drive"></i>
+                  <span>Open Full Drive Vault</span>
+                </a>
+                <button class="ff-btn-secondary" onclick="openPlayerModal('barbell-abs')">
                   <i class="fa-solid fa-play"></i>
-                  <span>Play Now</span>
-                </button>
-                <button class="ff-btn-secondary" onclick="openPlayerModal('class-1')">
-                  <i class="fa-solid fa-circle-info"></i>
-                  <span>More Info</span>
+                  <span>Preview Sample GIF</span>
                 </button>
                 <button class="ff-btn-icon-round" onclick="showToast('✓ Saved to your favorites list', 'fa-solid fa-bookmark')" title="Add to My List">
                   <i class="fa-solid fa-plus"></i>
@@ -380,97 +386,129 @@
         <!-- CONTENT ROWS / HORIZONTAL CAROUSELS -->
         <div class="ff-feed-rows">
           
-          <!-- ROW 1: CONTINUE LEARNING -->
-          <div class="ff-row">
+          <!-- ROW 1: BARBELL EXERCISES -->
+          <div class="ff-row" id="row-barbell">
             <div class="ff-row-header">
               <div class="ff-row-title-wrap">
-                <h3 class="ff-row-title">Continue Learning</h3>
-                <span class="ff-row-badge">In Progress</span>
+                <h3 class="ff-row-title">Barbell Exercises</h3>
+                <span class="ff-row-badge">Gym & Free Weights</span>
               </div>
-              <span class="ff-row-see-all" onclick="navigateTo('clases')">View All <i class="fa-solid fa-chevron-right"></i></span>
+              <a href="https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
+                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
             
             <div class="ff-carousel-wrapper">
               <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
-              <div id="ff-track-seguir-viendo" class="ff-carousel-track">
+              <div id="ff-track-barbell" class="ff-carousel-track">
                 <!-- Injected via JS -->
               </div>
               <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
           </div>
 
-          <!-- ROW 2: START HERE (FOUNDATIONS) -->
-          <div class="ff-row">
+          <!-- ROW 2: DUMBBELL EXERCISES -->
+          <div class="ff-row" id="row-dumbbell">
             <div class="ff-row-header">
               <div class="ff-row-title-wrap">
-                <h3 class="ff-row-title">Start Here • Platform Foundations & Onboarding</h3>
-                <span class="ff-row-badge">Getting Started</span>
+                <h3 class="ff-row-title">Dumbbell Exercises</h3>
+                <span class="ff-row-badge">Symmetry & Isolation</span>
               </div>
-              <span class="ff-row-see-all" onclick="navigateTo('modulos')">View Modules <i class="fa-solid fa-chevron-right"></i></span>
+              <a href="https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
+                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
             
             <div class="ff-carousel-wrapper">
-              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
-              <div id="ff-track-empieza-aqui" class="ff-carousel-track">
+              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-dumbbell" class="ff-carousel-track">
                 <!-- Injected via JS -->
               </div>
-              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
           </div>
 
-          <!-- ROW 3: TOP 5 MOST WATCHED (NETFLIX BIG NUMBERS) -->
-          <div class="ff-row">
+          <!-- ROW 3: MACHINE, HACK & BENCH EXERCISES -->
+          <div class="ff-row" id="row-machine">
             <div class="ff-row-header">
               <div class="ff-row-title-wrap">
-                <h3 class="ff-row-title">Top 5 Most Watched Classes This Week</h3>
-                <span class="ff-row-badge" style="background: rgba(229,9,20,0.15); color: #ff4d5a; border-color: rgba(229,9,20,0.3);">Trending</span>
+                <h3 class="ff-row-title">Machine, Hack & Bench Exercises</h3>
+                <span class="ff-row-badge">Guided Motion & Safety</span>
               </div>
+              <a href="https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
+                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
             
             <div class="ff-carousel-wrapper">
-              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
-              <div id="ff-track-top10" class="ff-carousel-track">
+              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-machine" class="ff-carousel-track">
                 <!-- Injected via JS -->
               </div>
-              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
           </div>
 
-          <!-- ROW 4: RECOMMENDED FOR YOU -->
-          <div class="ff-row">
+          <!-- ROW 4: CABLE & PULLEY EXERCISES -->
+          <div class="ff-row" id="row-cable">
             <div class="ff-row-header">
               <div class="ff-row-title-wrap">
-                <h3 class="ff-row-title">Recommended For You</h3>
-                <span class="ff-row-badge">Tailored to your profile</span>
+                <h3 class="ff-row-title">Cable & Pulley Exercises</h3>
+                <span class="ff-row-badge">Continuous Tension</span>
               </div>
-              <span class="ff-row-see-all" onclick="navigateTo('clases')">Explore Library <i class="fa-solid fa-chevron-right"></i></span>
+              <a href="https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
+                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
             
             <div class="ff-carousel-wrapper">
-              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
-              <div id="ff-track-recomendados" class="ff-carousel-track">
+              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-cable" class="ff-carousel-track">
                 <!-- Injected via JS -->
               </div>
-              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
           </div>
 
-          <!-- ROW 5: NEW RELEASES & PREMIERES -->
-          <div class="ff-row">
+          <!-- ROW 5: FUNCTIONAL & BODYWEIGHT -->
+          <div class="ff-row" id="row-functional">
             <div class="ff-row-header">
               <div class="ff-row-title-wrap">
-                <h3 class="ff-row-title">New Releases & Exclusive Premieres</h3>
-                <span class="ff-row-badge">Updated 2026</span>
+                <h3 class="ff-row-title">Functional & Bodyweight Training</h3>
+                <span class="ff-row-badge">Athletic Conditioning</span>
               </div>
-              <span class="ff-row-see-all" onclick="navigateTo('clases')">View All <i class="fa-solid fa-chevron-right"></i></span>
+              <a href="https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
+                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
             
             <div class="ff-carousel-wrapper">
-              <button class="ff-carousel-nav ff-carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
-              <div id="ff-track-nuevos" class="ff-carousel-track">
+              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-functional" class="ff-carousel-track">
                 <!-- Injected via JS -->
               </div>
-              <button class="ff-carousel-nav ff-carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- ROW 6: KETTLEBELL & SUPERBAND -->
+          <div class="ff-row" id="row-kettlebell">
+            <div class="ff-row-header">
+              <div class="ff-row-title-wrap">
+                <h3 class="ff-row-title">Kettlebell & Superband</h3>
+                <span class="ff-row-badge">Explosive Power & Elasticity</span>
+              </div>
+              <a href="https://drive.google.com/drive/folders/1OeDXqZIkmWgmUuwUxL6qIzfc_0auxQPa" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
+                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            
+            <div class="ff-carousel-wrapper">
+              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-kettlebell" class="ff-carousel-track">
+                <!-- Injected via JS -->
+              </div>
+              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
           </div>
 
@@ -512,20 +550,26 @@
            ======================================================================== -->
       <section id="ff-view-clases" class="ff-section-view">
         <div class="ff-page-header">
-          <span class="ff-page-kicker">Streaming Exercise Video Library</span>
-          <h2 class="ff-page-title">Classes & Form Breakdowns</h2>
-          <p class="ff-page-desc">Filter by muscle group, difficulty level, or search directly for any exercise to view the high-definition breakdown and key coaching cues.</p>
+          <span class="ff-page-kicker">Streaming Exercise GIF Library</span>
+          <h2 class="ff-page-title">All Exercise GIFs & Direct Drive Folders</h2>
+          <p class="ff-page-desc">Filter by equipment type or target muscle group, or search directly for any exercise to preview animated GIFs and jump straight into Google Drive.</p>
         </div>
 
         <div class="ff-filter-bar">
           <div class="ff-filter-chips">
             <button class="ff-chip ff-active" data-category="todos">All Exercises</button>
-            <button class="ff-chip" data-category="piernas">Legs & Glutes</button>
-            <button class="ff-chip" data-category="pecho">Chest</button>
-            <button class="ff-chip" data-category="espalda">Back</button>
-            <button class="ff-chip" data-category="hombros">Shoulders & Arms</button>
-            <button class="ff-chip" data-category="funcional">Functional & HIIT</button>
-            <button class="ff-chip" data-category="movilidad">Mobility</button>
+            <button class="ff-chip" data-category="barbell">Barbell</button>
+            <button class="ff-chip" data-category="dumbbell">Dumbbells</button>
+            <button class="ff-chip" data-category="machine">Machines</button>
+            <button class="ff-chip" data-category="cable">Cables</button>
+            <button class="ff-chip" data-category="functional">Functional</button>
+            <button class="ff-chip" data-category="kettlebell">Kettlebell & Bands</button>
+            <button class="ff-chip" data-category="abs">Abs & Core</button>
+            <button class="ff-chip" data-category="arms">Arms</button>
+            <button class="ff-chip" data-category="chest">Chest</button>
+            <button class="ff-chip" data-category="back">Back</button>
+            <button class="ff-chip" data-category="legs">Legs</button>
+            <button class="ff-chip" data-category="shoulders">Shoulders</button>
           </div>
 
           <div class="ff-search-filter-wrap">
@@ -800,32 +844,41 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
 
-        <!-- Video Stage -->
+        <!-- Video / GIF Stage -->
         <div class="ff-video-stage">
-          <video id="ff-modal-video" controls loop playsinline></video>
+          <video id="ff-modal-video" controls loop playsinline style="display: none;"></video>
+          <img id="ff-modal-gif" class="ff-modal-gif" src="" alt="Exercise Demonstration" style="width: 100%; height: 100%; object-fit: contain; background: #06080d;">
         </div>
 
         <!-- Class Metadata & Body -->
         <div class="ff-player-body">
           <div class="ff-player-title-row">
             <div>
-              <span id="ff-modal-category" style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--ff-secondary); letter-spacing: 0.8px;">Module 01 • Legs</span>
-              <h2 id="ff-modal-title" class="ff-player-title">Barbell Squat vs. Hack Squat</h2>
+              <span id="ff-modal-category" style="font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--ff-secondary); letter-spacing: 0.8px;">Barbell Exercises • Core</span>
+              <h2 id="ff-modal-title" class="ff-player-title">Abs & Core: Barbell Twists</h2>
               <div style="display: flex; gap: 14px; align-items: center; margin-top: 6px; font-size: 13px; color: var(--ff-text-muted);">
                 <span id="ff-modal-rating" style="color: var(--ff-accent-gold); font-weight: 700;">4.9 ★★★★★</span>
-                <span id="ff-modal-duration"><i class="fa-regular fa-clock"></i> 14:20 min</span>
-                <span class="ff-badge-status ff-badge-nuevo">1080p Full HD</span>
+                <span id="ff-modal-duration"><i class="fa-solid fa-folder"></i> Drive Folder</span>
+                <span class="ff-badge-status ff-badge-nuevo">HD GIF Preview</span>
               </div>
             </div>
 
-            <div class="ff-player-actions">
-              <button id="ff-modal-btn-complete" class="ff-btn-complete">
-                <i class="fa-regular fa-circle-check"></i>
-                <span>Mark as Completed</span>
+            <div class="ff-player-actions" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <a id="ff-modal-btn-drive" href="#" target="_blank" rel="noopener noreferrer" class="ff-btn-primary" style="padding: 10px 20px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span>Open Google Drive Folder ↗</span>
+              </a>
+              <button id="ff-modal-btn-copy-drive" class="ff-btn-secondary" style="padding: 10px 16px;">
+                <i class="fa-solid fa-copy"></i>
+                <span>Copy Link</span>
               </button>
-              <button id="ff-modal-btn-fav" class="ff-btn-secondary" style="padding: 9px 16px;">
+              <a id="ff-modal-btn-download-gif" href="#" download class="ff-btn-secondary" style="padding: 10px 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-download"></i>
+                <span>Download GIF</span>
+              </a>
+              <button id="ff-modal-btn-fav" class="ff-btn-secondary" style="padding: 10px 16px;">
                 <i class="fa-regular fa-bookmark"></i>
-                <span>My List</span>
+                <span>Save</span>
               </button>
             </div>
           </div>
