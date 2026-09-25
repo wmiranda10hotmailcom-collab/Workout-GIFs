@@ -3188,33 +3188,12 @@ a.ff-row-see-all {
             </div>
           </div>
 
-          <!-- ROW 5: FUNCTIONAL & BODYWEIGHT -->
-          <div class="ff-row" id="row-functional">
-            <div class="ff-row-header">
-              <div class="ff-row-title-wrap">
-                <h3 class="ff-row-title">Functional & Bodyweight Training</h3>
-                <span class="ff-row-badge">Athletic Conditioning</span>
-              </div>
-              <a href="https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
-                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-            
-            <div class="ff-carousel-wrapper">
-              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
-              <div id="ff-track-functional" class="ff-carousel-track">
-                <!-- Injected via JS -->
-              </div>
-              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-          </div>
-
-          <!-- ROW 6: KETTLEBELL & SUPERBAND -->
+          <!-- ROW 5: KETTLEBELL EXERCISES -->
           <div class="ff-row" id="row-kettlebell">
             <div class="ff-row-header">
               <div class="ff-row-title-wrap">
-                <h3 class="ff-row-title">Kettlebell & Superband</h3>
-                <span class="ff-row-badge">Explosive Power & Elasticity</span>
+                <h3 class="ff-row-title">Kettlebell Exercises</h3>
+                <span class="ff-row-badge">Explosive Power & Hinges</span>
               </div>
               <a href="https://drive.google.com/drive/folders/1OeDXqZIkmWgmUuwUxL6qIzfc_0auxQPa" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
                 Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -3224,6 +3203,27 @@ a.ff-row-see-all {
             <div class="ff-carousel-wrapper">
               <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
               <div id="ff-track-kettlebell" class="ff-carousel-track">
+                <!-- Injected via JS -->
+              </div>
+              <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <!-- ROW 6: SUPERBAND EXERCISES -->
+          <div class="ff-row" id="row-superband">
+            <div class="ff-row-header">
+              <div class="ff-row-title-wrap">
+                <h3 class="ff-row-title">Superband Exercises</h3>
+                <span class="ff-row-badge">Elastic Resistance & Mobility</span>
+              </div>
+              <a href="https://drive.google.com/drive/folders/1DZkIlOfRugbT62yKl1T-uCVTifhsTTXb" target="_blank" rel="noopener noreferrer" class="ff-row-see-all">
+                Open Drive Folder <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            
+            <div class="ff-carousel-wrapper">
+              <button class="ff-carousel-nav ff-carousel-prev" title="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div id="ff-track-superband" class="ff-carousel-track">
                 <!-- Injected via JS -->
               </div>
               <button class="ff-carousel-nav ff-carousel-next" title="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
@@ -3275,19 +3275,21 @@ a.ff-row-see-all {
 
         <div class="ff-filter-bar">
           <div class="ff-filter-chips">
-            <button class="ff-chip ff-active" data-category="todos">All Exercises</button>
+            <button class="ff-chip ff-active" data-category="todos">All Categories</button>
             <button class="ff-chip" data-category="barbell">Barbell</button>
             <button class="ff-chip" data-category="dumbbell">Dumbbells</button>
             <button class="ff-chip" data-category="machine">Machines</button>
             <button class="ff-chip" data-category="cable">Cables</button>
-            <button class="ff-chip" data-category="functional">Functional</button>
-            <button class="ff-chip" data-category="kettlebell">Kettlebell & Bands</button>
+            <button class="ff-chip" data-category="kettlebell">Kettlebell</button>
+            <button class="ff-chip" data-category="superband">Superband</button>
             <button class="ff-chip" data-category="abs">Abs & Core</button>
             <button class="ff-chip" data-category="arms">Arms</button>
             <button class="ff-chip" data-category="chest">Chest</button>
             <button class="ff-chip" data-category="back">Back</button>
             <button class="ff-chip" data-category="legs">Legs</button>
             <button class="ff-chip" data-category="shoulders">Shoulders</button>
+            <button class="ff-chip" data-category="calves">Calves</button>
+            <button class="ff-chip" data-category="traps">Trapezius</button>
           </div>
 
           <div class="ff-search-filter-wrap">
@@ -3697,18 +3699,18 @@ const MEMBERSHIP_CONFIG = {
    IN-MEMORY DATABASE (100% FRONT-END IN ENGLISH)
    ========================================================================== */
 
-// 1. Program Modules / Equipment Suites
+// 1. Program Modules / Equipment Suites (Matching Google Drive ACADEMIA)
 const MODULES_DATA = [
   {
     id: "mod-barbell",
     num: "Suite 01",
-    title: "Barbell Exercises (Exercícios com Barras)",
-    subtitle: "Heavy compounds & biomechanics with free weights",
-    desc: "Complete barbell demonstration library: Abs, Forearms, Biceps, Chest, Back, Shoulders, Legs, and Triceps. Direct access to the Drive folder.",
-    badge: "Drive Connected",
+    title: "Barbell Exercises",
+    subtitle: "EXERCÍCIOS COM BARRAS • Free Weights",
+    desc: "10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.",
+    badge: "10 Folders",
     badgeType: "disponible",
-    lessonsCount: 8,
-    duration: "150+ GIFs",
+    lessonsCount: 10,
+    duration: "Google Drive",
     progress: 100,
     cover: "./assets/gifs/barbell-chest.gif",
     fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
@@ -3717,14 +3719,14 @@ const MODULES_DATA = [
   {
     id: "mod-dumbbell",
     num: "Suite 02",
-    title: "Dumbbell Exercises (Exercícios com Halteres)",
-    subtitle: "Symmetry, hypertrophy & unilateral motion",
-    desc: "Target each side independently to eliminate strength imbalances. Features Biceps, Shoulders, Chest, Back, Triceps, Legs, Forearms, and Abs.",
-    badge: "Drive Connected",
+    title: "Dumbbell Exercises",
+    subtitle: "EXERCÍCIOS COM HALTERES • Unilateral Form",
+    desc: "10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.",
+    badge: "10 Folders",
     badgeType: "disponible",
-    lessonsCount: 8,
-    duration: "180+ GIFs",
-    progress: 75,
+    lessonsCount: 10,
+    duration: "Google Drive",
+    progress: 80,
     cover: "./assets/gifs/dumbbell-biceps.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
     driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv"
@@ -3732,14 +3734,14 @@ const MODULES_DATA = [
   {
     id: "mod-machine",
     num: "Suite 03",
-    title: "Machine, Hack & Bench (Máquina, Hack, Banco)",
-    subtitle: "Fixed trajectories, pure isolation & safety",
-    desc: "Push sets beyond failure safely. Features 45° Leg Press, Hack Squats, Lat Pulldowns, Seated Chest Press, Rear Pec Deck, and Ab Machines.",
-    badge: "Drive Connected",
+    title: "Machine, Hack & Bench Exercises",
+    subtitle: "EXERCÍCIOS NA MAQUINA - HACK - BANCO • Isolation",
+    desc: "10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.",
+    badge: "10 Folders",
     badgeType: "disponible",
-    lessonsCount: 5,
-    duration: "140+ GIFs",
-    progress: 50,
+    lessonsCount: 10,
+    duration: "Google Drive",
+    progress: 60,
     cover: "./assets/gifs/machine-legs.gif",
     fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
     driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI"
@@ -3747,1070 +3749,1727 @@ const MODULES_DATA = [
   {
     id: "mod-cable",
     num: "Suite 04",
-    title: "Cable & Pulley Exercises (Cabo ou Polia)",
-    subtitle: "Continuous tension & peak muscle contraction",
-    desc: "Zero dead spots in the strength curve. Complete collection of Triceps Pushdowns, Bicep Curls, High-to-Low Flyes, Face Pulls, and Cable Crunches.",
-    badge: "Drive Connected",
+    title: "Cable & Pulley Exercises",
+    subtitle: "EXERCÍCIOS NO CABO OU POLIA • Continuous Tension",
+    desc: "9 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Chest, Legs, Trapezius, and Triceps stored in Google Drive.",
+    badge: "9 Folders",
     badgeType: "disponible",
-    lessonsCount: 6,
-    duration: "120+ GIFs",
+    lessonsCount: 9,
+    duration: "Google Drive",
     progress: 40,
     cover: "./assets/gifs/cable-triceps.gif",
     fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
     driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1"
   },
   {
-    id: "mod-functional",
-    num: "Suite 05",
-    title: "Functional & Bodyweight Training (Funcional)",
-    subtitle: "Athletic conditioning, core strength & mobility",
-    desc: "Comprehensive 28-category athletic suite: Abs, Cardio, Agility, Bodyweight Calisthenics, Mobility, Battle Rope, and TRX Suspension.",
-    badge: "28 Subcategories",
-    badgeType: "nuevo",
-    lessonsCount: 7,
-    duration: "300+ GIFs",
-    progress: 20,
-    cover: "./assets/gifs/functional-abs.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh"
-  },
-  {
     id: "mod-kettlebell",
-    num: "Suite 06",
-    title: "Kettlebell & Superband (Kettlebell e Elásticos)",
-    subtitle: "Explosive hip hinges, power & joint activation",
-    desc: "Dynamic ballistic conditioning and elastic resistance: Kettlebell Swings, Turkish Get-Ups, Windmills, Band Monster Walks, and Pull-Aparts.",
-    badge: "Drive Connected",
+    num: "Suite 05",
+    title: "Kettlebell Exercises",
+    subtitle: "KETTLEBELL • Explosive Hip Hinges & Power",
+    desc: "10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.",
+    badge: "10 Folders",
     badgeType: "disponible",
-    lessonsCount: 2,
-    duration: "80+ GIFs",
-    progress: 10,
+    lessonsCount: 10,
+    duration: "Google Drive",
+    progress: 20,
     cover: "./assets/gifs/kettlebell-swing.gif",
     fallbackCover: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80",
     driveUrl: "https://drive.google.com/drive/folders/1OeDXqZIkmWgmUuwUxL6qIzfc_0auxQPa"
+  },
+  {
+    id: "mod-superband",
+    num: "Suite 06",
+    title: "Superband Exercises",
+    subtitle: "SUPERBAND • Elastic Resistance & Mobility",
+    desc: "8 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Chest, Legs, and Triceps stored in Google Drive.",
+    badge: "8 Folders",
+    badgeType: "disponible",
+    lessonsCount: 8,
+    duration: "Google Drive",
+    progress: 10,
+    cover: "./assets/gifs/superband-activation.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1DZkIlOfRugbT62yKl1T-uCVTifhsTTXb"
   }
 ];
 
-// 2. Video Lessons / Exercise GIF Demos
+// 2. Muscle Group Folder Catalog (Each item represents ONE Google Drive folder)
 const CLASSES_DATA = [
-  // --- ROW 1: BARBELL EXERCISES ---
+  // =========================================================================
+  // 1. BARBELL EXERCISES (EXERCÍCIOS COM BARRAS)
+  // =========================================================================
   {
     id: "barbell-abs",
     moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Abs & Core: Barbell Twists & Rollouts",
-    desc: "Seated barbell twists, standing rotations, and kneeling barbell rollouts for rotational core stability.",
-    category: "Barbell • Abs & Core",
+    moduleName: "Barbell Exercises",
+    title: "Abs & Core",
+    folderName: "ABDOMINAIS",
+    desc: "Access the Google Drive ABDOMINAIS folder with all barbell abdominal and core exercise GIFs.",
+    category: "Barbell Exercises",
     categoryKey: "barbell",
     equipment: "Barbell",
     equipmentKey: "barbell",
     muscleGroup: "Abs & Core",
     muscleKey: "abs",
-    duration: "15+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Barbell Core",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/barbell-abs.gif",
     cover: "./assets/gifs/barbell-abs.gif",
     fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
-    rating: "4.9 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/1SI_ayEMrz0bj7YF93CrMiFj53TlhEUZz",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Keep pelvis neutral and rotate exclusively through thoracic spine.",
-      "Engage the transverse abdominis and brace before initiating movement.",
-      "Control the eccentric return speed with zero momentum."
+      "Targeted Muscle Group: Abs & Core (ABDOMINAIS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
     ],
-    materials: "Barbell_Core_Index.pdf (Google Drive Connected)"
+    materials: "Google Drive Folder • ABDOMINAIS"
   },
   {
     id: "barbell-forearms",
     moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Forearms: Behind-the-Back Wrist Curls",
-    desc: "Behind-the-back wrist curls, finger curls, and reverse curls for crushing grip strength and forearm mass.",
-    category: "Barbell • Forearms & Grip",
+    moduleName: "Barbell Exercises",
+    title: "Forearms",
+    folderName: "ANTEBRAÇO",
+    desc: "Access the Google Drive ANTEBRAÇO folder with all barbell forearm and wrist curl exercise GIFs.",
+    category: "Barbell Exercises",
     categoryKey: "barbell",
     equipment: "Barbell",
     equipmentKey: "barbell",
     muscleGroup: "Forearms",
     muscleKey: "arms",
-    duration: "12+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Forearms",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/barbell-forearms.gif",
     cover: "./assets/gifs/barbell-forearms.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
-    rating: "4.8 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/1vgd6RlYzWfbZ-TBSDAwASmj44OQ1HX9X",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Allow bar to roll down to fingertips for maximum wrist flexor stretch.",
-      "Squeeze wrists hard at the peak for full contraction.",
-      "Keep elbows locked in extension to isolate the forearms."
+      "Targeted Muscle Group: Forearms (ANTEBRAÇO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
     ],
-    materials: "Forearm_Hypertrophy_Protocol.pdf"
+    materials: "Google Drive Folder • ANTEBRAÇO"
   },
   {
     id: "barbell-biceps",
     moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Biceps: Standing Curls & 21s Protocol",
-    desc: "Strict barbell curls, EZ-bar curls, drag curls, and 21s protocol for maximum bicep peak and brachialis recruitment.",
-    category: "Barbell • Biceps",
+    moduleName: "Barbell Exercises",
+    title: "Biceps",
+    folderName: "BICEPS",
+    desc: "Access the Google Drive BICEPS folder with all barbell bicep curl exercise GIFs.",
+    category: "Barbell Exercises",
     categoryKey: "barbell",
     equipment: "Barbell",
     equipmentKey: "barbell",
     muscleGroup: "Biceps",
     muscleKey: "arms",
-    duration: "18+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Biceps",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/barbell-biceps.gif",
     cover: "./assets/gifs/barbell-biceps.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    driveUrl: "https://drive.google.com/drive/folders/14GA-mZOBUnQBgAIQHnObBtxvAas69-ox",
     rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Pin elbows to ribcage and eliminate torso swing.",
-      "Supinate forcefully against the bar during the concentric phase.",
-      "Control the eccentric lowering phase for 2 to 3 seconds."
+      "Targeted Muscle Group: Biceps (BICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
     ],
-    materials: "Bicep_Peak_Mastery.pdf"
-  },
-  {
-    id: "barbell-chest",
-    moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Chest: Flat Bench & Incline Press",
-    desc: "Classic flat barbell bench press, 30° incline press, and banded bench presses for maximum pectoral hypertrophy.",
-    category: "Barbell • Chest & Pecs",
-    categoryKey: "barbell",
-    equipment: "Barbell",
-    equipmentKey: "barbell",
-    muscleGroup: "Chest",
-    muscleKey: "chest",
-    duration: "20+ GIFs",
-    difficulty: "All Levels",
-    badge: "Chest",
-    videoSrc: "./assets/gifs/barbell-chest.gif",
-    cover: "./assets/gifs/barbell-chest.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Retract and depress scapulae to create a stable pressing shelf.",
-      "Follow a curved J-bar path from sternum to upper chest lockout.",
-      "Keep feet planted firmly for leg drive and spinal stability."
-    ],
-    materials: "Bench_Press_Biomechanics.pdf"
+    materials: "Google Drive Folder • BICEPS"
   },
   {
     id: "barbell-back",
     moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Back: Bent-Over Rows & Deadlifts",
-    desc: "Bent-over barbell rows, Pendlay rows, deficit deadlifts, and Yates rows to build a thick, dense back and wide lats.",
-    category: "Barbell • Back & Lats",
+    moduleName: "Barbell Exercises",
+    title: "Back",
+    folderName: "COSTAS",
+    desc: "Access the Google Drive COSTAS folder with all barbell back, lat, and row exercise GIFs.",
+    category: "Barbell Exercises",
     categoryKey: "barbell",
     equipment: "Barbell",
     equipmentKey: "barbell",
     muscleGroup: "Back",
     muscleKey: "back",
-    duration: "22+ GIFs",
-    difficulty: "Advanced",
-    badge: "Back",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/barbell-back.gif",
     cover: "./assets/gifs/barbell-back.gif",
     fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
-    rating: "4.9 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/10TUTr4CZiX_cGM9P8FEZFbNbeKz_-h2u",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Hinge hips backward with neutral spine and engaged hamstrings.",
-      "Pull elbows toward your pockets to maximize latissimus dorsi recruitment.",
-      "Pause for a fraction of a second at peak contraction."
+      "Targeted Muscle Group: Back (COSTAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
     ],
-    materials: "Back_Thickness_Blueprint.pdf"
+    materials: "Google Drive Folder • COSTAS"
   },
   {
     id: "barbell-shoulders",
     moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Shoulders: Military Press & Front Raises",
-    desc: "Strict standing overhead press, push press, and barbell front raises to develop broad 3D anterior and medial deltoids.",
-    category: "Barbell • Shoulders",
+    moduleName: "Barbell Exercises",
+    title: "Shoulders",
+    folderName: "OMBROS",
+    desc: "Access the Google Drive OMBROS folder with all barbell shoulder and overhead press exercise GIFs.",
+    category: "Barbell Exercises",
     categoryKey: "barbell",
     equipment: "Barbell",
     equipmentKey: "barbell",
     muscleGroup: "Shoulders",
     muscleKey: "shoulders",
-    duration: "16+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Delts",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/barbell-shoulders.gif",
     cover: "./assets/gifs/barbell-shoulders.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
-    rating: "4.8 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/1igjbOBmiCHPAKFSPQaQ472AcO2SQ1l8E",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Squeeze glutes and core to prevent lumbar hyperextension.",
-      "Press the bar directly overhead with head moving slightly through window.",
-      "Keep forearms vertically stacked directly under the bar."
+      "Targeted Muscle Group: Shoulders (OMBROS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
     ],
-    materials: "Shoulder_Press_Safety_Rules.pdf"
+    materials: "Google Drive Folder • OMBROS"
+  },
+  {
+    id: "barbell-calves",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Exercises",
+    title: "Calves",
+    folderName: "PANTURRILHAS",
+    desc: "Access the Google Drive PANTURRILHAS folder with all barbell calf raise exercise GIFs.",
+    category: "Barbell Exercises",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Calves",
+    muscleKey: "calves",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/calves.gif",
+    cover: "./assets/gifs/calves.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1kf2knt5UdbacZkSYgdsOajclct_yUC3S",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Calves (PANTURRILHAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
+    ],
+    materials: "Google Drive Folder • PANTURRILHAS"
+  },
+  {
+    id: "barbell-chest",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Exercises",
+    title: "Chest",
+    folderName: "PEITO",
+    desc: "Access the Google Drive PEITO folder with all barbell bench press and chest exercise GIFs.",
+    category: "Barbell Exercises",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/barbell-chest.gif",
+    cover: "./assets/gifs/barbell-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1ie1657dqObvFoOQgLsSZYhIN3n-tRiTs",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Chest (PEITO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
+    ],
+    materials: "Google Drive Folder • PEITO"
   },
   {
     id: "barbell-legs",
     moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Legs: Back Squats & Romanian Deadlifts",
-    desc: "High-bar and low-bar back squats, front squats, and Romanian deadlifts (RDL) for quad tear drops and posterior chain power.",
-    category: "Barbell • Lower Body",
+    moduleName: "Barbell Exercises",
+    title: "Legs",
+    folderName: "PERNA",
+    desc: "Access the Google Drive PERNA folder with all barbell squat and leg exercise GIFs.",
+    category: "Barbell Exercises",
     categoryKey: "barbell",
     equipment: "Barbell",
     equipmentKey: "barbell",
     muscleGroup: "Legs",
     muscleKey: "legs",
-    duration: "24+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Quads & Glutes",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/barbell-legs.gif",
     cover: "./assets/gifs/barbell-legs.gif",
     fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
+    driveUrl: "https://drive.google.com/drive/folders/1aRfvp5LIreWX2oNDkbTDxuCS3TJ4NuoO",
     rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Maintain tripod foot pressure and track knees over toes.",
-      "Descend smoothly to parallel or below while keeping thoracic extension.",
-      "Push through midfoot and drive hips upward simultaneously."
+      "Targeted Muscle Group: Legs (PERNA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
     ],
-    materials: "Squat_Mastery_Checklist.pdf"
+    materials: "Google Drive Folder • PERNA"
+  },
+  {
+    id: "barbell-trapezius",
+    moduleId: "mod-barbell",
+    moduleName: "Barbell Exercises",
+    title: "Trapezius",
+    folderName: "TRAPÉZIO",
+    desc: "Access the Google Drive TRAPÉZIO folder with all barbell shrug and trapezius exercise GIFs.",
+    category: "Barbell Exercises",
+    categoryKey: "barbell",
+    equipment: "Barbell",
+    equipmentKey: "barbell",
+    muscleGroup: "Trapezius",
+    muscleKey: "traps",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/trapezius.gif",
+    cover: "./assets/gifs/trapezius.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/11VOPY9lLDNELpEQtRrjTgo-1i3ioPLTV",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Trapezius (TRAPÉZIO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
+    ],
+    materials: "Google Drive Folder • TRAPÉZIO"
   },
   {
     id: "barbell-triceps",
     moduleId: "mod-barbell",
-    moduleName: "Barbell Suite",
-    title: "Triceps: Skull Crushers & Close-Grip Bench",
-    desc: "Lying EZ-bar skull crushers, close-grip bench press, and overhead barbell extensions for complete triceps horseshoe development.",
-    category: "Barbell • Triceps",
+    moduleName: "Barbell Exercises",
+    title: "Triceps",
+    folderName: "TRICEPS",
+    desc: "Access the Google Drive TRICEPS folder with all barbell triceps extension exercise GIFs.",
+    category: "Barbell Exercises",
     categoryKey: "barbell",
     equipment: "Barbell",
     equipmentKey: "barbell",
     muscleGroup: "Triceps",
     muscleKey: "arms",
-    duration: "14+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Triceps",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/barbell-triceps.gif",
     cover: "./assets/gifs/barbell-triceps.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1N4Ef5g2rBSQ1LgO9qwwcODWh0hG3-0WR",
-    rating: "4.9 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/1l5aobDyets-AzycrBsChp0FXM5QrpCaN",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Keep elbows slightly angled backward rather than purely vertical to protect joints.",
-      "Lower bar smoothly to hairline or top of bench for deep long head stretch.",
-      "Lock out triceps with control at the peak."
+      "Targeted Muscle Group: Triceps (TRICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Barbell Exercises (EXERCÍCIOS COM BARRAS)."
     ],
-    materials: "Triceps_Horseshoe_Guide.pdf"
+    materials: "Google Drive Folder • TRICEPS"
   },
 
-  // --- ROW 2: DUMBBELL EXERCISES ---
+  // =========================================================================
+  // 2. DUMBBELL EXERCISES (EXERCÍCIOS COM HALTERES)
+  // =========================================================================
   {
-    id: "dumbbell-biceps",
+    id: "dumbbell-abs",
     moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Biceps: Incline & Hammer Curls",
-    desc: "Incline dumbbell curls, standing hammer curls, concentration curls, and Zottman curls for full biceps and brachioradialis.",
-    category: "Dumbbells • Biceps",
+    moduleName: "Dumbbell Exercises",
+    title: "Abs & Core",
+    folderName: "ABDOMINAIS",
+    desc: "Access the Google Drive ABDOMINAIS folder with all dumbbell abdominal and core exercise GIFs.",
+    category: "Dumbbell Exercises",
     categoryKey: "dumbbell",
     equipment: "Dumbbell",
     equipmentKey: "dumbbell",
-    muscleGroup: "Biceps",
-    muscleKey: "arms",
-    duration: "20+ GIFs",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Biceps",
-    videoSrc: "./assets/gifs/dumbbell-biceps.gif",
-    cover: "./assets/gifs/dumbbell-biceps.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Perform curls on a 60° incline bench to place long head in extreme stretch.",
-      "Supinate pinkies aggressively outward at the peak.",
-      "Neutral grip hammer curls heavily stimulate the brachialis muscle."
-    ],
-    materials: "Dumbbell_Arm_Hypertrophy.pdf"
-  },
-  {
-    id: "dumbbell-shoulders",
-    moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Shoulders: Lateral Raises & Arnold Press",
-    desc: "Side lateral raises with controlled eccentrics, Arnold press, rear delt flyes, and dumbbell shrugs.",
-    category: "Dumbbells • Shoulders",
-    categoryKey: "dumbbell",
-    equipment: "Dumbbell",
-    equipmentKey: "dumbbell",
-    muscleGroup: "Shoulders",
-    muscleKey: "shoulders",
-    duration: "22+ GIFs",
-    difficulty: "All Levels",
-    badge: "Delts",
-    videoSrc: "./assets/gifs/dumbbell-shoulders.gif",
-    cover: "./assets/gifs/dumbbell-shoulders.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
-    rating: "5.0 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Lead lateral raises with elbows and slight forward torso lean (scapular plane).",
-      "Do not shrug traps during the raise; keep shoulders depressed.",
-      "Control the descent for 3 seconds to trigger maximum mechanical tension."
-    ],
-    materials: "3D_Deltoids_Protocol.pdf"
-  },
-  {
-    id: "dumbbell-chest",
-    moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Chest: Flat Press & Incline Flyes",
-    desc: "Flat dumbbell bench press, incline presses at 30°, deep dumbbell push-ups, and flat dumbbell flyes.",
-    category: "Dumbbells • Chest",
-    categoryKey: "dumbbell",
-    equipment: "Dumbbell",
-    equipmentKey: "dumbbell",
-    muscleGroup: "Chest",
-    muscleKey: "chest",
-    duration: "18+ GIFs",
-    difficulty: "All Levels",
-    badge: "Chest",
-    videoSrc: "./assets/gifs/dumbbell-chest.gif",
-    cover: "./assets/gifs/dumbbell-chest.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Dumbbells allow greater range of motion and stretch than barbells.",
-      "Angle dumbbells slightly in a 45° arrow shape to spare rotator cuffs.",
-      "Drive hands toward each other at top without clanking dumbbells."
-    ],
-    materials: "Chest_Isolation_Blueprint.pdf"
-  },
-  {
-    id: "dumbbell-back",
-    moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Back: Single-Arm Rows & Pullovers",
-    desc: "Supported single-arm dumbbell rows, chest-supported incline rows, and dumbbell pullovers for serratus and lat flare.",
-    category: "Dumbbells • Back & Lats",
-    categoryKey: "dumbbell",
-    equipment: "Dumbbell",
-    equipmentKey: "dumbbell",
-    muscleGroup: "Back",
-    muscleKey: "back",
-    duration: "16+ GIFs",
-    difficulty: "All Levels",
-    badge: "Lats",
-    videoSrc: "./assets/gifs/dumbbell-back.gif",
-    cover: "./assets/gifs/dumbbell-back.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
-    rating: "4.8 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Pull the dumbbell toward your hip crease rather than straight up to the chest.",
-      "Allow full protraction of the scapula at bottom for extreme stretch.",
-      "Do not twist torso; keep chest parallel to the floor."
-    ],
-    materials: "Unilateral_Back_Guide.pdf"
-  },
-  {
-    id: "dumbbell-triceps",
-    moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Triceps: Overhead Extensions & Dips",
-    desc: "Two-handed overhead dumbbell triceps extension, kickbacks, and bench dips with feet elevated.",
-    category: "Dumbbells • Triceps",
-    categoryKey: "dumbbell",
-    equipment: "Dumbbell",
-    equipmentKey: "dumbbell",
-    muscleGroup: "Triceps",
-    muscleKey: "arms",
-    duration: "14+ GIFs",
-    difficulty: "All Levels",
-    badge: "Triceps",
-    videoSrc: "./assets/gifs/dumbbell-triceps.gif",
-    cover: "./assets/gifs/dumbbell-triceps.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
-    rating: "4.7 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Overhead positioning targets the triceps long head in its most lengthened position.",
-      "Keep upper arms pointing up and flare elbows only slightly.",
-      "Full extension at top without hyperextending elbows."
-    ],
-    materials: "Triceps_Extension_Cues.pdf"
-  },
-  {
-    id: "dumbbell-legs",
-    moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Legs: Bulgarian Split Squats & Lunges",
-    desc: "Bulgarian split squats with foot elevated, walking dumbbell lunges, and heavy goblet squats.",
-    category: "Dumbbells • Lower Body",
-    categoryKey: "dumbbell",
-    equipment: "Dumbbell",
-    equipmentKey: "dumbbell",
-    muscleGroup: "Legs",
-    muscleKey: "legs",
-    duration: "20+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Quads & Glutes",
-    videoSrc: "./assets/gifs/dumbbell-legs.gif",
-    cover: "./assets/gifs/dumbbell-legs.gif",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-abs.gif",
+    cover: "./assets/gifs/dumbbell-abs.gif",
     fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
+    driveUrl: "https://drive.google.com/drive/folders/1qJXtIsUr0DyQ-O3QbDILaUsvOG7Cmg25",
     rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Lean forward slightly at the torso to load glutes and reduce lumbar strain.",
-      "Keep 80% of weight on the front working leg.",
-      "Descend until front thigh is at least parallel to the floor."
+      "Targeted Muscle Group: Abs & Core (ABDOMINAIS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
     ],
-    materials: "Unilateral_Leg_Hypertrophy.pdf"
+    materials: "Google Drive Folder • ABDOMINAIS"
   },
   {
     id: "dumbbell-forearms",
     moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Forearms: Wrist Curls & Grip Holds",
-    desc: "Palms-up wrist curls, palms-down reverse wrist curls, and farmer's walks for forearms.",
-    category: "Dumbbells • Forearms",
+    moduleName: "Dumbbell Exercises",
+    title: "Forearms",
+    folderName: "ANTEBRAÇO",
+    desc: "Access the Google Drive ANTEBRAÇO folder with all dumbbell forearm and wrist curl exercise GIFs.",
+    category: "Dumbbell Exercises",
     categoryKey: "dumbbell",
     equipment: "Dumbbell",
     equipmentKey: "dumbbell",
     muscleGroup: "Forearms",
     muscleKey: "arms",
-    duration: "10+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Forearms",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/dumbbell-forearms.gif",
     cover: "./assets/gifs/dumbbell-forearms.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
-    rating: "4.7 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/1wFg81t-86LoeRacWTjfXsjvWAc5zuRtO",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Rest forearms on thighs or a flat bench for isolation.",
-      "Flex wrists upward with high reps and brief pauses.",
-      "Alternate between pronated and supinated grips."
+      "Targeted Muscle Group: Forearms (ANTEBRAÇO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
     ],
-    materials: "Grip_Strength_Guide.pdf"
+    materials: "Google Drive Folder • ANTEBRAÇO"
   },
   {
-    id: "dumbbell-abs",
+    id: "dumbbell-biceps",
     moduleId: "mod-dumbbell",
-    moduleName: "Dumbbell Suite",
-    title: "Abs & Core: Russian Twists & Side Bends",
-    desc: "Weighted dumbbell Russian twists, dumbbell side bends, and dumbbell plank pull-throughs.",
-    category: "Dumbbells • Core & Waist",
+    moduleName: "Dumbbell Exercises",
+    title: "Biceps",
+    folderName: "BICEPS",
+    desc: "Access the Google Drive BICEPS folder with all dumbbell bicep curl exercise GIFs.",
+    category: "Dumbbell Exercises",
     categoryKey: "dumbbell",
     equipment: "Dumbbell",
     equipmentKey: "dumbbell",
-    muscleGroup: "Abs & Core",
-    muscleKey: "abs",
-    duration: "14+ GIFs",
+    muscleGroup: "Biceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Core",
-    videoSrc: "./assets/gifs/dumbbell-abs.gif",
-    cover: "./assets/gifs/dumbbell-abs.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1drMGikDTMQA3c9r2g_HII0QGmHySlBkv",
-    rating: "4.8 ★★★★★",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-biceps.gif",
+    cover: "./assets/gifs/dumbbell-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/11SUHN4MnK_ReSy9qzEFBO_8ebp5jppE5",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Rotate through shoulders, not just moving arms side to side.",
-      "Maintain a 45° angle with torso off the ground in V-sit.",
-      "Keep core actively braced throughout every rotation."
+      "Targeted Muscle Group: Biceps (BICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
     ],
-    materials: "Oblique_Conditioning_Plan.pdf"
+    materials: "Google Drive Folder • BICEPS"
+  },
+  {
+    id: "dumbbell-back",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Exercises",
+    title: "Back",
+    folderName: "COSTAS",
+    desc: "Access the Google Drive COSTAS folder with all dumbbell row and back exercise GIFs.",
+    category: "Dumbbell Exercises",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-back.gif",
+    cover: "./assets/gifs/dumbbell-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1a-gkPwAHQFkZKeGpJZ6CnTsYUbcNkAZD",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Back (COSTAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
+    ],
+    materials: "Google Drive Folder • COSTAS"
+  },
+  {
+    id: "dumbbell-shoulders",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Exercises",
+    title: "Shoulders",
+    folderName: "OMBRO",
+    desc: "Access the Google Drive OMBRO folder with all dumbbell lateral raise and press exercise GIFs.",
+    category: "Dumbbell Exercises",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-shoulders.gif",
+    cover: "./assets/gifs/dumbbell-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1LF2ZNUtX9kQZT4adSw0RV-dyY9h31pDm",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Shoulders (OMBRO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
+    ],
+    materials: "Google Drive Folder • OMBRO"
+  },
+  {
+    id: "dumbbell-calves",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Exercises",
+    title: "Calves",
+    folderName: "PANTURRILHAS",
+    desc: "Access the Google Drive PANTURRILHAS folder with all dumbbell calf raise exercise GIFs.",
+    category: "Dumbbell Exercises",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Calves",
+    muscleKey: "calves",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/calves.gif",
+    cover: "./assets/gifs/calves.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1MPJ46GJ2rQXrMwj4BFgQ0LuzkKEmww-q",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Calves (PANTURRILHAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
+    ],
+    materials: "Google Drive Folder • PANTURRILHAS"
+  },
+  {
+    id: "dumbbell-chest",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Exercises",
+    title: "Chest",
+    folderName: "PEITO",
+    desc: "Access the Google Drive PEITO folder with all dumbbell bench press and fly exercise GIFs.",
+    category: "Dumbbell Exercises",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-chest.gif",
+    cover: "./assets/gifs/dumbbell-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/17Ou7WfUruNH2A2jJafy0CG95krtVKXDV",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Chest (PEITO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
+    ],
+    materials: "Google Drive Folder • PEITO"
+  },
+  {
+    id: "dumbbell-legs",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Exercises",
+    title: "Legs",
+    folderName: "PERNA",
+    desc: "Access the Google Drive PERNA folder with all dumbbell split squat, lunge, and leg GIFs.",
+    category: "Dumbbell Exercises",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Legs",
+    muscleKey: "legs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-legs.gif",
+    cover: "./assets/gifs/dumbbell-legs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1DbTdVTEhpH_IwgJ4w-WaH9PoyL8W5jyW",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Legs (PERNA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
+    ],
+    materials: "Google Drive Folder • PERNA"
+  },
+  {
+    id: "dumbbell-trapezius",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Exercises",
+    title: "Trapezius",
+    folderName: "TRAPÉZIO",
+    desc: "Access the Google Drive TRAPÉZIO folder with all dumbbell shrug and trapezius exercise GIFs.",
+    category: "Dumbbell Exercises",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Trapezius",
+    muscleKey: "traps",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/trapezius.gif",
+    cover: "./assets/gifs/trapezius.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1K-mFls29RfQEQ-6oGvmGMSarV5CFFes3",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Trapezius (TRAPÉZIO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
+    ],
+    materials: "Google Drive Folder • TRAPÉZIO"
+  },
+  {
+    id: "dumbbell-triceps",
+    moduleId: "mod-dumbbell",
+    moduleName: "Dumbbell Exercises",
+    title: "Triceps",
+    folderName: "TRICEPS",
+    desc: "Access the Google Drive TRICEPS folder with all dumbbell triceps extension exercise GIFs.",
+    category: "Dumbbell Exercises",
+    categoryKey: "dumbbell",
+    equipment: "Dumbbell",
+    equipmentKey: "dumbbell",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-triceps.gif",
+    cover: "./assets/gifs/dumbbell-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1IiluTeV-ylu4EdZUMq-SE1TaMtbBNdj9",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Triceps (TRICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Dumbbell Exercises (EXERCÍCIOS COM HALTERES)."
+    ],
+    materials: "Google Drive Folder • TRICEPS"
   },
 
-  // --- ROW 3: MACHINE, HACK & BENCH EXERCISES ---
+  // =========================================================================
+  // 3. MACHINE, HACK & BENCH EXERCISES (EXERCÍCIOS NA MAQUINA - HACK - BANCO)
+  // =========================================================================
+  {
+    id: "machine-abs",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Abs & Core",
+    folderName: "ABDOMINAIS",
+    desc: "Access the Machine ABDOMINAIS folder with all abdominal crunch & machine exercise GIFs in Google Drive.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/machine-abs.gif",
+    cover: "./assets/gifs/machine-abs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1pocAC1dhAPykj7N0q5D4UvxncWD7eQiJ",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Abs & Core (ABDOMINAIS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • ABDOMINAIS"
+  },
+  {
+    id: "machine-forearms",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Forearms",
+    folderName: "ANTEBRAÇO",
+    desc: "Access the Machine ANTEBRAÇO folder with all machine and supported bench forearm exercise GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Forearms",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/barbell-forearms.gif",
+    cover: "./assets/gifs/barbell-forearms.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1nuhLcHeGVwjfnbQN7NSWhi1UKoH1E94h",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Forearms (ANTEBRAÇO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • ANTEBRAÇO"
+  },
+  {
+    id: "machine-biceps",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Biceps",
+    folderName: "BICEPS",
+    desc: "Access the Machine BICEPS folder with all machine preacher curl and lever arm exercise GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Biceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-biceps.gif",
+    cover: "./assets/gifs/dumbbell-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1pxGZ474eXXS7VoiucLy3n9hAUC9LVzcn",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Biceps (BICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • BICEPS"
+  },
+  {
+    id: "machine-back",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Back",
+    folderName: "COSTAS",
+    desc: "Access the Machine COSTAS folder with all lat pulldown and machine row exercise GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/machine-back.gif",
+    cover: "./assets/gifs/machine-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/13mIZBpr1moKYEo3lS8JqTPHNP5yx7JfB",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Back (COSTAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • COSTAS"
+  },
+  {
+    id: "machine-shoulders",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Shoulders",
+    folderName: "OMBRO",
+    desc: "Access the Machine OMBRO folder with all shoulder press and reverse pec deck rear delt GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/machine-shoulders.gif",
+    cover: "./assets/gifs/machine-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1UxjJAXDXkxy8UOz6MekXFNHHYKOQMkAR",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Shoulders (OMBRO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • OMBRO"
+  },
+  {
+    id: "machine-calves",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Calves",
+    folderName: "PANTURRILHA",
+    desc: "Access the Machine PANTURRILHA folder with all seated and standing calf machine GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Calves",
+    muscleKey: "calves",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/calves.gif",
+    cover: "./assets/gifs/calves.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/136MqRFO5aDxZzPsgqnyZYcNrq-VzpK03",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Calves (PANTURRILHA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • PANTURRILHA"
+  },
+  {
+    id: "machine-chest",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Chest",
+    folderName: "PEITO",
+    desc: "Access the Machine PEITO folder with all chest press and pec deck fly exercise GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/machine-chest.gif",
+    cover: "./assets/gifs/machine-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1qVAyTN0dcY0licaLs-AqRtXUr79-hGai",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Chest (PEITO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • PEITO"
+  },
   {
     id: "machine-legs",
     moduleId: "mod-machine",
-    moduleName: "Machine Suite",
-    title: "Legs: 45° Leg Press & Hack Squats",
-    desc: "45° heavy leg press, plate-loaded hack squats, lying hamstring curls, and 45° hyperextensions.",
-    category: "Machines • Lower Body",
+    moduleName: "Machine & Bench Exercises",
+    title: "Legs",
+    folderName: "PERNA",
+    desc: "Access the Machine PERNA folder with all 45° leg press, hack squat, and leg extension GIFs.",
+    category: "Machine Exercises",
     categoryKey: "machine",
     equipment: "Machine",
     equipmentKey: "machine",
     muscleGroup: "Legs",
     muscleKey: "legs",
-    duration: "24+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Legs",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/machine-legs.gif",
     cover: "./assets/gifs/machine-legs.gif",
     fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Do not let lower back or hips lift off the seat during deep leg presses.",
-      "Place feet lower on platform to emphasize quads, higher for glutes/hams.",
-      "Never lock out knees aggressively under heavy machine loads."
-    ],
-    materials: "Leg_Press_Setup_Blueprint.pdf"
-  },
-  {
-    id: "machine-chest",
-    moduleId: "mod-machine",
-    moduleName: "Machine Suite",
-    title: "Chest: Machine Press & Pec Deck",
-    desc: "Seated chest press machine, Pec Deck machine flyes, and converge-incline lever press for peak pectoral contractions.",
-    category: "Machines • Chest",
-    categoryKey: "machine",
-    equipment: "Machine",
-    equipmentKey: "machine",
-    muscleGroup: "Chest",
-    muscleKey: "chest",
-    duration: "18+ GIFs",
-    difficulty: "All Levels",
-    badge: "Chest",
-    videoSrc: "./assets/gifs/machine-chest.gif",
-    cover: "./assets/gifs/machine-chest.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
-    rating: "4.8 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Adjust seat height so handles align directly with the mid-to-lower sternum.",
-      "Keep chest puffed and shoulder blades pressed firmly against the pad.",
-      "Squeeze pectorals together for a full 1-second pause at maximum contraction."
-    ],
-    materials: "Machine_Chest_Isolation.pdf"
-  },
-  {
-    id: "machine-back",
-    moduleId: "mod-machine",
-    moduleName: "Machine Suite",
-    title: "Back: Lat Pulldowns & Seated Rows",
-    desc: "Wide-grip lat pulldowns, neutral close-grip seated machine rows, and archer pull-ups.",
-    category: "Machines • Back & Lats",
-    categoryKey: "machine",
-    equipment: "Machine",
-    equipmentKey: "machine",
-    muscleGroup: "Back",
-    muscleKey: "back",
-    duration: "20+ GIFs",
-    difficulty: "All Levels",
-    badge: "Lats",
-    videoSrc: "./assets/gifs/machine-back.gif",
-    cover: "./assets/gifs/machine-back.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Depress and tuck shoulder blades before pulling the bar down.",
-      "Drive elbows down and slightly back toward your ribcage.",
-      "Avoid excessive backward leaning during pulldowns."
-    ],
-    materials: "Lat_Pulldown_Technique.pdf"
-  },
-  {
-    id: "machine-shoulders",
-    moduleId: "mod-machine",
-    moduleName: "Machine Suite",
-    title: "Shoulders: Overhead Press & Rear Pec Deck",
-    desc: "Plate-loaded shoulder press machine, reverse pec deck rear delt flyes, and decline diamond pike push-ups.",
-    category: "Machines • Shoulders",
-    categoryKey: "machine",
-    equipment: "Machine",
-    equipmentKey: "machine",
-    muscleGroup: "Shoulders",
-    muscleKey: "shoulders",
-    duration: "16+ GIFs",
-    difficulty: "All Levels",
-    badge: "Delts",
-    videoSrc: "./assets/gifs/machine-shoulders.gif",
-    cover: "./assets/gifs/machine-shoulders.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
-    rating: "4.8 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "On reverse pec deck, adjust seat so arms are parallel to the floor.",
-      "Lead movement with rear elbows without squeezing shoulder blades excessively.",
-      "Eliminate momentum for surgical rear deltoid isolation."
-    ],
-    materials: "Rear_Delt_Specialization.pdf"
-  },
-  {
-    id: "machine-abs",
-    moduleId: "mod-machine",
-    moduleName: "Machine Suite",
-    title: "Abs & Core: 45° Twisting Crunch & Ab Machine",
-    desc: "45-degree bicycle twisting crunches, seated abdominal crunch machines, and Roman chair knee raises.",
-    category: "Machines • Core",
-    categoryKey: "machine",
-    equipment: "Machine",
-    equipmentKey: "machine",
-    muscleGroup: "Abs & Core",
-    muscleKey: "abs",
-    duration: "15+ GIFs",
-    difficulty: "All Levels",
-    badge: "Core",
-    videoSrc: "./assets/gifs/machine-abs.gif",
-    cover: "./assets/gifs/machine-abs.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1EU0LGux7L0rgCH1F2vp7prZcE1VjPSxI",
-    rating: "4.8 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Curl your ribcage down toward your pelvis rather than just bending at hips.",
-      "Exhale completely during contraction to hollow out the abdominal wall.",
-      "Keep neck relaxed and let the core muscles do 100% of the work."
-    ],
-    materials: "Ab_Machine_Form_Cues.pdf"
-  },
-
-  // --- ROW 4: CABLE & PULLEY EXERCISES ---
-  {
-    id: "cable-triceps",
-    moduleId: "mod-cable",
-    moduleName: "Cable Suite",
-    title: "Triceps: Rope & Straight-Bar Pushdowns",
-    desc: "Cable alternate triceps extensions, rope pushdowns with peak flare, straight-bar pushdowns, and overhead extensions.",
-    category: "Cables • Triceps",
-    categoryKey: "cable",
-    equipment: "Cable",
-    equipmentKey: "cable",
-    muscleGroup: "Triceps",
-    muscleKey: "arms",
-    duration: "18+ GIFs",
-    difficulty: "All Levels",
-    badge: "Triceps",
-    videoSrc: "./assets/gifs/cable-triceps.gif",
-    cover: "./assets/gifs/cable-triceps.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
+    driveUrl: "https://drive.google.com/drive/folders/1q6dc9hNnF-mBnXyRSwfFFToE1_p9kKPb",
     rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Keep upper arms pinned immovably against your torso.",
-      "Spread the rope handles outward at the bottom of the movement.",
-      "Allow full elbow flexion at the top for complete triceps stretch."
+      "Targeted Muscle Group: Legs (PERNA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
     ],
-    materials: "Cable_Triceps_Execution.pdf"
+    materials: "Google Drive Folder • PERNA"
+  },
+  {
+    id: "machine-trapezius",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Trapezius",
+    folderName: "TRAPÉZIO",
+    desc: "Access the Machine TRAPÉZIO folder with all machine shrug and trapezius exercise GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Trapezius",
+    muscleKey: "traps",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/trapezius.gif",
+    cover: "./assets/gifs/trapezius.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1mm7zjSxg8wNnkUutUaGGI7vUBJqshCG_",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Trapezius (TRAPÉZIO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • TRAPÉZIO"
+  },
+  {
+    id: "machine-triceps",
+    moduleId: "mod-machine",
+    moduleName: "Machine & Bench Exercises",
+    title: "Triceps",
+    folderName: "TRICEPS",
+    desc: "Access the Machine TRICEPS folder with all machine dip and seated tricep extension GIFs.",
+    category: "Machine Exercises",
+    categoryKey: "machine",
+    equipment: "Machine",
+    equipmentKey: "machine",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-triceps.gif",
+    cover: "./assets/gifs/dumbbell-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1xeYCvjNpGbsaYhDXdrOm9TKld81gdPPw",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Triceps (TRICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Machine, Hack & Bench (EXERCÍCIOS NA MAQUINA - HACK - BANCO)."
+    ],
+    materials: "Google Drive Folder • TRICEPS"
+  },
+
+  // =========================================================================
+  // 4. CABLE & PULLEY EXERCISES (EXERCÍCIOS NO CABO OU POLIA)
+  // =========================================================================
+  {
+    id: "cable-abs",
+    moduleId: "mod-cable",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Abs & Core",
+    folderName: "ABDOMINAIS",
+    desc: "Access the Cable ABDOMINAIS folder with all cable kneeling crunch and rotation GIFs in Google Drive.",
+    category: "Cable Exercises",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/cable-abs.gif",
+    cover: "./assets/gifs/cable-abs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1AGatUPZSlwUxK8P_YizcAyPv-yCpaA_A",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Abs & Core (ABDOMINAIS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
+    ],
+    materials: "Google Drive Folder • ABDOMINAIS"
+  },
+  {
+    id: "cable-forearms",
+    moduleId: "mod-cable",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Forearms",
+    folderName: "ANDEBRAÇO",
+    desc: "Access the Cable ANDEBRAÇO folder with all cable wrist curl and grip exercise GIFs.",
+    category: "Cable Exercises",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Forearms",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/barbell-forearms.gif",
+    cover: "./assets/gifs/barbell-forearms.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1u1nxMI6kYTZbyOpEN1M1CC0uos1rBSFO",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Forearms (ANDEBRAÇO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
+    ],
+    materials: "Google Drive Folder • ANDEBRAÇO"
   },
   {
     id: "cable-biceps",
     moduleId: "mod-cable",
-    moduleName: "Cable Suite",
-    title: "Biceps: Low Pulley & SZ-Bar Curls",
-    desc: "Low pulley cable curls with SZ-bar, rope hammer curls, and high cable Hercules curls for continuous tension.",
-    category: "Cables • Biceps",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Biceps",
+    folderName: "BICEPS",
+    desc: "Access the Cable BICEPS folder with all low pulley, high cable, and rope curl GIFs.",
+    category: "Cable Exercises",
     categoryKey: "cable",
     equipment: "Cable",
     equipmentKey: "cable",
     muscleGroup: "Biceps",
     muscleKey: "arms",
-    duration: "16+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Biceps",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/cable-biceps.gif",
     cover: "./assets/gifs/cable-biceps.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
-    rating: "4.9 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/1LaDYHLt7VK7GO9LgA0GGdG35mOkzzAUI",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Cables provide non-stop resistance even at the top of the curl.",
-      "Step back slightly from pulley to maintain tension in start position.",
-      "Do not lean backward or use hips to jerk weight up."
+      "Targeted Muscle Group: Biceps (BICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
     ],
-    materials: "Cable_Curl_Variations.pdf"
-  },
-  {
-    id: "cable-chest",
-    moduleId: "mod-cable",
-    moduleName: "Cable Suite",
-    title: "Chest: High-to-Low Flyes & Crossovers",
-    desc: "High-to-low cable crossovers, mid-chest cable flyes, and low-to-high upper chest cable flyes.",
-    category: "Cables • Chest",
-    categoryKey: "cable",
-    equipment: "Cable",
-    equipmentKey: "cable",
-    muscleGroup: "Chest",
-    muscleKey: "chest",
-    duration: "20+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Chest",
-    videoSrc: "./assets/gifs/cable-chest.gif",
-    cover: "./assets/gifs/cable-chest.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Maintain a slight bend at the elbows like hugging a wide barrel.",
-      "Bring hands together along the line of lower pec fibers.",
-      "Cross hands slightly at peak for extreme adduction tension."
-    ],
-    materials: "Cable_Fly_Angles_Chart.pdf"
+    materials: "Google Drive Folder • BICEPS"
   },
   {
     id: "cable-back",
     moduleId: "mod-cable",
-    moduleName: "Cable Suite",
-    title: "Back: Straight-Arm Pulldowns & Face Pulls",
-    desc: "Cable 45-degree reverse flyes, straight-arm lat pulldowns, and face pulls to train the rear delts and mid traps.",
-    category: "Cables • Back",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Back",
+    folderName: "COSTAS",
+    desc: "Access the Cable COSTAS folder with all straight-arm pulldown and cable row GIFs.",
+    category: "Cable Exercises",
     categoryKey: "cable",
     equipment: "Cable",
     equipmentKey: "cable",
     muscleGroup: "Back",
     muscleKey: "back",
-    duration: "18+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Lats",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/cable-back.gif",
     cover: "./assets/gifs/cable-back.gif",
     fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
-    rating: "4.8 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/14b-2V01GmwlJdtS6L5LSQRWe1o-uls_s",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Straight-arm pulldowns isolate lats without biceps taking over.",
-      "Face pulls externally rotate shoulders for health and posture.",
-      "Pull rope directly toward eye level with thumbs facing backward."
+      "Targeted Muscle Group: Back (COSTAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
     ],
-    materials: "Face_Pull_Posture_Guide.pdf"
+    materials: "Google Drive Folder • COSTAS"
   },
   {
     id: "cable-shoulders",
     moduleId: "mod-cable",
-    moduleName: "Cable Suite",
-    title: "Shoulders: Cable Lateral & Forward Raises",
-    desc: "Single-arm cable lateral raises behind the back, forward cable raises, and cable Y-raises for round shoulders.",
-    category: "Cables • Shoulders",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Shoulders",
+    folderName: "OMBRO",
+    desc: "Access the Cable OMBRO folder with all cable lateral raise and face pull GIFs.",
+    category: "Cable Exercises",
     categoryKey: "cable",
     equipment: "Cable",
     equipmentKey: "cable",
     muscleGroup: "Shoulders",
     muscleKey: "shoulders",
-    duration: "16+ GIFs",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Delts",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/cable-shoulders.gif",
     cover: "./assets/gifs/cable-shoulders.gif",
     fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
-    rating: "4.9 ★★★★★",
+    driveUrl: "https://drive.google.com/drive/folders/1wtS5i6y0kn7ooGQ6os_iU_bC9DjMlYjQ",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Set pulley at hand height when arm is down for best resistance curve.",
-      "Raise arm in scapular plane 30° in front of the body.",
-      "Smooth tempo without leaning away violently."
+      "Targeted Muscle Group: Shoulders (OMBRO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
     ],
-    materials: "Cable_Lateral_Raise_Setup.pdf"
+    materials: "Google Drive Folder • OMBRO"
   },
   {
-    id: "cable-abs",
+    id: "cable-chest",
     moduleId: "mod-cable",
-    moduleName: "Cable Suite",
-    title: "Abs & Core: Decline Crunches & Woodchoppers",
-    desc: "Cable decline crunches, kneeling rope crunches, and rotational cable woodchoppers.",
-    category: "Cables • Core",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Chest",
+    folderName: "PEITO",
+    desc: "Access the Cable PEITO folder with all high, mid, and low cable fly & crossover GIFs.",
+    category: "Cable Exercises",
     categoryKey: "cable",
     equipment: "Cable",
     equipmentKey: "cable",
-    muscleGroup: "Abs & Core",
-    muscleKey: "abs",
-    duration: "15+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Core",
-    videoSrc: "./assets/gifs/cable-abs.gif",
-    cover: "./assets/gifs/cable-abs.gif",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/cable-chest.gif",
+    cover: "./assets/gifs/cable-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1H_kAyq6-sZtMc0A3e3l9jrCgnOt21QRg",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Chest (PEITO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
+    ],
+    materials: "Google Drive Folder • PEITO"
+  },
+  {
+    id: "cable-legs",
+    moduleId: "mod-cable",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Legs",
+    folderName: "PERNA",
+    desc: "Access the Cable PERNA folder with all cable pull-through, kickback, and leg GIFs.",
+    category: "Cable Exercises",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Legs",
+    muscleKey: "legs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-legs.gif",
+    cover: "./assets/gifs/dumbbell-legs.gif",
     fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1IkO1BBYztPHVlBlQQQ8kiD5Zovc2vKz1",
-    rating: "4.8 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "On kneeling cable crunches, fix hips in place and curl spine down.",
-      "Do not sit back onto your heels during contraction.",
-      "Exhale hard as elbows drive toward your knees."
-    ],
-    materials: "Kneeling_Crunch_Guide.pdf"
-  },
-
-  // --- ROW 5: FUNCTIONAL & BODYWEIGHT TRAINING ---
-  {
-    id: "functional-abs",
-    moduleId: "mod-functional",
-    moduleName: "Functional Suite",
-    title: "Abs & Core: 3/4 Sit-ups & Hollow Body",
-    desc: "3/4 sit-ups, dynamic plank variations, mountain climbers, and hollow body holds for deep core stability.",
-    category: "Functional • Core Conditioning",
-    categoryKey: "functional",
-    equipment: "Functional",
-    equipmentKey: "functional",
-    muscleGroup: "Abs & Core",
-    muscleKey: "abs",
-    duration: "30+ GIFs",
-    difficulty: "All Levels",
-    badge: "Core",
-    videoSrc: "./assets/gifs/functional-abs.gif",
-    cover: "./assets/gifs/functional-abs.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1s_uYON4pcMbZoTn9au5EbR2mtajaQ_Wx",
+    driveUrl: "https://drive.google.com/drive/folders/1-Rf8K384CVoquq6Eqrs_G7p2pk3q9_r0",
     rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Press lower back flush against the mat before flexing upward.",
-      "Engage the deep transverse abdominis on every repetition.",
-      "Control the eccentric descent; do not drop flat onto the ground."
+      "Targeted Muscle Group: Legs (PERNA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
     ],
-    materials: "Functional_Core_Index.pdf (Google Drive Connected)"
+    materials: "Google Drive Folder • PERNA"
   },
   {
-    id: "functional-cardio",
-    moduleId: "mod-functional",
-    moduleName: "Functional Suite",
-    title: "Cardio & HIIT: High Knees & Jump Squats",
-    desc: "High-knee squats, high-speed shuttle runs, jumping jacks, and sprint intervals for conditioning.",
-    category: "Functional • Cardio & HIIT",
-    categoryKey: "functional",
-    equipment: "Functional",
-    equipmentKey: "functional",
-    muscleGroup: "Cardio",
-    muscleKey: "cardio",
-    duration: "25+ GIFs",
+    id: "cable-trapezius",
+    moduleId: "mod-cable",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Trapezius",
+    folderName: "TRAPÉZIO",
+    desc: "Access the Cable TRAPÉZIO folder with all cable shrug and upright row exercise GIFs.",
+    category: "Cable Exercises",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Trapezius",
+    muscleKey: "traps",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "HIIT",
-    videoSrc: "./assets/gifs/functional-cardio.gif",
-    cover: "./assets/gifs/functional-cardio.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Land softly on balls of feet with knees absorbing impact.",
-      "Maintain rhythmic breathing patterns during high intensity intervals.",
-      "Keep athletic posture and upright chest during sprints and high knees."
-    ],
-    materials: "HIIT_Protocol_Matrix.pdf"
-  },
-  {
-    id: "functional-agility",
-    moduleId: "mod-functional",
-    moduleName: "Functional Suite",
-    title: "Agility: Step Drills & Footwork",
-    desc: "Alternate forward step arm swings, agility ladder quick-feet routines, and multi-directional bounds.",
-    category: "Functional • Agility & Speed",
-    categoryKey: "functional",
-    equipment: "Functional",
-    equipmentKey: "functional",
-    muscleGroup: "Agility",
-    muscleKey: "agility",
-    duration: "20+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Agility",
-    videoSrc: "./assets/gifs/functional-agility.gif",
-    cover: "./assets/gifs/functional-agility.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
-    rating: "4.8 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Stay light on forefoot and keep center of gravity low.",
-      "Coordinate arm drive symmetrically with foot cadence.",
-      "Train decelerations before accelerations for joint safety."
-    ],
-    materials: "Footwork_Agility_Patterns.pdf"
-  },
-  {
-    id: "functional-bodyweight",
-    moduleId: "mod-functional",
-    moduleName: "Functional Suite",
-    title: "Bodyweight: Burpees & Calisthenics",
-    desc: "Burpee alternate arm-leg raises, strict push-ups, explosive plyo push-ups, and pull-ups.",
-    category: "Functional • Calisthenics",
-    categoryKey: "functional",
-    equipment: "Functional",
-    equipmentKey: "functional",
-    muscleGroup: "Full Body",
-    muscleKey: "bodyweight",
-    duration: "28+ GIFs",
-    difficulty: "All Levels",
-    badge: "Calisthenics",
-    videoSrc: "./assets/gifs/functional-bodyweight.gif",
-    cover: "./assets/gifs/functional-bodyweight.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Maintain a straight hollow-body line from head to heels.",
-      "Full chest-to-deck range of motion on push-ups and burpees.",
-      "Explosive push through palms with active shoulder blade control."
-    ],
-    materials: "Calisthenics_Progression_Tree.pdf"
-  },
-  {
-    id: "functional-mobility",
-    moduleId: "mod-functional",
-    moduleName: "Functional Suite",
-    title: "Mobility: Joint Openers & Knee Circles",
-    desc: "Circle knee stretches, deep squat holds, 90/90 hip flow, and thoracic spine rotational mobility.",
-    category: "Functional • Mobility & Recovery",
-    categoryKey: "functional",
-    equipment: "Functional",
-    equipmentKey: "functional",
-    muscleGroup: "Mobility",
-    muscleKey: "mobility",
-    duration: "25+ GIFs",
-    difficulty: "All Levels",
-    badge: "Mobility",
-    videoSrc: "./assets/gifs/functional-mobility.gif",
-    cover: "./assets/gifs/functional-mobility.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/trapezius.gif",
+    cover: "./assets/gifs/trapezius.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/10Cr2U5egO0KJ6zT54lJWQ_hUxVUV3s00",
     rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Breathe slowly and deeply into areas of tension.",
-      "Perform active mobility rather than passive, limp stretches.",
-      "Expand joint capsule freedom before heavy lifting sessions."
+      "Targeted Muscle Group: Trapezius (TRAPÉZIO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
     ],
-    materials: "Joint_Mobility_Daily_Flow.pdf"
+    materials: "Google Drive Folder • TRAPÉZIO"
   },
   {
-    id: "functional-battle-rope",
-    moduleId: "mod-functional",
-    moduleName: "Functional Suite",
-    title: "Battle Rope: Alternate Arms Jump Squat",
-    desc: "Battling ropes alternate arms jump squats, power slams, double waves, and rotational whips.",
-    category: "Functional • Battle Rope",
-    categoryKey: "functional",
-    equipment: "Functional",
-    equipmentKey: "functional",
-    muscleGroup: "Full Body",
-    muscleKey: "power",
-    duration: "15+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Battle Rope",
-    videoSrc: "./assets/gifs/functional-battle-rope.gif",
-    cover: "./assets/gifs/functional-battle-rope.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
-    rating: "4.9 ★★★★★",
+    id: "cable-triceps",
+    moduleId: "mod-cable",
+    moduleName: "Cable & Pulley Exercises",
+    title: "Triceps",
+    folderName: "TRICEPS",
+    desc: "Access the Cable TRICEPS folder with all rope and straight-bar pushdown exercise GIFs.",
+    category: "Cable Exercises",
+    categoryKey: "cable",
+    equipment: "Cable",
+    equipmentKey: "cable",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/cable-triceps.gif",
+    cover: "./assets/gifs/cable-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1MxICI9GVBq96YdMuI0-CIcG9P0d6y1CN",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Keep athletic base with knees bent and chest up.",
-      "Generate power from hips and core, channeling it down through arms.",
-      "Slam ropes all the way to anchor point without slack."
+      "Targeted Muscle Group: Triceps (TRICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Cable & Pulley Exercises (EXERCÍCIOS NO CABO OU POLIA)."
     ],
-    materials: "Battle_Rope_Conditioning.pdf"
-  },
-  {
-    id: "functional-trx",
-    moduleId: "mod-functional",
-    moduleName: "Functional Suite",
-    title: "TRX & Suspension: Fallouts & Rows",
-    desc: "Suspended abdominal fallouts, inverted TRX rows, suspension push-ups, and TRX pikes.",
-    category: "Functional • Suspension Training",
-    categoryKey: "functional",
-    equipment: "Functional",
-    equipmentKey: "functional",
-    muscleGroup: "Core & Stability",
-    muscleKey: "trx",
-    duration: "20+ GIFs",
-    difficulty: "Intermediate",
-    badge: "TRX",
-    videoSrc: "./assets/gifs/functional-trx.gif",
-    cover: "./assets/gifs/functional-trx.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1sh4r1PWRDlkTQ2cIoMAP_yVNeUh19xNh",
-    rating: "4.9 ★★★★★",
-    progress: 0,
-    keyTakeaways: [
-      "Adjust body angle relative to floor to instantly scale resistance.",
-      "Keep straps taut with zero slack at any point in the movement.",
-      "Maintain active core bracing so hips do not sag or pike."
-    ],
-    materials: "TRX_Suspension_Mastery.pdf"
+    materials: "Google Drive Folder • TRICEPS"
   },
 
-  // --- ROW 6: KETTLEBELL & SUPERBAND ---
+  // =========================================================================
+  // 5. KETTLEBELL EXERCISES (KETTLEBELL)
+  // =========================================================================
   {
-    id: "kettlebell-swings",
+    id: "kettlebell-abs",
     moduleId: "mod-kettlebell",
-    moduleName: "Kettlebell Suite",
-    title: "Kettlebell: Advanced Windmills & Swings",
-    desc: "Kettlebell advanced windmills, Russian hip hinge swings, Turkish get-ups, and clean & press.",
-    category: "Kettlebell • Power",
+    moduleName: "Kettlebell Exercises",
+    title: "Abs & Core",
+    folderName: "ABDOMINAIS",
+    desc: "Access the Kettlebell ABDOMINAIS folder with all kettlebell core and windmill exercise GIFs.",
+    category: "Kettlebell Exercises",
     categoryKey: "kettlebell",
     equipment: "Kettlebell",
     equipmentKey: "kettlebell",
-    muscleGroup: "Full Body",
-    muscleKey: "kettlebell",
-    duration: "20+ GIFs",
-    difficulty: "Intermediate",
-    badge: "Kettlebell",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
     videoSrc: "./assets/gifs/kettlebell-swing.gif",
     cover: "./assets/gifs/kettlebell-swing.gif",
     fallbackCover: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1OeDXqZIkmWgmUuwUxL6qIzfc_0auxQPa",
+    driveUrl: "https://drive.google.com/drive/folders/1hEHvB6JwiDSo6tq9S7Y2vjntoDaw2N6L",
     rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "The swing is a pure hip hinge, not a squat with arms lifting.",
-      "Snap hips forward explosively at lockout with glutes squeezed.",
-      "Keep eyes focused on the bell during overhead windmills."
+      "Targeted Muscle Group: Abs & Core (ABDOMINAIS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
     ],
-    materials: "Kettlebell_Power_Biomechanics.pdf"
+    materials: "Google Drive Folder • ABDOMINAIS"
   },
   {
-    id: "superband-activation",
+    id: "kettlebell-forearms",
     moduleId: "mod-kettlebell",
-    moduleName: "Superband Suite",
-    title: "Superband: Banded Bicycle Crunches & Mobility",
-    desc: "Band bicycle crunches, monster walks, band pull-aparts, and banded deadlifts for muscle activation.",
-    category: "Superband • Elastic Resistance",
+    moduleName: "Kettlebell Exercises",
+    title: "Forearms",
+    folderName: "ANTEBRAÇO",
+    desc: "Access the Kettlebell ANTEBRAÇO folder with all kettlebell grip and bottom-up exercise GIFs.",
+    category: "Kettlebell Exercises",
     categoryKey: "kettlebell",
-    equipment: "Superband",
+    equipment: "Kettlebell",
     equipmentKey: "kettlebell",
-    muscleGroup: "Activation",
-    muscleKey: "superband",
-    duration: "18+ GIFs",
+    muscleGroup: "Forearms",
+    muscleKey: "arms",
+    duration: "Drive Folder",
     difficulty: "All Levels",
-    badge: "Superband",
-    videoSrc: "./assets/gifs/superband-activation.gif",
-    cover: "./assets/gifs/superband-activation.gif",
-    fallbackCover: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
-    driveUrl: "https://drive.google.com/drive/folders/1DZkIlOfRugbT62yKl1T-uCVTifhsTTXb",
-    rating: "4.9 ★★★★★",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/barbell-forearms.gif",
+    cover: "./assets/gifs/barbell-forearms.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/16W4fU7YJoSToRJMRxsEZO1XGDdHRfh8i",
+    rating: "5.0 ★★★★★",
     progress: 0,
     keyTakeaways: [
-      "Maintain continuous tension in band without allowing it to go slack.",
-      "Use lighter bands for high-rep motor recruitment warmups.",
-      "Control the eccentric return against elastic resistance."
+      "Targeted Muscle Group: Forearms (ANTEBRAÇO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
     ],
-    materials: "Elastic_Band_Activation_Protocols.pdf"
+    materials: "Google Drive Folder • ANTEBRAÇO"
+  },
+  {
+    id: "kettlebell-biceps",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Biceps",
+    folderName: "BICEPS",
+    desc: "Access the Kettlebell BICEPS folder with all kettlebell bicep and horn curl exercise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Biceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-biceps.gif",
+    cover: "./assets/gifs/dumbbell-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1qbTIMQjVvEj09WZ-FpeP4CyImPgAp87R",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Biceps (BICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • BICEPS"
+  },
+  {
+    id: "kettlebell-back",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Back",
+    folderName: "COSTAS",
+    desc: "Access the Kettlebell COSTAS folder with all kettlebell row and posterior chain exercise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-back.gif",
+    cover: "./assets/gifs/dumbbell-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1mPsTbq5YI7cDlj6JjwFrNu2f6GX7cjGD",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Back (COSTAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • COSTAS"
+  },
+  {
+    id: "kettlebell-shoulders",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Shoulders",
+    folderName: "OMBRO",
+    desc: "Access the Kettlebell OMBRO folder with all kettlebell overhead press and halo exercise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-shoulders.gif",
+    cover: "./assets/gifs/dumbbell-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1_BrkA-t0hJCYASTAmT_V4jQvGNVPX2VH",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Shoulders (OMBRO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • OMBRO"
+  },
+  {
+    id: "kettlebell-calves",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Calves",
+    folderName: "PANTURRILHA",
+    desc: "Access the Kettlebell PANTURRILHA folder with all loaded kettlebell calf raise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Calves",
+    muscleKey: "calves",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/calves.gif",
+    cover: "./assets/gifs/calves.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/15SxV08E4pB0Uv-v-2OIR8STneNOX56Vm",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Calves (PANTURRILHA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • PANTURRILHA"
+  },
+  {
+    id: "kettlebell-chest",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Chest",
+    folderName: "PEITO",
+    desc: "Access the Kettlebell PEITO folder with all kettlebell floor press and pushup exercise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-chest.gif",
+    cover: "./assets/gifs/dumbbell-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1yPQBHdk-4DfOyujiFLR20ZXFXxoLeAJL",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Chest (PEITO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • PEITO"
+  },
+  {
+    id: "kettlebell-legs",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Legs",
+    folderName: "PERNA",
+    desc: "Access the Kettlebell PERNA folder with all goblet squat, lunge, and swing exercise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Legs",
+    muscleKey: "legs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/kettlebell-swing.gif",
+    cover: "./assets/gifs/kettlebell-swing.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1NXfvmW6k7Ol2lDsdt0YE7o0U-DawNyAa",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Legs (PERNA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • PERNA"
+  },
+  {
+    id: "kettlebell-trapezius",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Trapezius",
+    folderName: "TRAPÉZIO",
+    desc: "Access the Kettlebell TRAPÉZIO folder with all kettlebell high pull and shrug exercise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Trapezius",
+    muscleKey: "traps",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/trapezius.gif",
+    cover: "./assets/gifs/trapezius.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1yK7-glCf3C49Lp4EGsNix5EhFbX-hea4",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Trapezius (TRAPÉZIO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • TRAPÉZIO"
+  },
+  {
+    id: "kettlebell-triceps",
+    moduleId: "mod-kettlebell",
+    moduleName: "Kettlebell Exercises",
+    title: "Triceps",
+    folderName: "TRICEPS",
+    desc: "Access the Kettlebell TRICEPS folder with all kettlebell overhead extension and dip exercise GIFs.",
+    category: "Kettlebell Exercises",
+    categoryKey: "kettlebell",
+    equipment: "Kettlebell",
+    equipmentKey: "kettlebell",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-triceps.gif",
+    cover: "./assets/gifs/dumbbell-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1V8I163fYDVDc60UCpBsFgVssVnWlfFGS",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Triceps (TRICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Kettlebell (KETTLEBELL)."
+    ],
+    materials: "Google Drive Folder • TRICEPS"
+  },
+
+  // =========================================================================
+  // 6. SUPERBAND EXERCISES (SUPERBAND)
+  // =========================================================================
+  {
+    id: "superband-abs",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Abs & Core",
+    folderName: "ABDOMINAIS",
+    desc: "Access the Superband ABDOMINAIS folder with all banded core and crunch exercise GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Abs & Core",
+    muscleKey: "abs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/superband-activation.gif",
+    cover: "./assets/gifs/superband-activation.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1pXe6WoUPZ4Ay9kI-DeWOZFp3Ue33bvQg",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Abs & Core (ABDOMINAIS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • ABDOMINAIS"
+  },
+  {
+    id: "superband-forearms",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Forearms",
+    folderName: "ANTEBRAÇO",
+    desc: "Access the Superband ANTEBRAÇO folder with all elastic wrist curl and grip resistance exercise GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Forearms",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/barbell-forearms.gif",
+    cover: "./assets/gifs/barbell-forearms.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EE8ueXL6gg-eRnhjoWanubhmQIGl54__",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Forearms (ANTEBRAÇO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • ANTEBRAÇO"
+  },
+  {
+    id: "superband-biceps",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Biceps",
+    folderName: "BICEPS",
+    desc: "Access the Superband BICEPS folder with all standing banded curl and arm exercise GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Biceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-biceps.gif",
+    cover: "./assets/gifs/dumbbell-biceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/15UQi_4AHQ6z12ZSUYh_DH1GWZKKPRAKL",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Biceps (BICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • BICEPS"
+  },
+  {
+    id: "superband-back",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Back",
+    folderName: "COSTAS",
+    desc: "Access the Superband COSTAS folder with all band pull-apart and row exercise GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Back",
+    muscleKey: "back",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/cable-back.gif",
+    cover: "./assets/gifs/cable-back.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1MiOb2Zhsj7sVL9GFW_522f3IYlSjGWPe",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Back (COSTAS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • COSTAS"
+  },
+  {
+    id: "superband-shoulders",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Shoulders",
+    folderName: "OMBRO",
+    desc: "Access the Superband OMBRO folder with all banded face pull and lateral raise exercise GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Shoulders",
+    muscleKey: "shoulders",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/cable-shoulders.gif",
+    cover: "./assets/gifs/cable-shoulders.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1eIB7NiBjWivOHqSCbAXfcvjfRY1wbv1T",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Shoulders (OMBRO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • OMBRO"
+  },
+  {
+    id: "superband-chest",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Chest",
+    folderName: "PEITO",
+    desc: "Access the Superband PEITO folder with all banded pushup and chest fly exercise GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Chest",
+    muscleKey: "chest",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/barbell-chest.gif",
+    cover: "./assets/gifs/barbell-chest.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1EcnBu8T9thqpm8X3y-_taGDyM9vvWxQL",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Chest (PEITO).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • PEITO"
+  },
+  {
+    id: "superband-legs",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Legs",
+    folderName: "PERNA",
+    desc: "Access the Superband PERNA folder with all banded monster walk, squat, and glute bridge GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Legs",
+    muscleKey: "legs",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/dumbbell-legs.gif",
+    cover: "./assets/gifs/dumbbell-legs.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/15WxEj6Xna1nn_8gS_tCT_OxFKThu-MuU",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Legs (PERNA).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • PERNA"
+  },
+  {
+    id: "superband-triceps",
+    moduleId: "mod-superband",
+    moduleName: "Superband Exercises",
+    title: "Triceps",
+    folderName: "TRICEPS",
+    desc: "Access the Superband TRICEPS folder with all banded pushdown and overhead extension GIFs.",
+    category: "Superband Exercises",
+    categoryKey: "superband",
+    equipment: "Superband",
+    equipmentKey: "superband",
+    muscleGroup: "Triceps",
+    muscleKey: "arms",
+    duration: "Drive Folder",
+    difficulty: "All Levels",
+    badge: "Drive Folder",
+    videoSrc: "./assets/gifs/barbell-triceps.gif",
+    cover: "./assets/gifs/barbell-triceps.gif",
+    fallbackCover: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+    driveUrl: "https://drive.google.com/drive/folders/1lpGo6yJJdNJ5tz6yYa97HLsVDLrbYF68",
+    rating: "5.0 ★★★★★",
+    progress: 0,
+    keyTakeaways: [
+      "Targeted Muscle Group: Triceps (TRICEPS).",
+      "Direct Drive access: View, stream, and download all exercise GIFs.",
+      "Equipment Category: Superband (SUPERBAND)."
+    ],
+    materials: "Google Drive Folder • TRICEPS"
   }
 ];
 
@@ -5360,7 +6019,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProfileSavedList();
   }
   
-    // RENDER: Home Rows (Carousels)
+      // RENDER: Home Rows (Carousels)
   function renderHomeCarousels() {
     // 1. Barbell Exercises
     const trackBarbell = document.getElementById('ff-track-barbell');
@@ -5390,18 +6049,18 @@ document.addEventListener('DOMContentLoaded', () => {
       trackCable.innerHTML = cableClasses.map(c => createCardHtml(c)).join('');
     }
     
-    // 5. Functional & Bodyweight Exercises
-    const trackFunctional = document.getElementById('ff-track-functional');
-    if (trackFunctional) {
-      const functionalClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'functional');
-      trackFunctional.innerHTML = functionalClasses.map(c => createCardHtml(c)).join('');
-    }
-    
-    // 6. Kettlebell & Superband
+    // 5. Kettlebell Exercises
     const trackKettlebell = document.getElementById('ff-track-kettlebell');
     if (trackKettlebell) {
       const kettlebellClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'kettlebell');
       trackKettlebell.innerHTML = kettlebellClasses.map(c => createCardHtml(c)).join('');
+    }
+    
+    // 6. Superband Exercises
+    const trackSuperband = document.getElementById('ff-track-superband');
+    if (trackSuperband) {
+      const superbandClasses = CLASSES_DATA.filter(c => c.equipmentKey === 'superband');
+      trackSuperband.innerHTML = superbandClasses.map(c => createCardHtml(c)).join('');
     }
     
     setupCarouselArrows();
@@ -5415,18 +6074,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressVal = item.progress || (isCompleted ? 100 : 0);
     
     return `
-      <div class="ff-card" data-lesson-id="${item.id}">
+      <div class="ff-card" data-lesson-id="${item.id}" data-drive-url="${item.driveUrl}">
         <div class="ff-card-media">
           <img class="ff-card-img" src="${item.cover}" alt="${item.title}" onerror="this.onerror=null;this.src='${item.fallbackCover}';">
           <div class="ff-card-overlay-gradient"></div>
           
           <div class="ff-card-top-tags">
-            <span class="ff-badge-status ff-badge-disponible">${item.badge || item.equipment || 'GIF'}</span>
-            <span class="ff-badge-duration"><i class="fa-solid fa-folder"></i> Drive</span>
+            <span class="ff-badge-status ff-badge-disponible">${item.equipment}</span>
+            <span class="ff-badge-duration"><i class="fa-solid fa-folder"></i> Drive Folder</span>
           </div>
           
-          <div class="ff-card-play-hover">
-            <i class="fa-solid fa-play"></i>
+          <div class="ff-card-play-hover" title="Open Google Drive Folder">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </div>
         </div>
         
@@ -5442,8 +6101,10 @@ document.addEventListener('DOMContentLoaded', () => {
           ` : ''}
           
           <div class="ff-card-footer">
-            <span class="ff-card-cta-btn"><i class="fa-solid fa-play"></i> Preview GIF</span>
-            <a href="${item.driveUrl}" target="_blank" rel="noopener noreferrer" class="ff-card-drive-btn" title="Open Google Drive folder" onclick="event.stopPropagation();">
+            <button class="ff-card-cta-btn ff-card-preview-btn" type="button" title="Preview sample GIF and details">
+              <i class="fa-solid fa-play"></i> Preview GIF
+            </button>
+            <a href="${item.driveUrl}" target="_blank" rel="noopener noreferrer" class="ff-card-drive-btn" title="Open folder in Google Drive">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Drive ↗
             </a>
             <button class="ff-card-fav-btn ${isSaved ? 'ff-saved' : ''}" data-fav-id="${item.id}" title="${isSaved ? 'Remove from My List' : 'Save to My List'}">
@@ -5592,7 +6253,8 @@ document.addEventListener('DOMContentLoaded', () => {
         c.desc.toLowerCase().includes(query) ||
         c.category.toLowerCase().includes(query) ||
         (c.equipment && c.equipment.toLowerCase().includes(query)) ||
-        (c.muscleGroup && c.muscleGroup.toLowerCase().includes(query))
+        (c.muscleGroup && c.muscleGroup.toLowerCase().includes(query)) ||
+        (c.folderName && c.folderName.toLowerCase().includes(query))
       );
     }
     
@@ -5601,7 +6263,7 @@ document.addEventListener('DOMContentLoaded', () => {
       : `
         <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--ff-text-muted);">
           <i class="fa-solid fa-magnifying-glass" style="font-size: 40px; margin-bottom: 14px; opacity: 0.4;"></i>
-          <h3>No matching exercise GIFs found</h3>
+          <h3>No matching folders found</h3>
           <p style="font-size: 13px; margin-top: 6px;">Try another keyword or select a different category.</p>
         </div>
       `;
@@ -5804,12 +6466,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // CARD EVENTS & LESSON PLAYER MODAL
   // ==========================================================================
   function attachCardEvents() {
-    // Open lesson modal
+    // Card clicks
     document.querySelectorAll('.ff-card').forEach(card => {
       card.addEventListener('click', (e) => {
         if (e.target.closest('.ff-card-fav-btn')) return;
+        
         const lessonId = card.getAttribute('data-lesson-id');
-        if (lessonId) {
+        const driveUrl = card.getAttribute('data-drive-url');
+        
+        // If clicking the preview button, open the modal
+        if (e.target.closest('.ff-card-preview-btn')) {
+          e.stopPropagation();
+          if (lessonId) openPlayerModal(lessonId);
+          return;
+        }
+        
+        // If clicking the Drive button directly, let it open normally
+        if (e.target.closest('.ff-card-drive-btn')) {
+          return;
+        }
+        
+        // Clicking the card body redirects/opens the corresponding Google Drive folder
+        if (driveUrl) {
+          window.open(driveUrl, '_blank');
+        } else if (lessonId) {
           openPlayerModal(lessonId);
         }
       });
@@ -5837,7 +6517,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-    // LESSON PLAYER MODAL
+  // LESSON PLAYER MODAL
   const playerModal = document.getElementById('ff-player-modal');
   const playerCloseBtn = document.getElementById('ff-player-close');
   const modalVideo = document.getElementById('ff-modal-video');
