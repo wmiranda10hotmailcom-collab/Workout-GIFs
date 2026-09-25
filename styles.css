@@ -776,6 +776,7 @@ body {
   animation: ffFadeInUp 0.25s ease;
 }
 
+.ff-profile-menu.ff-open .ff-profile-dropdown,
 .ff-profile-dropdown.ff-open {
   display: flex;
 }
@@ -940,6 +941,17 @@ body {
   background: rgba(229, 9, 20, 0.15);
   color: var(--ff-text-white);
   border-left: 3px solid var(--ff-primary);
+}
+
+/* ==========================================================================
+   COMPONENTES EXCLUSIVOS DE NAVEGACIÓN MÓVIL (OCULTOS EN DESKTOP)
+   ========================================================================== */
+.ff-mobile-tab-bar {
+  display: none;
+}
+
+.ff-mobile-bottom-nav {
+  display: none;
 }
 
 /* ==========================================================================
@@ -1457,14 +1469,21 @@ body {
   font-size: 12px;
   font-weight: 700;
   color: var(--ff-text-white);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 5px;
+  white-space: nowrap;
   transition: color var(--ff-transition-fast);
 }
 
 .ff-card:hover .ff-card-cta-btn {
   color: var(--ff-primary);
+}
+
+.ff-card-footer-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .ff-card-fav-btn {
@@ -2756,8 +2775,28 @@ a.ff-row-see-all {
     gap: 8px;
   }
   /* Ocultar el botón rojo largo "Drive Vault ↗" del navbar en móviles para que no sature la barra */
-  .ff-nav-right > a.ff-btn-primary {
-    display: none;
+  .ff-nav-right > a.ff-btn-primary,
+  .ff-nav-drive-btn {
+    display: none !important;
+  }
+  .ff-notifications {
+    display: none !important;
+  }
+  .ff-profile-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 2px;
+  }
+  .ff-profile-dropdown {
+    position: fixed !important;
+    top: 64px !important;
+    right: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    z-index: 1100 !important;
   }
   .ff-search-btn {
     font-size: 16px;
@@ -2768,14 +2807,10 @@ a.ff-row-see-all {
     padding: 6px 12px 6px 30px;
     font-size: 12px;
   }
-  .ff-notif-btn {
-    font-size: 17px;
-    padding: 4px;
-  }
   .ff-avatar-badge {
-    width: 32px;
-    height: 32px;
-    font-size: 12px;
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
   }
   .ff-profile-arrow {
     display: none;
@@ -2792,10 +2827,149 @@ a.ff-row-see-all {
     border-radius: var(--ff-radius-sm);
   }
 
+  /* ========================================================================
+     BARRA DE PESTAÑAS HORIZONTAL MÓVIL (DESPLAZABLE • TODAS LAS PESTAÑAS)
+     ======================================================================== */
+  .ff-mobile-tab-bar {
+    display: block !important;
+    position: sticky !important;
+    top: 60px !important;
+    margin-top: 60px !important;
+    z-index: 990 !important;
+    background: rgba(10, 11, 15, 0.96) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid var(--ff-border-subtle) !important;
+    padding: 8px 12px !important;
+    width: 100% !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .ff-mobile-tab-scroll {
+    display: flex !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 2px 4px !important;
+  }
+
+  .ff-mobile-tab-scroll::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .ff-mobile-tab-item {
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 7px 14px !important;
+    border-radius: var(--ff-radius-full) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid var(--ff-border-subtle) !important;
+    color: var(--ff-text-muted) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all var(--ff-transition-fast) !important;
+    user-select: none !important;
+  }
+
+  .ff-mobile-tab-item i {
+    font-size: 12px !important;
+  }
+
+  .ff-mobile-tab-item:active {
+    transform: scale(0.96) !important;
+  }
+
+  .ff-mobile-tab-item.ff-active {
+    background: var(--ff-primary) !important;
+    border-color: var(--ff-primary) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    box-shadow: 0 2px 10px var(--ff-primary-glow) !important;
+  }
+
+  /* ========================================================================
+     BARRA DE NAVEGACIÓN INFERIOR MÓVIL (DOCK FIJO EN LA PARTE INFERIOR)
+     ======================================================================== */
+  .ff-mobile-bottom-nav {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 58px !important;
+    z-index: 1000 !important;
+    background: rgba(10, 11, 15, 0.97) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid var(--ff-border-subtle) !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    padding: 0 4px env(safe-area-inset-bottom, 0px) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .ff-bottom-nav-item {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    padding: 6px 2px !important;
+    color: var(--ff-text-muted) !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all var(--ff-transition-fast) !important;
+    background: none !important;
+    border: none !important;
+  }
+
+  .ff-bottom-nav-item i {
+    font-size: 18px !important;
+    transition: transform var(--ff-transition-fast) !important;
+  }
+
+  .ff-bottom-nav-item.ff-active {
+    color: var(--ff-primary) !important;
+    font-weight: 800 !important;
+  }
+
+  .ff-bottom-nav-item.ff-active i {
+    transform: translateY(-2px) scale(1.1) !important;
+    filter: drop-shadow(0 0 8px var(--ff-primary-glow)) !important;
+  }
+
+  .ff-bottom-badge {
+    position: absolute !important;
+    top: -4px !important;
+    right: -8px !important;
+    background: var(--ff-primary) !important;
+    color: #ffffff !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    border-radius: 999px !important;
+    padding: 1px 4px !important;
+    line-height: 1 !important;
+    box-shadow: 0 0 6px var(--ff-primary) !important;
+  }
+
+  /* Padding extra para que la barra inferior no cubra contenido */
+  main.ff-main-wrapper {
+    padding-bottom: 84px !important;
+  }
+
   /* 2. Hero Banner Móvil */
   .ff-hero {
     min-height: auto;
-    padding-top: 76px;
+    padding-top: 24px;
     padding-bottom: 28px;
     padding-left: 16px;
     padding-right: 16px;
@@ -2938,27 +3112,73 @@ a.ff-row-see-all {
     display: none;
   }
   .ff-card-footer {
-    margin-top: 4px;
-    padding-top: 6px;
-    gap: 4px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    margin-top: 6px !important;
+    padding-top: 6px !important;
+    border-top: 1px solid var(--ff-border-subtle) !important;
   }
   .ff-card-cta-btn {
-    font-size: 11px;
-    gap: 4px;
+    width: 100% !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 7px 8px !important;
+    background: rgba(229, 9, 20, 0.9) !important;
+    border-radius: 6px !important;
+    color: #fff !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+  }
+  .ff-card-cta-btn:active {
+    transform: scale(0.98);
+  }
+  .ff-card-footer-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    width: 100% !important;
   }
   .ff-card-drive-btn {
-    font-size: 10px;
-    padding: 3px 6px;
-    gap: 3px;
+    flex: 1 !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 6px 8px !important;
+    border-radius: 6px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid var(--ff-border-subtle) !important;
+    color: #fff !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+  }
+  .ff-card-drive-btn:active {
+    background: rgba(229, 9, 20, 0.3) !important;
   }
   .ff-card-fav-btn {
-    font-size: 13px;
-    padding: 2px;
+    width: 32px !important;
+    height: 29px !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--ff-border-subtle) !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    padding: 0 !important;
   }
 
   /* 4. Vistas de Módulos, Clases, Bonos y Recursos */
   .ff-page-header {
-    padding: 76px 16px 18px 16px;
+    padding: 24px 16px 18px 16px;
   }
   .ff-page-title {
     font-size: 22px;

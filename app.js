@@ -2316,7 +2316,7 @@ document.addEventListener('DOMContentLoaded', () => {
       targetView.classList.add('ff-view-active');
     }
     
-    // Update active nav indicators
+    // Update active nav indicators across Desktop, Drawer, Mobile Tab Bar, and Bottom Nav
     document.querySelectorAll('.ff-nav-item').forEach(item => {
       if (item.getAttribute('data-target') === sectionId) {
         item.classList.add('ff-active');
@@ -2326,6 +2326,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     document.querySelectorAll('.ff-drawer-item').forEach(item => {
+      if (item.getAttribute('data-target') === sectionId) {
+        item.classList.add('ff-active');
+      } else {
+        item.classList.remove('ff-active');
+      }
+    });
+
+    document.querySelectorAll('.ff-mobile-tab-item').forEach(item => {
+      if (item.getAttribute('data-target') === sectionId) {
+        item.classList.add('ff-active');
+        try {
+          item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } catch (e) {}
+      } else {
+        item.classList.remove('ff-active');
+      }
+    });
+
+    document.querySelectorAll('.ff-bottom-nav-item').forEach(item => {
       if (item.getAttribute('data-target') === sectionId) {
         item.classList.add('ff-active');
       } else {
@@ -2365,10 +2384,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Profile Dropdown
   const profileMenu = document.getElementById('ff-profile-menu');
   const profileBtn = document.getElementById('ff-profile-btn');
+  const profileDropdown = document.getElementById('ff-profile-dropdown');
   if (profileBtn && profileMenu) {
     profileBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       profileMenu.classList.toggle('ff-open');
+      if (profileDropdown) profileDropdown.classList.toggle('ff-open');
       const notifMenu = document.getElementById('ff-notif-dropdown');
       if (notifMenu) notifMenu.classList.remove('ff-open');
     });
@@ -2382,12 +2403,14 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       notifDropdown.classList.toggle('ff-open');
       if (profileMenu) profileMenu.classList.remove('ff-open');
+      if (profileDropdown) profileDropdown.classList.remove('ff-open');
     });
   }
   
   // Close dropdowns on outside click
   document.addEventListener('click', () => {
     if (profileMenu) profileMenu.classList.remove('ff-open');
+    if (profileDropdown) profileDropdown.classList.remove('ff-open');
     if (notifDropdown) notifDropdown.classList.remove('ff-open');
   });
   
@@ -2529,14 +2552,16 @@ document.addEventListener('DOMContentLoaded', () => {
           
           <div class="ff-card-footer">
             <button class="ff-card-cta-btn ff-card-preview-btn" type="button" title="Preview sample GIF and details">
-              <i class="fa-solid fa-play"></i> Preview GIF
+              <i class="fa-solid fa-play"></i> <span>Preview GIF</span>
             </button>
-            <a href="${item.driveUrl}" target="_blank" rel="noopener noreferrer" class="ff-card-drive-btn" title="Open folder in Google Drive">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Drive ↗
-            </a>
-            <button class="ff-card-fav-btn ${isSaved ? 'ff-saved' : ''}" data-fav-id="${item.id}" title="${isSaved ? 'Remove from My List' : 'Save to My List'}">
-              <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
-            </button>
+            <div class="ff-card-footer-actions">
+              <a href="${item.driveUrl}" target="_blank" rel="noopener noreferrer" class="ff-card-drive-btn" title="Open folder in Google Drive">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Drive ↗</span>
+              </a>
+              <button class="ff-card-fav-btn ${isSaved ? 'ff-saved' : ''}" data-fav-id="${item.id}" title="${isSaved ? 'Remove from My List' : 'Save to My List'}">
+                <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -22,8 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 6 Icons (Free CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome 6 Icons (Robust CDN with jsDelivr Fallback) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="./styles.css">
@@ -162,7 +163,7 @@
         </div>
 
         <!-- Google Drive Vault Quick Access -->
-        <a href="https://drive.google.com/drive/folders/1gHrmIU6NWrO8olL4TYRAGpLpXHx_tzbT" target="_blank" rel="noopener noreferrer" class="ff-btn-primary" style="padding: 7px 14px; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; border-radius: var(--ff-radius-sm);">
+        <a href="https://drive.google.com/drive/folders/1gHrmIU6NWrO8olL4TYRAGpLpXHx_tzbT" target="_blank" rel="noopener noreferrer" class="ff-btn-primary ff-nav-drive-btn" style="padding: 7px 14px; font-size: 12px; text-decoration: none; align-items: center; gap: 6px; font-weight: 700; border-radius: var(--ff-radius-sm);">
           <i class="fa-brands fa-google-drive"></i>
           <span>Drive Vault ↗</span>
         </a>
@@ -242,6 +243,45 @@
         </button>
       </div>
     </header>
+ 
+    <!-- MOBILE HORIZONTAL SCROLLABLE TAB BAR (ALL TABS FROM DESKTOP) -->
+    <nav id="ff-mobile-tab-bar" class="ff-mobile-tab-bar" aria-label="Mobile Navigation Tabs">
+      <div class="ff-mobile-tab-scroll">
+        <button class="ff-mobile-tab-item ff-active" data-target="inicio" type="button">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </button>
+        <button class="ff-mobile-tab-item" data-target="modulos" type="button">
+          <i class="fa-solid fa-cubes"></i>
+          <span>Modules</span>
+        </button>
+        <button class="ff-mobile-tab-item" data-target="clases" type="button">
+          <i class="fa-solid fa-film"></i>
+          <span>Classes</span>
+        </button>
+        <button class="ff-mobile-tab-item" data-target="bonus" type="button">
+          <i class="fa-solid fa-gift"></i>
+          <span>Bonuses</span>
+          <span class="ff-badge-status ff-badge-nuevo" style="font-size: 8px; padding: 1px 4px; margin-left: 2px;">4 FREE</span>
+        </button>
+        <button class="ff-mobile-tab-item" data-target="recursos" type="button">
+          <i class="fa-solid fa-download"></i>
+          <span>Resources</span>
+        </button>
+        <button class="ff-mobile-tab-item" data-target="comunidad" type="button">
+          <i class="fa-solid fa-users"></i>
+          <span>Community</span>
+        </button>
+        <button class="ff-mobile-tab-item" data-target="soporte" type="button">
+          <i class="fa-solid fa-headset"></i>
+          <span>Support</span>
+        </button>
+        <button class="ff-mobile-tab-item" data-target="perfil" type="button">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>My Profile</span>
+        </button>
+      </div>
+    </nav>
 
     <!-- MOBILE OFF-CANVAS DRAWER -->
     <div id="ff-mobile-drawer" class="ff-mobile-drawer">
@@ -924,6 +964,33 @@
         </div>
       </div>
     </div>
+
+    <!-- MOBILE BOTTOM NAVIGATION DOCK (FIXED AT SCREEN BOTTOM) -->
+    <nav id="ff-mobile-bottom-nav" class="ff-mobile-bottom-nav" aria-label="Mobile Bottom Dock">
+      <button class="ff-bottom-nav-item ff-active" data-target="inicio" type="button">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </button>
+      <button class="ff-bottom-nav-item" data-target="modulos" type="button">
+        <i class="fa-solid fa-cubes"></i>
+        <span>Modules</span>
+      </button>
+      <button class="ff-bottom-nav-item" data-target="clases" type="button">
+        <i class="fa-solid fa-film"></i>
+        <span>Classes</span>
+      </button>
+      <button class="ff-bottom-nav-item" data-target="bonus" type="button">
+        <div style="position: relative; display: inline-flex;">
+          <i class="fa-solid fa-gift"></i>
+          <span class="ff-bottom-badge">4</span>
+        </div>
+        <span>Bonuses</span>
+      </button>
+      <button class="ff-bottom-nav-item" data-target="perfil" type="button">
+        <i class="fa-solid fa-user-gear"></i>
+        <span>Profile</span>
+      </button>
+    </nav>
 
     <!-- FLOATING TOAST NOTIFICATIONS CONTAINER -->
     <div id="ff-toast-container" class="ff-toast-container"></div>
