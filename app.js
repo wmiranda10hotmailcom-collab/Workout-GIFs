@@ -2316,7 +2316,7 @@ document.addEventListener('DOMContentLoaded', () => {
       targetView.classList.add('ff-view-active');
     }
     
-    // Update active nav indicators across Desktop, Drawer, Mobile Tab Bar, and Bottom Nav
+    // Update active nav indicators across Desktop and Drawer
     document.querySelectorAll('.ff-nav-item').forEach(item => {
       if (item.getAttribute('data-target') === sectionId) {
         item.classList.add('ff-active');
@@ -2332,25 +2332,6 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.remove('ff-active');
       }
     });
-
-    document.querySelectorAll('.ff-mobile-tab-item').forEach(item => {
-      if (item.getAttribute('data-target') === sectionId) {
-        item.classList.add('ff-active');
-        try {
-          item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        } catch (e) {}
-      } else {
-        item.classList.remove('ff-active');
-      }
-    });
-
-    document.querySelectorAll('.ff-bottom-nav-item').forEach(item => {
-      if (item.getAttribute('data-target') === sectionId) {
-        item.classList.add('ff-active');
-      } else {
-        item.classList.remove('ff-active');
-      }
-    });
     
     // Close mobile drawer if open
     const drawer = document.getElementById('ff-mobile-drawer');
@@ -2359,6 +2340,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  
+  // Drawer Training Module Direct Filter Links
+  document.querySelectorAll('[data-drawer-filter]').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const filter = item.getAttribute('data-drawer-filter');
+      const drawer = document.getElementById('ff-mobile-drawer');
+      if (drawer) drawer.classList.remove('ff-open');
+      
+      navigateTo('inicio');
+      setTimeout(() => {
+        const targetRow = document.getElementById(`row-${filter}`);
+        if (targetRow) {
+          targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 200);
+    });
+  });
   
   // Menu link click events
   document.querySelectorAll('[data-target]').forEach(link => {

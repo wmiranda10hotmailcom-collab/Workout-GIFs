@@ -22,9 +22,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 6 Icons (Robust CDN with jsDelivr Fallback) -->
+  <!-- Font Awesome 6 Icons (Robust CSS & SVG JS) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="./styles.css">
@@ -115,6 +116,11 @@
     <!-- TOPBAR NAVIGATION (NETFLIX NAVBAR) -->
     <header id="ff-navbar" class="ff-navbar">
       <div class="ff-nav-left">
+        <!-- Mobile Hamburger Button (Top-Left Corner) -->
+        <button id="ff-hamburger" class="ff-hamburger" title="Open navigation menu" aria-label="Open menu" type="button">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
         <a href="javascript:void(0)" onclick="navigateTo('inicio')" class="ff-brand-logo">
           <i class="fa-solid fa-play" style="font-size: 18px;"></i>
           <span>WORKOUT GIFs</span>
@@ -237,51 +243,8 @@
           </div>
         </div>
 
-        <!-- Mobile Hamburger Button -->
-        <button id="ff-hamburger" class="ff-hamburger" title="Open mobile navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
       </div>
     </header>
- 
-    <!-- MOBILE HORIZONTAL SCROLLABLE TAB BAR (ALL TABS FROM DESKTOP) -->
-    <nav id="ff-mobile-tab-bar" class="ff-mobile-tab-bar" aria-label="Mobile Navigation Tabs">
-      <div class="ff-mobile-tab-scroll">
-        <button class="ff-mobile-tab-item ff-active" data-target="inicio" type="button">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </button>
-        <button class="ff-mobile-tab-item" data-target="modulos" type="button">
-          <i class="fa-solid fa-cubes"></i>
-          <span>Modules</span>
-        </button>
-        <button class="ff-mobile-tab-item" data-target="clases" type="button">
-          <i class="fa-solid fa-film"></i>
-          <span>Classes</span>
-        </button>
-        <button class="ff-mobile-tab-item" data-target="bonus" type="button">
-          <i class="fa-solid fa-gift"></i>
-          <span>Bonuses</span>
-          <span class="ff-badge-status ff-badge-nuevo" style="font-size: 8px; padding: 1px 4px; margin-left: 2px;">4 FREE</span>
-        </button>
-        <button class="ff-mobile-tab-item" data-target="recursos" type="button">
-          <i class="fa-solid fa-download"></i>
-          <span>Resources</span>
-        </button>
-        <button class="ff-mobile-tab-item" data-target="comunidad" type="button">
-          <i class="fa-solid fa-users"></i>
-          <span>Community</span>
-        </button>
-        <button class="ff-mobile-tab-item" data-target="soporte" type="button">
-          <i class="fa-solid fa-headset"></i>
-          <span>Support</span>
-        </button>
-        <button class="ff-mobile-tab-item" data-target="perfil" type="button">
-          <i class="fa-solid fa-user-gear"></i>
-          <span>My Profile</span>
-        </button>
-      </div>
-    </nav>
 
     <!-- MOBILE OFF-CANVAS DRAWER -->
     <div id="ff-mobile-drawer" class="ff-mobile-drawer">
@@ -308,8 +271,53 @@
           <li class="ff-drawer-item" data-target="modulos">
             <a href="javascript:void(0)" class="ff-drawer-link">
               <i class="fa-solid fa-cubes"></i>
-              <span>Modules</span>
+              <span>All Modules</span>
             </a>
+          </li>
+
+          <!-- Module Categories in Lateral Menu -->
+          <li class="ff-drawer-section-heading">
+            <span>TRAINING MODULES</span>
+          </li>
+          <li class="ff-drawer-item ff-drawer-subitem" data-drawer-filter="barbell">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-dumbbell"></i>
+              <span>Barbell Exercises</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item ff-drawer-subitem" data-drawer-filter="dumbbell">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-dumbbell"></i>
+              <span>Dumbbell Exercises</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item ff-drawer-subitem" data-drawer-filter="machine">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-gear"></i>
+              <span>Machine Exercises</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item ff-drawer-subitem" data-drawer-filter="cable">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-arrows-split-up-and-left"></i>
+              <span>Cable & Pulley</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item ff-drawer-subitem" data-drawer-filter="kettlebell">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-weight-hanging"></i>
+              <span>Kettlebell Exercises</span>
+            </a>
+          </li>
+          <li class="ff-drawer-item ff-drawer-subitem" data-drawer-filter="superband">
+            <a href="javascript:void(0)" class="ff-drawer-link">
+              <i class="fa-solid fa-ring"></i>
+              <span>Superband Exercises</span>
+            </a>
+          </li>
+
+          <li class="ff-drawer-section-heading">
+            <span>PLATFORM SECTIONS</span>
           </li>
           <li class="ff-drawer-item" data-target="clases">
             <a href="javascript:void(0)" class="ff-drawer-link">
@@ -321,6 +329,7 @@
             <a href="javascript:void(0)" class="ff-drawer-link">
               <i class="fa-solid fa-gift"></i>
               <span>4 Exclusive Bonuses</span>
+              <span class="ff-badge-status ff-badge-nuevo" style="font-size: 8px; padding: 1px 5px; margin-left: auto;">4 FREE</span>
             </a>
           </li>
           <li class="ff-drawer-item" data-target="recursos">
@@ -395,7 +404,7 @@
               </div>
 
               <div class="ff-hero-actions">
-                <a href="https://drive.google.com/drive/folders/1gHrmIU6NWrO8olL4TYRAGpLpXHx_tzbT" target="_blank" rel="noopener noreferrer" class="ff-btn-play" style="text-decoration: none;">
+                <a href="https://drive.google.com/drive/folders/1gHrmIU6NWrO8olL4TYRAGpLpXHx_tzbT" target="_blank" rel="noopener noreferrer" class="ff-btn-play ff-hero-vault-btn" style="text-decoration: none;">
                   <i class="fa-brands fa-google-drive"></i>
                   <span>Open Full Drive Vault</span>
                 </a>
@@ -964,33 +973,6 @@
         </div>
       </div>
     </div>
-
-    <!-- MOBILE BOTTOM NAVIGATION DOCK (FIXED AT SCREEN BOTTOM) -->
-    <nav id="ff-mobile-bottom-nav" class="ff-mobile-bottom-nav" aria-label="Mobile Bottom Dock">
-      <button class="ff-bottom-nav-item ff-active" data-target="inicio" type="button">
-        <i class="fa-solid fa-house"></i>
-        <span>Home</span>
-      </button>
-      <button class="ff-bottom-nav-item" data-target="modulos" type="button">
-        <i class="fa-solid fa-cubes"></i>
-        <span>Modules</span>
-      </button>
-      <button class="ff-bottom-nav-item" data-target="clases" type="button">
-        <i class="fa-solid fa-film"></i>
-        <span>Classes</span>
-      </button>
-      <button class="ff-bottom-nav-item" data-target="bonus" type="button">
-        <div style="position: relative; display: inline-flex;">
-          <i class="fa-solid fa-gift"></i>
-          <span class="ff-bottom-badge">4</span>
-        </div>
-        <span>Bonuses</span>
-      </button>
-      <button class="ff-bottom-nav-item" data-target="perfil" type="button">
-        <i class="fa-solid fa-user-gear"></i>
-        <span>Profile</span>
-      </button>
-    </nav>
 
     <!-- FLOATING TOAST NOTIFICATIONS CONTAINER -->
     <div id="ff-toast-container" class="ff-toast-container"></div>
