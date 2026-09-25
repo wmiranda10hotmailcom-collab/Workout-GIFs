@@ -1998,6 +1998,61 @@ const FAQ_DATA = [
 ];
 
 /* ==========================================================================
+   SECURE FRONTEND AUTHENTICATION (SALTED SHA-256)
+   Password is NEVER stored in plaintext in the codebase
+   ========================================================================== */
+function sha256(ascii) {
+  function rightRotate(value, amount) { return (value >>> amount) | (value << (32 - amount)); }
+  const mathPow = Math.pow, maxWord = mathPow(2, 32), lengthProperty = 'length';
+  let i, j, result = '', words = [], asciiBitLength = ascii[lengthProperty] * 8, hash = [], k = [], primeCounter = 0, isComposite = {};
+  for (let candidate = 2; primeCounter < 64; candidate++) {
+    if (!isComposite[candidate]) {
+      for (i = 0; i < 313; i += candidate) isComposite[i] = candidate;
+      hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0;
+      k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0;
+    }
+  }
+  hash = hash.slice(0, 8);
+  ascii += '\x80';
+  while ((ascii[lengthProperty] % 64) - 56) ascii += '\x00';
+  for (i = 0; i < ascii[lengthProperty]; i++) {
+    j = ascii.charCodeAt(i);
+    words[i >> 2] |= j << (((3 - i) % 4) * 8);
+  }
+  words[words[lengthProperty]] = (asciiBitLength / maxWord) | 0;
+  words[words[lengthProperty]] = asciiBitLength;
+  for (j = 0; j < words[lengthProperty];) {
+    const w = words.slice(j, (j += 16)), oldHash = hash;
+    hash = hash.slice(0, 8);
+    for (i = 0; i < 64; i++) {
+      const w15 = w[i - 15], w2 = w[i - 2];
+      const s0 = rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3);
+      const s1 = rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10);
+      w[i] = i < 16 ? w[i] : (w[i - 16] + s0 + w[i - 7] + s1) | 0;
+      const s1h = rightRotate(hash[0], 2) ^ rightRotate(hash[0], 13) ^ rightRotate(hash[0], 22);
+      const maj = (hash[0] & hash[1]) ^ (hash[0] & hash[2]) ^ (hash[1] & hash[2]);
+      const t2 = (s1h + maj) | 0;
+      const s0h = rightRotate(hash[4], 6) ^ rightRotate(hash[4], 11) ^ rightRotate(hash[4], 25);
+      const ch = (hash[4] & hash[5]) ^ (~hash[4] & hash[6]);
+      const t1 = (hash[7] + s0h + ch + k[i] + w[i]) | 0;
+      hash = [(t1 + t2) | 0].concat(hash);
+      hash[4] = (hash[4] + t1) | 0;
+    }
+    for (i = 0; i < 8; i++) hash[i] = (hash[i] + oldHash[i]) | 0;
+  }
+  for (i = 0; i < 8; i++) {
+    for (j = 3; j >= 0; j--) {
+      const b = (hash[i] >> (j * 8)) & 255;
+      result += (b < 16 ? '0' : '') + b.toString(16);
+    }
+  }
+  return result;
+}
+
+const AUTH_SALT = "WorkoutGifs_Vault_Secure_Salt_2026";
+const AUTH_HASH = "979c56487313b0a7401461a460dc683e6b0dfa0b720c0c8d5324ae3766983006";
+
+/* ==========================================================================
    APPLICATION STATE (LOCALSTORAGE & FRONT-END)
    ========================================================================== */
 const AppState = {
@@ -2009,38 +2064,46 @@ const AppState = {
   userNotes: {},
   
   init() {
-    // 1. Load user from localStorage
-    const savedUser = localStorage.getItem('workout_gifs_user') || localStorage.getItem('fitflix_user');
+    // 1. Load user from storage
+    const savedUser = sessionStorage.getItem('workout_gifs_user') || localStorage.getItem('workout_gifs_user');
     if (savedUser) {
       try {
-        this.user = JSON.parse(savedUser);
+        const parsed = JSON.parse(savedUser);
+        // Clear any previous demo credentials
+        if (parsed && parsed.email && !parsed.email.includes('vip.student@') && !parsed.email.includes('pro.coach@')) {
+          this.user = parsed;
+        } else {
+          this.user = null;
+          localStorage.removeItem('workout_gifs_user');
+          sessionStorage.removeItem('workout_gifs_user');
+        }
       } catch (e) {
         this.user = null;
       }
     }
     
     // 2. Load completed lessons
-    const savedCompleted = localStorage.getItem('workout_gifs_completed') || localStorage.getItem('fitflix_completed');
+    const savedCompleted = localStorage.getItem('workout_gifs_completed');
     if (savedCompleted) {
       try {
         this.completedLessons = new Set(JSON.parse(savedCompleted));
       } catch (e) {}
     } else {
-      this.completedLessons = new Set(['class-8']); // Default demo item
+      this.completedLessons = new Set(['barbell-chest']);
     }
     
     // 3. Load My List
-    const savedList = localStorage.getItem('workout_gifs_my_list') || localStorage.getItem('fitflix_my_list');
+    const savedList = localStorage.getItem('workout_gifs_my_list');
     if (savedList) {
       try {
         this.myList = new Set(JSON.parse(savedList));
       } catch (e) {}
     } else {
-      this.myList = new Set(['class-1', 'class-3']); // Default demo items
+      this.myList = new Set(['barbell-abs', 'dumbbell-biceps']);
     }
     
     // 4. Load Personal Notes
-    const savedNotes = localStorage.getItem('workout_gifs_notes') || localStorage.getItem('fitflix_notes');
+    const savedNotes = localStorage.getItem('workout_gifs_notes');
     if (savedNotes) {
       try {
         this.userNotes = JSON.parse(savedNotes);
@@ -2048,11 +2111,18 @@ const AppState = {
     }
   },
   
-  save() {
+  save(rememberMe = true) {
     if (this.user) {
-      localStorage.setItem('workout_gifs_user', JSON.stringify(this.user));
+      if (rememberMe) {
+        localStorage.setItem('workout_gifs_user', JSON.stringify(this.user));
+        sessionStorage.removeItem('workout_gifs_user');
+      } else {
+        sessionStorage.setItem('workout_gifs_user', JSON.stringify(this.user));
+        localStorage.removeItem('workout_gifs_user');
+      }
     } else {
       localStorage.removeItem('workout_gifs_user');
+      sessionStorage.removeItem('workout_gifs_user');
       localStorage.removeItem('fitflix_user');
     }
     localStorage.setItem('workout_gifs_completed', JSON.stringify([...this.completedLessons]));
@@ -2075,9 +2145,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginEmailInput = document.getElementById('ff-login-email');
   const loginPasswordInput = document.getElementById('ff-login-password');
   const togglePasswordBtn = document.getElementById('ff-toggle-password');
-  const fastLoginAlumno = document.getElementById('ff-fast-login-alumno');
-  const fastLoginCoach = document.getElementById('ff-fast-login-coach');
+  const forgotPassLink = document.getElementById('ff-forgot-pass-link');
   const toastContainer = document.getElementById('ff-toast-container');
+  
+  // Ensure login fields start completely empty
+  if (loginEmailInput) loginEmailInput.value = '';
+  if (loginPasswordInput) loginPasswordInput.value = '';
   
   // Session check
   if (AppState.user) {
@@ -2088,6 +2161,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Show Login Screen
   function showLoginScreen() {
+    if (loginEmailInput) loginEmailInput.value = '';
+    if (loginPasswordInput) loginPasswordInput.value = '';
+    if (loginAlert) {
+      loginAlert.classList.add('ff-hidden');
+      loginAlert.textContent = '';
+    }
     loginScreen.classList.remove('ff-hidden');
     loginScreen.style.opacity = '1';
     loginScreen.style.visibility = 'visible';
@@ -2140,22 +2219,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  
-  // Fast Demo Login (Student)
-  if (fastLoginAlumno) {
-    fastLoginAlumno.addEventListener('click', () => {
-      loginEmailInput.value = 'vip.student@workoutgifs.com';
-      loginPasswordInput.value = 'password123';
-      performLogin('vip.student@workoutgifs.com', 'VIP Student');
-    });
-  }
-  
-  // Fast Demo Login (Coach)
-  if (fastLoginCoach) {
-    fastLoginCoach.addEventListener('click', () => {
-      loginEmailInput.value = 'pro.coach@workoutgifs.com';
-      loginPasswordInput.value = 'coach2026';
-      performLogin('pro.coach@workoutgifs.com', 'Pro Master Coach');
+
+  // Forgot password link
+  if (forgotPassLink) {
+    forgotPassLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('If you forgot your password or need assistance accessing Workout GIFs, please contact support via the Help Center or email support@workoutgifs.com.');
     });
   }
   
@@ -2165,28 +2234,54 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const email = loginEmailInput.value.trim();
       const password = loginPasswordInput.value.trim();
+      const rememberCheckbox = document.getElementById('ff-remember-me');
+      const rememberMe = rememberCheckbox ? rememberCheckbox.checked : true;
       
-      // Elegant front-end validation
+      // Validation: Email and password required
       if (!email || !password) {
         loginAlert.classList.remove('ff-hidden');
-        loginAlert.textContent = '⚠️ Please enter your email address and password to continue.';
+        loginAlert.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Please enter both your email address and password to continue.';
+        return;
+      }
+
+      // Email format validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        loginAlert.classList.remove('ff-hidden');
+        loginAlert.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.';
         return;
       }
       
+      // Secure Salted Hash Password Verification (Password is NEVER stored in plaintext in the frontend)
+      const enteredHash = sha256(password + AUTH_SALT);
+      if (enteredHash !== AUTH_HASH) {
+        loginAlert.classList.remove('ff-hidden');
+        loginAlert.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> <strong>Incorrect password.</strong> Please verify your credentials and try again.';
+        loginPasswordInput.value = '';
+        loginPasswordInput.focus();
+        return;
+      }
+      
+      // Password correct! Format display name from email
       loginAlert.classList.add('ff-hidden');
-      performLogin(email, email.split('@')[0].replace('.', ' ').toUpperCase());
+      const rawName = email.split('@')[0].replace(/[._-]/g, ' ');
+      const formattedName = rawName.split(' ')
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ') || 'VIP Athlete';
+
+      performLogin(email, formattedName, rememberMe);
     });
   }
   
   // Login Execution
-  function performLogin(email, name) {
+  function performLogin(email, name, rememberMe = true) {
     AppState.user = {
       email: email,
       name: name || 'VIP Athlete',
       plan: 'Lifetime Pro Membership',
       joinDate: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
     };
-    AppState.save();
+    AppState.save(rememberMe);
     showToast(`Welcome back, ${AppState.user.name}!`, 'fa-solid fa-circle-check');
     showMainApp();
   }
