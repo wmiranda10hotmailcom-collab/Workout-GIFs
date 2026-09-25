@@ -28,7 +28,723 @@ const MEMBERSHIP_CONFIG = {
 };
 
 /* ==========================================================================
-   IN-MEMORY DATABASE (100% FRONT-END IN ENGLISH)
+   INTERNATIONALIZATION (I18N) - PORTUGUÊS (BR) & ENGLISH (US)
+   ========================================================================== */
+const TRANSLATIONS = {
+  'pt-BR': {
+    doc_title: "Workout GIFs • Plataforma VIP de Exercícios e Biomecânica",
+    login_tagline: "Streaming de Exercícios e Biomecânica",
+    login_title: "Entrar na Plataforma",
+    login_instruction: "Digite o e-mail e senha utilizados no momento da compra.",
+    login_email_label: "Endereço de E-mail",
+    login_email_placeholder: "seu-email@exemplo.com",
+    login_pass_label: "Senha de Acesso",
+    login_forgot_pass: "Esqueceu a senha?",
+    login_remember_me: "Lembrar meu acesso",
+    login_instant_access: "Acesso Instantâneo",
+    login_btn: "Acessar Plataforma",
+    login_footer: "Acesso Seguro 256-Bit • Acesso Vitalício Garantido",
+    login_err_both: "Por favor, preencha o e-mail e a senha para continuar.",
+    login_err_email: "Por favor, digite um e-mail válido.",
+    login_err_pass: "Senha incorreta. Verifique suas credenciais e tente novamente.",
+    login_forgot_msg: "Se você esqueceu sua senha ou precisa de suporte para acessar o Workout GIFs, entre em contato via WhatsApp ou envie um e-mail para suporte@workoutgifs.com.",
+    nav_home: "Início",
+    nav_modules: "Módulos",
+    nav_classes: "Exercícios",
+    nav_bonuses: "Bônus",
+    nav_resources: "Recursos",
+    nav_community: "Comunidade",
+    nav_support: "Suporte",
+    nav_profile: "Meu Perfil",
+    nav_search_placeholder: "Buscar exercícios, grupos musculares, equipamentos...",
+    nav_drive_vault: "Drive Geral ↗",
+    notif_title: "Notificações Recentes",
+    notif_mark_read: "Marcar todas como lidas",
+    notif_item1: "Novo MasterClass adicionado: Biomecânica do Agachamento em 4K.",
+    notif_item2: "Bônus desbloqueado: Planilha de Periodização Automatizada V3.",
+    notif_item3: "Comunidade Ativa: Coach Mateo compartilhou um novo estudo de caso.",
+    profile_plan_pill: "Membro Vitalício Pro",
+    dropdown_lang_label: "Idioma / Language",
+    profile_dropdown_profile: "Meu Perfil e Progresso",
+    profile_dropdown_saved: "Meus Exercícios Salvos",
+    profile_dropdown_help: "Central de Ajuda e FAQ",
+    profile_dropdown_logout: "Sair da Conta",
+    profile_kicker: "Sua Conta",
+    profile_title: "Meu Perfil & Progresso de Estudo",
+    profile_desc: "Acompanhe suas estatísticas, exercícios concluídos, ofensiva diária e gerencie sua lista de favoritos.",
+    profile_sync_btn: "Sincronizar",
+    profile_logout_btn: "Sair da Conta",
+    profile_lang_setting_title: "Preferência de Idioma / Language",
+    profile_lang_setting_desc: "Alterne entre Português do Brasil e Inglês em toda a plataforma.",
+    profile_stat1_label: "Progresso Geral",
+    profile_stat1_sub: "Do catálogo completo",
+    profile_stat2_label: "Pastas Concluídas",
+    profile_stat2_sub: "Registradas na sua conta",
+    profile_stat3_label: "Tempo de Prática",
+    profile_stat3_val: "18.5 hrs",
+    profile_stat3_sub: "Tempo estimado",
+    profile_stat4_label: "Ofensiva de Treino",
+    profile_stat4_val: "5 Dias 🔥",
+    profile_stat4_sub: "Continue com o foco!",
+    profile_saved_title: "Meus Exercícios Salvos",
+    profile_saved_empty_title: "Você ainda não possui exercícios salvos",
+    profile_saved_empty_desc: "Clique no ícone de salvar em qualquer exercício para acessá-lo facilmente aqui.",
+    drawer_all_modules: "Todos os Módulos",
+    drawer_section_modules: "CATÁLOGO DE MÓDULOS",
+    drawer_mod_barbell: "Exercícios com Barra",
+    drawer_mod_dumbbell: "Exercícios com Halteres",
+    drawer_mod_machine: "Exercícios na Máquina",
+    drawer_mod_cable: "Cabos e Polia",
+    drawer_mod_kettlebell: "Exercícios com Kettlebell",
+    drawer_mod_superband: "Exercícios com Superband",
+    drawer_section_sections: "SEÇÕES DA PLATAFORMA",
+    drawer_sec_classes: "Exercícios e Vídeos",
+    drawer_sec_bonuses: "4 Bônus Exclusivos",
+    drawer_sec_resources: "Recursos & PDFs",
+    drawer_sec_community: "Comunidade VIP",
+    drawer_sec_support: "Suporte Técnico",
+    drawer_sec_profile: "Meu Perfil",
+    drawer_logout: "Sair da Conta",
+    hero_kicker: "🔥 #1 PLATAFORMA DE STREAMING DE EXERCÍCIOS EM GIF",
+    hero_pill1: "1.000+ EXERCÍCIOS EM HD",
+    hero_pill2: "GOOGLE DRIVE GERAL",
+    hero_title: "WORKOUT GIFs: BIOMECÂNICA DE PRECISÃO & DEMONSTRAÇÕES DE EXERCÍCIOS",
+    hero_desc: "Demonstrações visuais instantâneas para cada grupo muscular e equipamento. Explore a coleção completa com Barras, Halteres, Máquinas, Cabos e Funcionais direto no Google Drive com 1 clique.",
+    hero_meta_match: "100% Relevância",
+    hero_meta_vault: "Biblioteca 2026",
+    hero_meta_suites: "6 Módulos de Equipamentos",
+    hero_meta_gifs: "1.000+ GIFs",
+    hero_meta_connected: "Google Drive Conectado",
+    hero_btn_vault: "Abrir Pasta Geral do Drive",
+    hero_btn_preview: "Ver GIF de Exemplo",
+    row_barbell_title: "Exercícios com Barra",
+    row_barbell_badge: "Academia & Pesos Livres",
+    row_dumbbell_title: "Exercícios com Halteres",
+    row_dumbbell_badge: "Simetria & Treino Unilateral",
+    row_machine_title: "Exercícios na Máquina, Hack e Banco",
+    row_machine_badge: "Movimento Guiado & Segurança",
+    row_cable_title: "Exercícios no Cabo e Polia",
+    row_cable_badge: "Tensão Contínua",
+    row_kettlebell_title: "Exercícios com Kettlebell",
+    row_kettlebell_badge: "Potência Explosiva & Padrões de Quadril",
+    row_superband_title: "Exercícios com Superband",
+    row_superband_badge: "Resistência Elástica & Mobilidade",
+    row_open_drive: "Abrir Pasta no Drive",
+    promo_kicker: "NÃO SE ESQUEÇA DOS SEUS PRESENTES!",
+    promo_title: "Você tem 4 Bônus Exclusivos Desbloqueados (Valor de R$ 1.497)",
+    promo_desc: "Inclui o Manual Mestre de Hipertrofia, Guia de Correção de Postura, 150 Receitas Anabólicas e a Planilha de Periodização Automatizada.",
+    promo_btn: "Ver e Baixar Bônus",
+    modules_kicker: "Grade Completa de Treinamento",
+    modules_title: "Módulos de Equipamentos",
+    modules_desc: "Explore a estrutura completa por tipo de equipamento. Das bases biomecânicas fundamentais aos exercícios mais avançados organizados no Google Drive.",
+    classes_kicker: "Biblioteca de GIFs de Exercícios",
+    classes_title: "Todos os GIFs e Pastas Diretas do Drive",
+    classes_desc: "Filtre por tipo de equipamento ou grupo muscular, ou pesquise diretamente pelo exercício para visualizar o GIF animado e acessar a pasta no Google Drive.",
+    chip_todos: "Todas as Categorias",
+    chip_barbell: "Barra",
+    chip_dumbbell: "Halteres",
+    chip_machine: "Máquinas",
+    chip_cable: "Cabos",
+    chip_kettlebell: "Kettlebell",
+    chip_superband: "Superband",
+    chip_abs: "Abdominais",
+    chip_arms: "Braços",
+    chip_chest: "Peitoral",
+    chip_back: "Costas",
+    chip_legs: "Pernas",
+    chip_shoulders: "Ombros",
+    chip_calves: "Panturrilhas",
+    chip_traps: "Trapézio",
+    class_search_placeholder: "Filtrar por nome do exercício ou técnica...",
+    classes_no_match_title: "Nenhum exercício encontrado para sua busca",
+    classes_no_match_desc: "Tente selecionar outra categoria ou limpar o termo de pesquisa.",
+    bonuses_kicker: "Materiais Exclusivos VIP",
+    bonuses_title: "Seus 4 Bônus Exclusivos de Alto Valor",
+    bonuses_desc: "Ferramentas avançadas, e-books e planilhas desenvolvidas para acelerar seus resultados e dar uma vantagem competitiva profissional como treinador ou atleta.",
+    bonus_real_val: "Valor real:",
+    bonus_btn: "Acessar Bônus Grátis",
+    resources_kicker: "Caixa de Ferramentas do Treinador",
+    resources_title: "Recursos para Download, PDFs & Planilhas",
+    resources_desc: "Baixe checklists, calculadoras calóricas, formulários de avaliação postural e modelos prontos para utilizar em suas rotinas de treino e consultoria.",
+    res_downloads: "downloads",
+    res_btn_download: "Baixar",
+    community_kicker: "Comunidade Exclusiva de Treinadores e Atletas",
+    community_title: "Feed de Discussões VIP",
+    community_desc: "Conecte-se com outros membros, tire dúvidas sobre biomecânica, compartilhe evoluções e receba feedbacks da equipe técnica.",
+    community_prompt: "O que você está treinando hoje?",
+    community_placeholder: "Compartilhe suas dúvidas sobre execução, recordes pessoais ou dúvidas com a comunidade...",
+    community_post_btn: "Publicar",
+    community_leaderboard: "Classificação",
+    community_guidelines: "Regras da Comunidade",
+    community_rule1: "✓ Respeito mútuo e feedback construtivo.",
+    community_rule2: "✓ Discussões focadas em biomecânica e treinamento.",
+    community_rule3: "✓ Proibido spam ou divulgações externas.",
+    support_kicker: "Central de Ajuda ao Aluno",
+    support_title: "Suporte Técnico & Perguntas Frequentes",
+    support_desc: "Encontre respostas imediatas para suas dúvidas ou fale diretamente com a nossa equipe de suporte dedicada.",
+    support_wa_title: "Suporte via WhatsApp",
+    support_wa_desc: "Atendimento prioritário de Segunda a Sábado das 9h às 20h para dúvidas sobre acesso e suporte imediato.",
+    support_wa_btn: "Conversar no WhatsApp",
+    support_email_title: "Suporte por E-mail",
+    support_email_desc: "Escreva para suporte@workoutgifs.com para dúvidas técnicas, alteração de dados de acesso ou financeiro.",
+    support_email_btn: "Enviar E-mail",
+    support_tutorial_badge: "Tutorial de Boas-Vindas",
+    support_tutorial_title: "Como enviar GIFs para seus clientes em 3 toques?",
+    support_tutorial_desc: "Veja este vídeo rápido de 3 minutos demonstrando como usar a biblioteca direto no seu celular.",
+    support_tutorial_btn: "Assistir ao Vídeo Tutorial",
+    support_faq_title: "Perguntas Frequentes",
+    modal_preview_badge: "Prévia em GIF HD",
+    modal_btn_drive: "Abrir Pasta no Google Drive ↗",
+    modal_btn_copy: "Copiar Link",
+    modal_btn_download: "Baixar GIF",
+    modal_btn_save: "Salvar",
+    modal_btn_saved: "Salvo na Lista",
+    modal_tab_cues: "Instruções & Dicas Técnicas",
+    modal_tab_next: "Próximos Exercícios",
+    modal_tab_notes: "Minhas Anotações",
+    modal_tab_qa: "Perguntas & Dúvidas",
+    modal_cues_title: "Pontos Críticos de Execução:",
+    modal_cheat_sheet: "Ficha técnica anexa:",
+    modal_btn_download_file: "Baixar",
+    modal_notes_desc: "Digite suas anotações pessoais para este exercício. Elas são salvas automaticamente no seu navegador.",
+    modal_notes_placeholder: "ex: Ajustar o banco a 75 graus para isolar o deltoide anterior e proteger o ombro...",
+    modal_notes_autosave: "✓ Salvamento automático ativo",
+    modal_qa_placeholder: "Envie uma dúvida técnica para a equipe sobre este exercício...",
+    modal_qa_submit: "Enviar",
+    modal_qa_featured_title: "Dúvida em Destaque:",
+    modal_qa_featured_q: "Se meu aluno tiver pouca mobilidade de tornozelo, posso calçar o calcanhar com anilhas pequenas?",
+    modal_qa_featured_ans: "Resposta do Treinador: Sim, elevar levemente os calcanhares ajuda a manter o tronco ereto enquanto você trabalha simultaneamente a dorsiflexão.",
+    modal_status_completed: "Concluído ✓",
+    modal_status_mark_completed: "Marcar como Concluído",
+    card_preview_btn: "Ver GIF",
+    card_drive_btn: "Drive ↗",
+    card_drive_folder: "Pasta do Drive",
+    card_explore_btn: "Explorar",
+    card_classes_label: "Pastas",
+    card_completed_label: "concluído",
+    card_save_fav: "Salvar nos Favoritos",
+    card_remove_fav: "Remover dos Favoritos",
+    toast_link_copied: "Link do Google Drive copiado para a área de transferência!",
+    toast_saved_list: "✓ Salvo na sua lista de favoritos.",
+    toast_removed_list: "Removido da sua lista de favoritos.",
+    toast_class_completed: "🎉 Exercício concluído! Progresso atualizado.",
+    toast_class_pending: "Exercício marcado como pendente.",
+    toast_logged_out: "Você se desconectou com sucesso.",
+    toast_lang_changed: "Idioma alterado para Português (Brasil) 🇧🇷",
+    toast_post_shared: "Publicação compartilhada com a comunidade!",
+    toast_post_empty: "Por favor, escreva algo antes de publicar.",
+    toast_sync: "Dados do usuário sincronizados com sucesso.",
+    logout_confirm: "Tem certeza de que deseja sair do Workout GIFs?"
+  },
+  'en-US': {
+    doc_title: "Workout GIFs • High-Performance Streaming Platform",
+    login_tagline: "Streaming Education Platform",
+    login_title: "Sign In",
+    login_instruction: "Enter the email address and password used at the time of purchase.",
+    login_email_label: "Email Address",
+    login_email_placeholder: "name@example.com",
+    login_pass_label: "Password",
+    login_forgot_pass: "Forgot it?",
+    login_remember_me: "Remember my login",
+    login_instant_access: "Instant Access",
+    login_btn: "Access Platform",
+    login_footer: "256-Bit Secure Access • Guaranteed Lifetime Membership",
+    login_err_both: "Please enter both your email address and password to continue.",
+    login_err_email: "Please enter a valid email address.",
+    login_err_pass: "Incorrect password. Please verify your credentials and try again.",
+    login_forgot_msg: "If you forgot your password or need assistance accessing Workout GIFs, please contact support via the Help Center or email support@workoutgifs.com.",
+    nav_home: "Home",
+    nav_modules: "Modules",
+    nav_classes: "Classes",
+    nav_bonuses: "Bonuses",
+    nav_resources: "Resources",
+    nav_community: "Community",
+    nav_support: "Support",
+    nav_profile: "My Profile",
+    nav_search_placeholder: "Search exercises, muscle groups, techniques...",
+    nav_drive_vault: "Drive Vault ↗",
+    notif_title: "Recent Notifications",
+    notif_mark_read: "Mark all as read",
+    notif_item1: "New MasterClass added: Squat Biomechanics in 4K.",
+    notif_item2: "Bonus unlocked: Automated Periodization Spreadsheet V3.",
+    notif_item3: "Active Community: Coach Mateo shared a new case study.",
+    profile_plan_pill: "Lifetime Pro Membership",
+    dropdown_lang_label: "Idioma / Language",
+    profile_dropdown_profile: "My Profile & Progress",
+    profile_dropdown_saved: "My Saved Classes",
+    profile_dropdown_help: "Help Center & FAQ",
+    profile_dropdown_logout: "Sign Out",
+    profile_kicker: "Your Account",
+    profile_title: "My Profile & Learning Progress",
+    profile_desc: "Track your study metrics, completed lessons, daily streak, and manage your saved video collection.",
+    profile_sync_btn: "Sync",
+    profile_logout_btn: "Sign Out",
+    profile_lang_setting_title: "Language Preference / Idioma",
+    profile_lang_setting_desc: "Switch between Brazilian Portuguese and English across the entire platform.",
+    profile_stat1_label: "Overall Progress",
+    profile_stat1_sub: "Of total curriculum",
+    profile_stat2_label: "Completed Classes",
+    profile_stat2_sub: "Logged on your account",
+    profile_stat3_label: "Training Hours",
+    profile_stat3_val: "18.5 hrs",
+    profile_stat3_sub: "Total watch time",
+    profile_stat4_label: "Study Streak",
+    profile_stat4_val: "5 Days 🔥",
+    profile_stat4_sub: "Keep up the momentum!",
+    profile_saved_title: "My Saved Classes",
+    profile_saved_empty_title: "You have no saved classes yet",
+    profile_saved_empty_desc: "Click the bookmark icon on any lesson to keep it easily accessible here.",
+    drawer_all_modules: "All Modules",
+    drawer_section_modules: "TRAINING MODULES",
+    drawer_mod_barbell: "Barbell Exercises",
+    drawer_mod_dumbbell: "Dumbbell Exercises",
+    drawer_mod_machine: "Machine Exercises",
+    drawer_mod_cable: "Cable & Pulley",
+    drawer_mod_kettlebell: "Kettlebell Exercises",
+    drawer_mod_superband: "Superband Exercises",
+    drawer_section_sections: "PLATFORM SECTIONS",
+    drawer_sec_classes: "Classes & Videos",
+    drawer_sec_bonuses: "4 Exclusive Bonuses",
+    drawer_sec_resources: "Resources & PDFs",
+    drawer_sec_community: "VIP Community",
+    drawer_sec_support: "Technical Support",
+    drawer_sec_profile: "My Profile",
+    drawer_logout: "Sign Out",
+    hero_kicker: "🔥 #1 EXERCISE GIF STREAMING LIBRARY",
+    hero_pill1: "1,000+ HD EXERCISES",
+    hero_pill2: "GOOGLE DRIVE VAULT",
+    hero_title: "WORKOUT GIFS VAULT: PINPOINT BIOMECHANICS & EXERCISE DEMOS",
+    hero_desc: "Instant visual demonstrations for every muscle group and piece of equipment. Explore the complete Barbell, Dumbbell, Machine, Cable, and Functional exercise collection directly in Google Drive with one click.",
+    hero_meta_match: "100% Match",
+    hero_meta_vault: "2026 Vault",
+    hero_meta_suites: "6 Equipment Suites",
+    hero_meta_gifs: "1,000+ GIFs",
+    hero_meta_connected: "Google Drive Connected",
+    hero_btn_vault: "Open Full Drive Vault",
+    hero_btn_preview: "Preview Sample GIF",
+    row_barbell_title: "Barbell Exercises",
+    row_barbell_badge: "Gym & Free Weights",
+    row_dumbbell_title: "Dumbbell Exercises",
+    row_dumbbell_badge: "Symmetry & Isolation",
+    row_machine_title: "Machine, Hack & Bench Exercises",
+    row_machine_badge: "Guided Motion & Safety",
+    row_cable_title: "Cable & Pulley Exercises",
+    row_cable_badge: "Continuous Tension",
+    row_kettlebell_title: "Kettlebell Exercises",
+    row_kettlebell_badge: "Explosive Power & Hinges",
+    row_superband_title: "Superband Exercises",
+    row_superband_badge: "Elastic Resistance & Mobility",
+    row_open_drive: "Open Drive Folder",
+    promo_kicker: "Don't forget your gifts!",
+    promo_title: "You Have 4 Exclusive Bonuses Worth $297 USD Unlocked",
+    promo_desc: "Includes the Master Hypertrophy Manual, Posture Correction Guide, 150 High-Protein Recipes, and the Automated Periodization Spreadsheet.",
+    promo_btn: "View & Download Bonuses",
+    modules_kicker: "Complete Learning Curriculum",
+    modules_title: "Training Modules",
+    modules_desc: "Explore the structured step-by-step curriculum. From core biomechanical foundations to advanced loading periodization and hypertrophy techniques.",
+    classes_kicker: "Streaming Exercise GIF Library",
+    classes_title: "All Exercise GIFs & Direct Drive Folders",
+    classes_desc: "Filter by equipment type or target muscle group, or search directly for any exercise to preview animated GIFs and jump straight into Google Drive.",
+    chip_todos: "All Categories",
+    chip_barbell: "Barbell",
+    chip_dumbbell: "Dumbbells",
+    chip_machine: "Machines",
+    chip_cable: "Cables",
+    chip_kettlebell: "Kettlebell",
+    chip_superband: "Superband",
+    chip_abs: "Abs & Core",
+    chip_arms: "Arms",
+    chip_chest: "Chest",
+    chip_back: "Back",
+    chip_legs: "Legs",
+    chip_shoulders: "Shoulders",
+    chip_calves: "Calves",
+    chip_traps: "Trapezius",
+    class_search_placeholder: "Filter by exercise name or technique...",
+    classes_no_match_title: "No classes found matching your criteria",
+    classes_no_match_desc: "Try selecting another category or clearing your search query.",
+    bonuses_kicker: "VIP Exclusive Materials",
+    bonuses_title: "Your 4 Exclusive High-Value Bonuses",
+    bonuses_desc: "Advanced tools, e-books, and spreadsheets built to accelerate your results and give you an unfair competitive advantage as an athlete or fitness coach.",
+    bonus_real_val: "Real value:",
+    bonus_btn: "Access Free Bonus",
+    resources_kicker: "Coach & Athlete Toolbox",
+    resources_title: "Downloadable Resources, PDFs & Spreadsheets",
+    resources_desc: "Download checklists, calorie calculators, postural assessment templates, and done-for-you client forms ready to use in your coaching sessions.",
+    res_downloads: "downloads",
+    res_btn_download: "Download",
+    community_kicker: "Private Student & Coach Community",
+    community_title: "VIP Discussion Feed",
+    community_desc: "Connect with fellow members, share physique progress, ask biomechanics questions, and get feedback from certified coaches.",
+    community_prompt: "What are you training today?",
+    community_placeholder: "Share your form questions, PR milestones, or client wins with the community...",
+    community_post_btn: "Post",
+    community_leaderboard: "Leaderboard",
+    community_guidelines: "Community Guidelines",
+    community_rule1: "✓ Mutual respect and constructive feedback.",
+    community_rule2: "✓ High-quality discussions on biomechanics and training.",
+    community_rule3: "✓ No spam or unauthorized external promotions.",
+    support_kicker: "Student Help Center",
+    support_title: "Technical Support & Frequently Asked Questions",
+    support_desc: "Find instant answers to common questions or reach out directly to our dedicated support team.",
+    support_wa_title: "WhatsApp Support",
+    support_wa_desc: "Direct priority assistance Monday to Saturday from 9:00 AM to 8:00 PM for login issues and immediate guidance.",
+    support_wa_btn: "Chat on WhatsApp",
+    support_email_title: "Email Support",
+    support_email_desc: "Write to us at support@workoutgifs.com for technical inquiries, credential changes, or billing questions.",
+    support_email_btn: "Send an Email",
+    support_tutorial_badge: "Onboarding Tutorial",
+    support_tutorial_title: "How to send GIFs to your clients in 3 taps?",
+    support_tutorial_desc: "Watch this quick 3-minute video showing you how to navigate the library directly from your smartphone.",
+    support_tutorial_btn: "Watch Video Tutorial",
+    support_faq_title: "Frequently Asked Questions",
+    modal_preview_badge: "HD GIF Preview",
+    modal_btn_drive: "Open Google Drive Folder ↗",
+    modal_btn_copy: "Copy Link",
+    modal_btn_download: "Download GIF",
+    modal_btn_save: "Save",
+    modal_btn_saved: "In My List",
+    modal_tab_cues: "Key Takeaways & Form Cues",
+    modal_tab_next: "Next Lessons",
+    modal_tab_notes: "My Personal Notes",
+    modal_tab_qa: "Student Q&A",
+    modal_cues_title: "Critical Coaching Cues:",
+    modal_cheat_sheet: "Attached cheat sheet:",
+    modal_btn_download_file: "Download",
+    modal_notes_desc: "Type your private notes for this lesson. They are automatically saved to your browser.",
+    modal_notes_placeholder: "e.g. Set bench to 75 degrees to isolate the anterior deltoid and prevent impingement...",
+    modal_notes_autosave: "✓ Auto-save active",
+    modal_qa_placeholder: "Ask the coaching team a question about this lesson...",
+    modal_qa_submit: "Submit",
+    modal_qa_featured_title: "Featured Question:",
+    modal_qa_featured_q: "If my client has tight calves, should I elevate their heels on small plates?",
+    modal_qa_featured_ans: "Coach Answer: Yes, slightly elevating the heels helps maintain an upright torso while you concurrently work on ankle dorsiflexion mobility drills.",
+    modal_status_completed: "Completed ✓",
+    modal_status_mark_completed: "Mark as Completed",
+    card_preview_btn: "Preview GIF",
+    card_drive_btn: "Drive ↗",
+    card_drive_folder: "Drive Folder",
+    card_explore_btn: "Explore",
+    card_classes_label: "Classes",
+    card_completed_label: "completed",
+    card_save_fav: "Save to My List",
+    card_remove_fav: "Remove from My List",
+    toast_link_copied: "Google Drive link copied to clipboard!",
+    toast_saved_list: "✓ Saved to My List.",
+    toast_removed_list: "Removed from My List.",
+    toast_class_completed: "🎉 Class completed! Progress updated.",
+    toast_class_pending: "Class marked as pending.",
+    toast_logged_out: "You have successfully signed out.",
+    toast_lang_changed: "Language changed to English (US) 🇺🇸",
+    toast_post_shared: "Post shared with the community!",
+    toast_post_empty: "Please write something before publishing.",
+    toast_sync: "User data synchronized.",
+    logout_confirm: "Are you sure you want to sign out of Workout GIFs?"
+  }
+};
+
+const MUSCLE_NAMES = {
+  'ABDOMINAIS': { 'pt-BR': 'Abdominais', 'en-US': 'Abs & Core' },
+  'ANTEBRAÇO': { 'pt-BR': 'Antebraço', 'en-US': 'Forearms' },
+  'BICEPS': { 'pt-BR': 'Bíceps', 'en-US': 'Biceps' },
+  'COSTAS': { 'pt-BR': 'Costas', 'en-US': 'Back' },
+  'OMBRO': { 'pt-BR': 'Ombros', 'en-US': 'Shoulders' },
+  'PANTURRILHA': { 'pt-BR': 'Panturrilhas', 'en-US': 'Calves' },
+  'PEITORAL': { 'pt-BR': 'Peitoral', 'en-US': 'Chest' },
+  'PERNAS': { 'pt-BR': 'Pernas', 'en-US': 'Legs' },
+  'TRAPEZIO': { 'pt-BR': 'Trapézio', 'en-US': 'Trapezius' },
+  'TRICEPS': { 'pt-BR': 'Tríceps', 'en-US': 'Triceps' }
+};
+
+const EQUIPMENT_NAMES = {
+  'barbell': { 'pt-BR': 'Barra', 'en-US': 'Barbell', categoryPt: 'Exercícios com Barra', categoryEn: 'Barbell Exercises' },
+  'dumbbell': { 'pt-BR': 'Halteres', 'en-US': 'Dumbbell', categoryPt: 'Exercícios com Halteres', categoryEn: 'Dumbbell Exercises' },
+  'machine': { 'pt-BR': 'Máquina', 'en-US': 'Machine', categoryPt: 'Exercícios na Máquina', categoryEn: 'Machine Exercises' },
+  'cable': { 'pt-BR': 'Cabo', 'en-US': 'Cable', categoryPt: 'Exercícios no Cabo e Polia', categoryEn: 'Cable & Pulley' },
+  'kettlebell': { 'pt-BR': 'Kettlebell', 'en-US': 'Kettlebell', categoryPt: 'Exercícios com Kettlebell', categoryEn: 'Kettlebell Exercises' },
+  'superband': { 'pt-BR': 'Superband', 'en-US': 'Superband', categoryPt: 'Exercícios com Superband', categoryEn: 'Superband Exercises' }
+};
+
+const MODULES_LOCALIZED = {
+  'mod-barbell': {
+    'pt-BR': {
+      title: 'Exercícios com Barra',
+      subtitle: 'EXERCÍCIOS COM BARRAS • Pesos Livres',
+      desc: '10 pastas por grupo muscular: Abdominais, Antebraço, Bíceps, Costas, Ombros, Panturrilhas, Peitoral, Pernas, Trapézio e Tríceps no Google Drive.',
+      badge: '10 Pastas'
+    },
+    'en-US': {
+      title: 'Barbell Exercises',
+      subtitle: 'EXERCÍCIOS COM BARRAS • Free Weights',
+      desc: '10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.',
+      badge: '10 Folders'
+    }
+  },
+  'mod-dumbbell': {
+    'pt-BR': {
+      title: 'Exercícios com Halteres',
+      subtitle: 'EXERCÍCIOS COM HALTERES • Treino Unilateral',
+      desc: '10 pastas por grupo muscular: Abdominais, Antebraço, Bíceps, Costas, Ombros, Panturrilhas, Peitoral, Pernas, Trapézio e Tríceps no Google Drive.',
+      badge: '10 Pastas'
+    },
+    'en-US': {
+      title: 'Dumbbell Exercises',
+      subtitle: 'EXERCÍCIOS COM HALTERES • Unilateral Form',
+      desc: '10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.',
+      badge: '10 Folders'
+    }
+  },
+  'mod-machine': {
+    'pt-BR': {
+      title: 'Exercícios na Máquina, Hack e Banco',
+      subtitle: 'EXERCÍCIOS NA MÁQUINA, HACK E BANCO • Isolamento',
+      desc: '10 pastas por grupo muscular: Abdominais, Antebraço, Bíceps, Costas, Ombros, Panturrilhas, Peitoral, Pernas, Trapézio e Tríceps no Google Drive.',
+      badge: '10 Pastas'
+    },
+    'en-US': {
+      title: 'Machine, Hack & Bench Exercises',
+      subtitle: 'EXERCÍCIOS NA MAQUINA - HACK - BANCO • Isolation',
+      desc: '10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.',
+      badge: '10 Folders'
+    }
+  },
+  'mod-cable': {
+    'pt-BR': {
+      title: 'Exercícios no Cabo e Polia',
+      subtitle: 'EXERCÍCIOS NO CABO OU POLIA • Tensão Contínua',
+      desc: '9 pastas por grupo muscular: Abdominais, Antebraço, Bíceps, Costas, Ombros, Peitoral, Pernas, Trapézio e Tríceps no Google Drive.',
+      badge: '9 Pastas'
+    },
+    'en-US': {
+      title: 'Cable & Pulley Exercises',
+      subtitle: 'EXERCÍCIOS NO CABO OU POLIA • Continuous Tension',
+      desc: '9 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Chest, Legs, Trapezius, and Triceps stored in Google Drive.',
+      badge: '9 Folders'
+    }
+  },
+  'mod-kettlebell': {
+    'pt-BR': {
+      title: 'Exercícios com Kettlebell',
+      subtitle: 'KETTLEBELL • Potência e Explosão',
+      desc: '10 pastas por grupo muscular: Abdominais, Antebraço, Bíceps, Costas, Ombros, Panturrilhas, Peitoral, Pernas, Trapézio e Tríceps no Google Drive.',
+      badge: '10 Pastas'
+    },
+    'en-US': {
+      title: 'Kettlebell Exercises',
+      subtitle: 'KETTLEBELL • Explosive Hip Hinges & Power',
+      desc: '10 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Calves, Chest, Legs, Trapezius, and Triceps stored in Google Drive.',
+      badge: '10 Folders'
+    }
+  },
+  'mod-superband': {
+    'pt-BR': {
+      title: 'Exercícios com Superband',
+      subtitle: 'SUPERBAND • Resistência Elástica e Mobilidade',
+      desc: '8 pastas por grupo muscular: Abdominais, Antebraço, Bíceps, Costas, Ombros, Peitoral, Pernas e Tríceps no Google Drive.',
+      badge: '8 Pastas'
+    },
+    'en-US': {
+      title: 'Superband Exercises',
+      subtitle: 'SUPERBAND • Elastic Resistance & Mobility',
+      desc: '8 muscle-group folders: Abs & Core, Forearms, Biceps, Back, Shoulders, Chest, Legs, and Triceps stored in Google Drive.',
+      badge: '8 Folders'
+    }
+  }
+};
+
+const BONUSES_I18N = {
+  'bonus-1': {
+    'pt-BR': {
+      tag: "Bônus Exclusivo 01",
+      title: "Manual Mestre de Hipertrofia & Biomecânica",
+      desc: "Um guia ilustrado de mais de 120 páginas detalhando a anatomia muscular e os vetores de força de cada movimento chave. Domine a ciência por trás de cada correção e eleve sua autoridade.",
+      badge: "E-Book Elite"
+    },
+    'en-US': {
+      tag: "Exclusive Bonus 01",
+      title: "Master Manual of Hypertrophy & Biomechanics",
+      desc: "A 120+ page illustrated guide detailing muscle anatomy and force vectors for every key lift. Master the science behind every coaching cue and elevate your authority.",
+      badge: "Elite E-Book"
+    }
+  },
+  'bonus-2': {
+    'pt-BR': {
+      tag: "Bônus Exclusivo 02",
+      title: "Guia Rápido de Correção de Postura & Erros Comuns",
+      desc: "Checklist direto ao ponto cobrindo os 50 erros mais comuns da academia e as orientações verbais exatas para corrigir seus alunos em menos de 10 segundos.",
+      badge: "Checklist de Bolso"
+    },
+    'en-US': {
+      tag: "Exclusive Bonus 02",
+      title: "Quick Form Correction & Mistake Fix Guide",
+      desc: "Straight-to-the-point pocket checklist covering the 50 most common gym mistakes and the exact verbal cues to correct your clients in under 10 seconds.",
+      badge: "Pocket Checklist"
+    }
+  },
+  'bonus-3': {
+    'pt-BR': {
+      tag: "Bônus Exclusivo 03",
+      title: "150 Receitas Fitness de Alta Performance & Anabólicas",
+      desc: "Uma coleção pronta para compartilhar com seus alunos: cafés da manhã, almoços, jantares e lanches ricos em proteína com tabela completa de calorias e macronutrientes.",
+      badge: "Livro de Receitas Pro"
+    },
+    'en-US': {
+      tag: "Exclusive Bonus 03",
+      title: "150 High-Performance & Anabolic Fitness Recipes",
+      desc: "A ready-to-use collection to share with your clients: high-protein breakfasts, lunches, dinners, and snacks with complete calorie and macro breakdowns.",
+      badge: "Pro Cookbook"
+    }
+  },
+  'bonus-4': {
+    'pt-BR': {
+      tag: "Bônus Exclusivo 04",
+      title: "Planilha Automatizada de Periodização & Carga",
+      desc: "Modelo pronto para Excel e Google Sheets formulado para calcular tonelagem semanal, progressão de carga, índices de fadiga e gráficos visuais de evolução do aluno.",
+      badge: "Planilha Excel / Sheets"
+    },
+    'en-US': {
+      tag: "Exclusive Bonus 04",
+      title: "Automated Periodization & Loading Spreadsheet",
+      desc: "Done-for-you Excel and Google Sheets template formulated to calculate weekly tonnage, load progression, fatigue scores, and visual client progress charts.",
+      badge: "Excel / Sheets Sheet"
+    }
+  },
+  'bonus-5': {
+    'pt-BR': {
+      tag: "Bônus Exclusivo 05",
+      title: "MasterClass: Escalando Consultoria Online para R$ 10.000/mês",
+      desc: "Aprenda o método exato de captação de clientes e entrega de GIFs pelo WhatsApp para fechar consultorias de alto valor sem perder horas montando treinos.",
+      badge: "MasterClass em Vídeo"
+    },
+    'en-US': {
+      tag: "Exclusive Bonus 05",
+      title: "MasterClass: Scaling Online Coaching to $3,000/mo",
+      desc: "Learn the exact client acquisition system and WhatsApp GIF delivery method that lets you sign high-ticket coaching clients without spending hours programming.",
+      badge: "Video MasterClass"
+    }
+  }
+};
+
+const RESOURCES_I18N = {
+  'res-1': {
+    'pt-BR': {
+      title: "Ficha de Avaliação Postural & Mobilidade Inicial",
+      desc: "Modelo de avaliação clínica em PDF para testar dorsiflexão, extensão torácica e mobilidade de quadril em novos alunos."
+    },
+    'en-US': {
+      title: "Initial Postural & Mobility Assessment Form",
+      desc: "Clinical evaluation template in PDF to test dorsiflexion, thoracic extension, and hip mobility in new clients."
+    }
+  },
+  'res-2': {
+    'pt-BR': {
+      title: "Calculadora de TMB, Gasto Calórico & Macronutrientes",
+      desc: "Planilha inteligente programada com as equações de Harris-Benedict e Cunningham para ajustes precisos de dieta."
+    },
+    'en-US': {
+      title: "TDEE, BMR & Caloric Expenditure Calculator",
+      desc: "Smart spreadsheet programmed with Harris-Benedict and Cunningham equations for precise macro adjustments."
+    }
+  },
+  'res-3': {
+    'pt-BR': {
+      title: "Checklist de Execução: 25 Exercícios Fundamentais",
+      desc: "Protocolo visual passo a passo com critérios objetivos para avaliar a técnica dos seus alunos."
+    },
+    'en-US': {
+      title: "Execution Checklist: 25 Fundamental Lifts",
+      desc: "Step-by-step observational protocol with visual checkpoint cues to assess your clients' technical form."
+    }
+  },
+  'res-4': {
+    'pt-BR': {
+      title: "Contrato de Prestação de Serviços para Consultoria Fitness",
+      desc: "Modelo de contrato jurídico elaborado para personal trainers e consultores com termos de responsabilidade e pagamento."
+    },
+    'en-US': {
+      title: "Online Fitness Coaching Client Service Agreement",
+      desc: "Legal contract template crafted for personal trainers and coaches with liability waivers and payment terms."
+    }
+  },
+  'res-5': {
+    'pt-BR': {
+      title: "Guia Baseado em Evidências sobre Suplementação Esportiva",
+      desc: "Classificação científica (Classes A, B, C) sobre creatina, cafeína, whey protein e beta-alanina."
+    },
+    'en-US': {
+      title: "Evidence-Based Sports Supplementation Guide",
+      desc: "Scientific grading (Class A, B, C) on creatine monohydrate, caffeine, whey isolate, and beta-alanine."
+    }
+  },
+  'res-6': {
+    'pt-BR': {
+      title: "Modelo de Ficha de Treino Semanal Preenchível em PDF",
+      desc: "Layout profissional para organizar divisões semanais com links diretos para os GIFs dos exercícios em alta resolução."
+    },
+    'en-US': {
+      title: "Weekly Workout Schedule Template in Fillable PDF",
+      desc: "Sleek and clean layout to organize weekly split routines with direct links to high-resolution exercise GIFs."
+    }
+  }
+};
+
+const FAQ_DATA_I18N = {
+  'pt-BR': [
+    {
+      q: "Como acesso a plataforma e por quanto tempo terei acesso?",
+      a: "Você tem acesso 100% vitalício e ilimitado. Pode acessar 24 horas por dia, 7 dias por semana, de qualquer computador, tablet ou smartphone. Seus dados de acesso são o e-mail e senha cadastrados no checkout."
+    },
+    {
+      q: "Como posso enviar os GIFs de exercícios para meus alunos via WhatsApp?",
+      a: "É super simples! Dentro do catálogo de exercícios, você pode visualizar ou salvar qualquer GIF em alta resolução direto no celular e encaminhar no WhatsApp, Telegram, direct do Instagram em apenas 2 toques."
+    },
+    {
+      q: "Terei acesso a futuras atualizações e novos módulos adicionados?",
+      a: "Sim! Como membro vitalício, todas as novas categorias, expansões de GIFs e materiais para download serão disponibilizados automaticamente na sua conta sem nenhum custo adicional."
+    },
+    {
+      q: "Posso utilizar esses materiais comercialmente com meus clientes e alunos de consultoria?",
+      a: "Com certeza. Sua compra inclui licença de uso para aplicar com seus próprios alunos e clientes de consultoria presencial ou online sem restrições."
+    },
+    {
+      q: "O que devo fazer se tiver dúvidas sobre a execução de um exercício?",
+      a: "Você pode deixar sua dúvida diretamente na aba de perguntas abaixo do exercício, ou publicar no feed da Comunidade VIP. Nossa equipe técnica responde com agilidade."
+    },
+    {
+      q: "Como faço para baixar os bônus e planilhas em PDF/Excel?",
+      a: "Acesse a aba 'Bônus' ou 'Recursos' no menu de navegação. Basta clicar no botão de download em qualquer material e o arquivo será salvo diretamente no seu dispositivo."
+    }
+  ],
+  'en-US': [
+    {
+      q: "How do I access the platform and how long do I have access?",
+      a: "You have 100% lifetime, unlimited access. You can log in 24 hours a day, 7 days a week, from any desktop computer, tablet, or smartphone. Your login credentials are the email and password you used at checkout."
+    },
+    {
+      q: "How can I send the exercise GIFs to my clients via WhatsApp?",
+      a: "It's super easy! Inside the exercise library, you can preview or save any high-resolution GIF directly to your phone or forward it immediately via WhatsApp, Telegram, iMessage, or Instagram in just 2 taps."
+    },
+    {
+      q: "Do I get access to future updates and newly released modules?",
+      a: "Yes! As a lifetime member, all new classes, specialized masterclasses, expanded exercise GIFs, and downloadable templates will be added automatically to your account with zero additional fees."
+    },
+    {
+      q: "Can I use these materials commercially with my private clients?",
+      a: "Absolutely. Your purchase includes a full commercial license allowing you to share the form GIFs, mistake checklists, and periodization spreadsheets with your own students worry-free."
+    },
+    {
+      q: "What should I do if I have questions about an exercise technique?",
+      a: "You can post your question directly in the 'Student Q&A' tab underneath any lesson, or start a discussion in the VIP Community feed. Our coaching team and community will assist you quickly."
+    },
+    {
+      q: "How do I download the bonuses and PDF/Excel resources?",
+      a: "Navigate to the 'Bonuses' or 'Resources' tabs in the top navigation bar. Simply click the download button on any asset, and it will be saved straight to your device."
+    }
+  ]
+};
+
+/* ==========================================================================
+   IN-MEMORY DATABASE (MULTI-LANGUAGE CATALOG)
    ========================================================================== */
 
 // 1. Program Modules / Equipment Suites (Matching Google Drive ACADEMIA)
@@ -2062,8 +2778,18 @@ const AppState = {
   completedLessons: new Set(),
   myList: new Set(),
   userNotes: {},
+  currentLang: localStorage.getItem('workout_gifs_lang') || 'pt-BR',
   
   init() {
+    // 0. Load language preference (defaults to pt-BR)
+    const savedLang = localStorage.getItem('workout_gifs_lang');
+    if (savedLang && (savedLang === 'pt-BR' || savedLang === 'en-US')) {
+      this.currentLang = savedLang;
+    } else {
+      this.currentLang = 'pt-BR';
+      localStorage.setItem('workout_gifs_lang', 'pt-BR');
+    }
+
     // 1. Load user from storage
     const savedUser = sessionStorage.getItem('workout_gifs_user') || localStorage.getItem('workout_gifs_user');
     if (savedUser) {
@@ -2152,11 +2878,139 @@ document.addEventListener('DOMContentLoaded', () => {
   if (loginEmailInput) loginEmailInput.value = '';
   if (loginPasswordInput) loginPasswordInput.value = '';
   
+  // Apply language state immediately
+  updateLanguageUI();
+  applyI18nTranslations();
+
+  // Language selectors binding
+  const loginLangBtn = document.getElementById('ff-login-lang-btn');
+  const loginLangMenu = document.getElementById('ff-login-lang-menu');
+  const loginLangWrap = document.getElementById('ff-login-lang-wrap');
+  
+  if (loginLangBtn && loginLangMenu) {
+    loginLangBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      loginLangMenu.classList.toggle('ff-hidden');
+    });
+  }
+  
+  document.querySelectorAll('.ff-lang-option').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const selectedLang = opt.getAttribute('data-lang');
+      if (selectedLang) {
+        window.setLanguage(selectedLang);
+        if (loginLangMenu) loginLangMenu.classList.add('ff-hidden');
+      }
+    });
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (loginLangWrap && !loginLangWrap.contains(e.target) && loginLangMenu) {
+      loginLangMenu.classList.add('ff-hidden');
+    }
+  });
+
+  document.querySelectorAll('.ff-lang-chip').forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const selectedLang = chip.getAttribute('data-lang');
+      if (selectedLang) {
+        window.setLanguage(selectedLang);
+      }
+    });
+  });
+
   // Session check
   if (AppState.user) {
     showMainApp();
   } else {
     showLoginScreen();
+  }
+  
+  // Global setLanguage function
+  window.setLanguage = function(lang, showToastNotification = true) {
+    if (lang !== 'pt-BR' && lang !== 'en-US') return;
+    AppState.currentLang = lang;
+    localStorage.setItem('workout_gifs_lang', lang);
+    
+    updateLanguageUI();
+    applyI18nTranslations();
+    
+    // Re-render components with localized strings
+    renderHomeCarousels();
+    renderModulesGrid();
+    renderClassesGrid();
+    renderBonusesGrid();
+    renderResourcesGrid();
+    renderFaqAccordion();
+    renderProfileSavedList();
+    
+    const playerModal = document.getElementById('ff-player-modal');
+    if (playerModal && playerModal.classList.contains('ff-modal-open') && AppState.activeLessonId) {
+      window.openPlayerModal(AppState.activeLessonId);
+    }
+    
+    if (showToastNotification) {
+      const msg = lang === 'pt-BR' ? 'Idioma alterado para Português (Brasil) 🇧🇷' : 'Language changed to English (US) 🇺🇸';
+      showToast(msg, 'fa-solid fa-globe');
+    }
+  };
+
+  function updateLanguageUI() {
+    const lang = AppState.currentLang || 'pt-BR';
+    
+    const loginCurrent = document.getElementById('ff-login-lang-current');
+    if (loginCurrent) {
+      loginCurrent.textContent = lang === 'pt-BR' ? 'Português (BR)' : 'English (US)';
+    }
+    
+    document.querySelectorAll('.ff-lang-option').forEach(opt => {
+      if (opt.getAttribute('data-lang') === lang) {
+        opt.classList.add('ff-active');
+      } else {
+        opt.classList.remove('ff-active');
+      }
+    });
+    
+    document.querySelectorAll('.ff-lang-chip').forEach(chip => {
+      if (chip.getAttribute('data-lang') === lang) {
+        chip.classList.add('ff-active');
+      } else {
+        chip.classList.remove('ff-active');
+      }
+    });
+  }
+
+  function applyI18nTranslations() {
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+    
+    if (dict.doc_title) {
+      document.title = dict.doc_title;
+    }
+    
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.textContent = dict[key];
+      }
+    });
+    
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.placeholder = dict[key];
+      }
+    });
+    
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (dict[key] !== undefined) {
+        el.title = dict[key];
+      }
+    });
   }
   
   // Show Login Screen
@@ -2167,6 +3021,8 @@ document.addEventListener('DOMContentLoaded', () => {
       loginAlert.classList.add('ff-hidden');
       loginAlert.textContent = '';
     }
+    updateLanguageUI();
+    applyI18nTranslations();
     loginScreen.classList.remove('ff-hidden');
     loginScreen.style.opacity = '1';
     loginScreen.style.visibility = 'visible';
@@ -2180,6 +3036,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       loginScreen.classList.add('ff-hidden');
       mainApp.classList.remove('ff-hidden');
+      updateLanguageUI();
+      applyI18nTranslations();
       updateUserUI();
       renderAllSections();
     }, 300);
@@ -2224,7 +3082,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (forgotPassLink) {
     forgotPassLink.addEventListener('click', (e) => {
       e.preventDefault();
-      alert('If you forgot your password or need assistance accessing Workout GIFs, please contact support via the Help Center or email support@workoutgifs.com.');
+      const lang = AppState.currentLang || 'pt-BR';
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+      alert(dict.login_forgot_msg || 'If you forgot your password or need assistance accessing Workout GIFs, please contact support via the Help Center or email support@workoutgifs.com.');
     });
   }
   
@@ -2236,11 +3096,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const password = loginPasswordInput.value.trim();
       const rememberCheckbox = document.getElementById('ff-remember-me');
       const rememberMe = rememberCheckbox ? rememberCheckbox.checked : true;
+      const lang = AppState.currentLang || 'pt-BR';
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
       
       // Validation: Email and password required
       if (!email || !password) {
         loginAlert.classList.remove('ff-hidden');
-        loginAlert.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Please enter both your email address and password to continue.';
+        loginAlert.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${dict.login_err_both || 'Please enter both your email address and password to continue.'}`;
         return;
       }
 
@@ -2248,7 +3110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         loginAlert.classList.remove('ff-hidden');
-        loginAlert.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.';
+        loginAlert.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${dict.login_err_email || 'Please enter a valid email address.'}`;
         return;
       }
       
@@ -2256,7 +3118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const enteredHash = sha256(password + AUTH_SALT);
       if (enteredHash !== AUTH_HASH) {
         loginAlert.classList.remove('ff-hidden');
-        loginAlert.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> <strong>Incorrect password.</strong> Please verify your credentials and try again.';
+        loginAlert.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${dict.login_err_pass || '<strong>Incorrect password.</strong> Please verify your credentials and try again.'}`;
         loginPasswordInput.value = '';
         loginPasswordInput.focus();
         return;
@@ -2275,14 +3137,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Login Execution
   function performLogin(email, name, rememberMe = true) {
+    const lang = AppState.currentLang || 'pt-BR';
     AppState.user = {
       email: email,
       name: name || 'VIP Athlete',
-      plan: 'Lifetime Pro Membership',
-      joinDate: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+      plan: lang === 'pt-BR' ? 'Acesso Vitalício Pro' : 'Lifetime Pro Membership',
+      joinDate: new Date().toLocaleDateString(lang === 'pt-BR' ? 'pt-BR' : 'en-US', { month: 'long', year: 'numeric' })
     };
     AppState.save(rememberMe);
-    showToast(`Welcome back, ${AppState.user.name}!`, 'fa-solid fa-circle-check');
+    const welcomeMsg = lang === 'pt-BR' ? `Bem-vindo(a) de volta, ${AppState.user.name}!` : `Welcome back, ${AppState.user.name}!`;
+    showToast(welcomeMsg, 'fa-solid fa-circle-check');
     showMainApp();
   }
   
@@ -2290,10 +3154,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.ff-action-logout').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      if (confirm('Are you sure you want to sign out of Workout GIFs?')) {
+      const lang = AppState.currentLang || 'pt-BR';
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+      if (confirm(dict.logout_confirm || 'Are you sure you want to sign out of Workout GIFs?')) {
         AppState.user = null;
         AppState.save();
-        showToast('You have successfully signed out.', 'fa-solid fa-right-from-bracket');
+        showToast(dict.toast_logged_out || 'You have successfully signed out.', 'fa-solid fa-right-from-bracket');
         showLoginScreen();
       }
     });
@@ -2521,27 +3387,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const isCompleted = AppState.completedLessons.has(item.id);
     const isSaved = AppState.myList.has(item.id);
     const progressVal = item.progress || (isCompleted ? 100 : 0);
-    
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+
+    const eq = EQUIPMENT_NAMES[item.equipmentKey] ? EQUIPMENT_NAMES[item.equipmentKey][lang] : item.equipment;
+    const cat = EQUIPMENT_NAMES[item.equipmentKey] ? (lang === 'pt-BR' ? EQUIPMENT_NAMES[item.equipmentKey].categoryPt : EQUIPMENT_NAMES[item.equipmentKey].categoryEn) : item.category;
+    const title = (MUSCLE_NAMES[item.folderName] && MUSCLE_NAMES[item.folderName][lang]) ? MUSCLE_NAMES[item.folderName][lang] : item.title;
+    const desc = lang === 'pt-BR'
+      ? `Acesse a pasta ${item.folderName} no Google Drive com todos os GIFs de exercícios em alta resolução.`
+      : `Access the Google Drive ${item.folderName} folder with all high-resolution exercise GIFs.`;
+
+    const driveFolderText = dict.card_drive_folder || (lang === 'pt-BR' ? 'Pasta do Drive' : 'Drive Folder');
+    const previewBtnText = dict.card_preview_btn || (lang === 'pt-BR' ? 'Ver GIF' : 'Preview GIF');
+    const driveBtnText = dict.card_drive_btn || 'Drive ↗';
+    const favTitle = isSaved
+      ? (dict.card_remove_fav || (lang === 'pt-BR' ? 'Remover da Minha Lista' : 'Remove from My List'))
+      : (dict.card_save_fav || (lang === 'pt-BR' ? 'Salvar na Minha Lista' : 'Save to My List'));
+
     return `
       <div class="ff-card" data-lesson-id="${item.id}" data-drive-url="${item.driveUrl}">
         <div class="ff-card-media">
-          <img class="ff-card-img" src="${item.cover}" alt="${item.title}" onerror="this.onerror=null;this.src='${item.fallbackCover}';">
+          <img class="ff-card-img" src="${item.cover}" alt="${title}" onerror="this.onerror=null;this.src='${item.fallbackCover}';">
           <div class="ff-card-overlay-gradient"></div>
           
           <div class="ff-card-top-tags">
-            <span class="ff-badge-status ff-badge-disponible">${item.equipment}</span>
-            <span class="ff-badge-duration"><i class="fa-solid fa-folder"></i> Drive Folder</span>
+            <span class="ff-badge-status ff-badge-disponible">${eq}</span>
+            <span class="ff-badge-duration"><i class="fa-solid fa-folder"></i> ${driveFolderText}</span>
           </div>
           
-          <div class="ff-card-play-hover" title="Open Google Drive Folder">
+          <div class="ff-card-play-hover" title="${driveFolderText}">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </div>
         </div>
         
         <div class="ff-card-body">
-          <span class="ff-card-category">${item.category}</span>
-          <h4 class="ff-card-title">${item.title}</h4>
-          <p class="ff-card-desc">${item.desc}</p>
+          <span class="ff-card-category">${cat}</span>
+          <h4 class="ff-card-title">${title}</h4>
+          <p class="ff-card-desc">${desc}</p>
           
           ${showProgress && progressVal > 0 ? `
             <div class="ff-card-progress-bar">
@@ -2550,14 +3432,14 @@ document.addEventListener('DOMContentLoaded', () => {
           ` : ''}
           
           <div class="ff-card-footer">
-            <button class="ff-card-cta-btn ff-card-preview-btn" type="button" title="Preview sample GIF and details">
-              <i class="fa-solid fa-play"></i> <span>Preview GIF</span>
+            <button class="ff-card-cta-btn ff-card-preview-btn" type="button" title="${previewBtnText}">
+              <i class="fa-solid fa-play"></i> <span>${previewBtnText}</span>
             </button>
             <div class="ff-card-footer-actions">
-              <a href="${item.driveUrl}" target="_blank" rel="noopener noreferrer" class="ff-card-drive-btn" title="Open folder in Google Drive">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Drive ↗</span>
+              <a href="${item.driveUrl}" target="_blank" rel="noopener noreferrer" class="ff-card-drive-btn" title="${driveFolderText}">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>${driveBtnText}</span>
               </a>
-              <button class="ff-card-fav-btn ${isSaved ? 'ff-saved' : ''}" data-fav-id="${item.id}" title="${isSaved ? 'Remove from My List' : 'Save to My List'}">
+              <button class="ff-card-fav-btn ${isSaved ? 'ff-saved' : ''}" data-fav-id="${item.id}" title="${favTitle}">
                 <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
               </button>
             </div>
@@ -2590,35 +3472,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('ff-modules-grid');
     if (!grid) return;
     
-    grid.innerHTML = MODULES_DATA.map(mod => `
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+    
+    grid.innerHTML = MODULES_DATA.map(mod => {
+      const loc = (MODULES_LOCALIZED[mod.id] && MODULES_LOCALIZED[mod.id][lang]) || {};
+      const title = loc.title || mod.title;
+      const desc = loc.desc || mod.desc;
+      const badge = loc.badge || mod.badge;
+      const classesLabel = dict.card_classes_label || (lang === 'pt-BR' ? 'Aulas' : 'Classes');
+      const completedLabel = dict.card_completed_label || (lang === 'pt-BR' ? 'concluído' : 'completed');
+      const exploreLabel = dict.card_explore_btn || (lang === 'pt-BR' ? 'Explorar' : 'Explore');
+      
+      return `
       <div class="ff-module-card" data-module-id="${mod.id}">
         <div class="ff-module-cover">
-          <img src="${mod.cover}" alt="${mod.title}" onerror="this.onerror=null;this.src='${mod.fallbackCover}';">
+          <img src="${mod.cover}" alt="${title}" onerror="this.onerror=null;this.src='${mod.fallbackCover}';">
           <div class="ff-module-badge-top">
-            <span class="ff-badge-status ff-badge-${mod.badgeType}">${mod.badge}</span>
+            <span class="ff-badge-status ff-badge-${mod.badgeType}">${badge}</span>
           </div>
-          <span class="ff-module-count-pill">${mod.lessonsCount} Classes • ${mod.duration}</span>
+          <span class="ff-module-count-pill">${mod.lessonsCount} ${classesLabel} • Google Drive</span>
         </div>
         
         <div class="ff-module-body">
           <span class="ff-module-number">${mod.num}</span>
-          <h3 class="ff-module-title">${mod.title}</h3>
-          <p class="ff-module-desc">${mod.desc}</p>
+          <h3 class="ff-module-title">${title}</h3>
+          <p class="ff-module-desc">${desc}</p>
           
           <div class="ff-card-progress-bar">
             <div class="ff-card-progress-fill" style="width: ${mod.progress}%"></div>
           </div>
           
           <div class="ff-module-footer">
-            <span style="font-size: 12px; color: var(--ff-text-muted);">${mod.progress}% completed</span>
+            <span style="font-size: 12px; color: var(--ff-text-muted);">${mod.progress}% ${completedLabel}</span>
             <button class="ff-module-btn" data-filter-module="${mod.id}">
-              <span>Explore</span>
+              <span>${exploreLabel}</span>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
     
     // Module explore button
     grid.querySelectorAll('[data-filter-module]').forEach(btn => {
@@ -2640,12 +3535,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return;
     
     function updateGrid(items) {
+      const lang = AppState.currentLang || 'pt-BR';
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
       if (items.length === 0) {
         grid.innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--ff-text-muted);">
             <i class="fa-solid fa-magnifying-glass" style="font-size: 48px; margin-bottom: 16px; opacity: 0.4;"></i>
-            <h3>No classes found matching your criteria</h3>
-            <p style="font-size: 14px; margin-top: 6px;">Try selecting another category or clearing your search query.</p>
+            <h3>${dict.classes_no_match_title || 'Nenhuma aula encontrada'}</h3>
+            <p style="font-size: 14px; margin-top: 6px;">${dict.classes_no_match_desc || 'Tente selecionar outra categoria ou limpar a busca.'}</p>
           </div>
         `;
         return;
@@ -2699,23 +3596,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     if (query) {
-      filtered = filtered.filter(c => 
-        c.title.toLowerCase().includes(query) || 
-        c.desc.toLowerCase().includes(query) ||
-        c.category.toLowerCase().includes(query) ||
-        (c.equipment && c.equipment.toLowerCase().includes(query)) ||
-        (c.muscleGroup && c.muscleGroup.toLowerCase().includes(query)) ||
-        (c.folderName && c.folderName.toLowerCase().includes(query))
-      );
+      filtered = filtered.filter(c => {
+        const musclePt = MUSCLE_NAMES[c.folderName] ? MUSCLE_NAMES[c.folderName]['pt-BR'].toLowerCase() : '';
+        const muscleEn = MUSCLE_NAMES[c.folderName] ? MUSCLE_NAMES[c.folderName]['en-US'].toLowerCase() : '';
+        const equipPt = EQUIPMENT_NAMES[c.equipmentKey] ? EQUIPMENT_NAMES[c.equipmentKey]['pt-BR'].toLowerCase() : '';
+        const equipEn = EQUIPMENT_NAMES[c.equipmentKey] ? EQUIPMENT_NAMES[c.equipmentKey]['en-US'].toLowerCase() : '';
+        
+        return c.title.toLowerCase().includes(query) || 
+          c.desc.toLowerCase().includes(query) ||
+          c.category.toLowerCase().includes(query) ||
+          (c.equipment && c.equipment.toLowerCase().includes(query)) ||
+          (c.muscleGroup && c.muscleGroup.toLowerCase().includes(query)) ||
+          (c.folderName && c.folderName.toLowerCase().includes(query)) ||
+          musclePt.includes(query) ||
+          muscleEn.includes(query) ||
+          equipPt.includes(query) ||
+          equipEn.includes(query);
+      });
     }
     
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+
     grid.innerHTML = filtered.length > 0 
       ? filtered.map(c => createCardHtml(c, true)).join('')
       : `
         <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--ff-text-muted);">
           <i class="fa-solid fa-magnifying-glass" style="font-size: 40px; margin-bottom: 14px; opacity: 0.4;"></i>
-          <h3>No matching folders found</h3>
-          <p style="font-size: 13px; margin-top: 6px;">Try another keyword or select a different category.</p>
+          <h3>${dict.classes_no_match_title || 'Nenhuma pasta encontrada'}</h3>
+          <p style="font-size: 13px; margin-top: 6px;">${dict.classes_no_match_desc || 'Tente outra palavra-chave ou escolha outra categoria.'}</p>
         </div>
       `;
     attachCardEvents();
@@ -2726,28 +3635,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('ff-bonuses-grid');
     if (!grid) return;
     
-    grid.innerHTML = BONUSES_DATA.map(bonus => `
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+    
+    grid.innerHTML = BONUSES_DATA.map(bonus => {
+      const loc = (BONUSES_I18N[bonus.id] && BONUSES_I18N[bonus.id][lang]) || {};
+      const tag = loc.tag || bonus.tag;
+      const title = loc.title || bonus.title;
+      const desc = loc.desc || bonus.desc;
+      const realValLabel = dict.bonus_real_val || (lang === 'pt-BR' ? 'Valor real:' : 'Real value:');
+      const realPrice = lang === 'pt-BR' ? bonus.priceReal.replace('$', 'R$ ').replace('USD', '') : bonus.priceReal;
+      const freeLabel = lang === 'pt-BR' ? 'GRÁTIS' : bonus.priceOffer;
+      const bonusBtnText = dict.bonus_btn || (lang === 'pt-BR' ? 'Acessar Bônus Grátis' : 'Access Free Bonus');
+      
+      return `
       <div class="ff-bonus-card">
         <div class="ff-bonus-img-wrap">
-          <img src="${bonus.image}" alt="${bonus.title}" onerror="this.onerror=null;this.src='${bonus.fallbackImage}';">
+          <img src="${bonus.image}" alt="${title}" onerror="this.onerror=null;this.src='${bonus.fallbackImage}';">
         </div>
         
-        <span class="ff-bonus-tag"><i class="fa-solid fa-gift"></i> ${bonus.tag}</span>
-        <h3 class="ff-bonus-title">${bonus.title}</h3>
-        <p class="ff-bonus-desc">${bonus.desc}</p>
+        <span class="ff-bonus-tag"><i class="fa-solid fa-gift"></i> ${tag}</span>
+        <h3 class="ff-bonus-title">${title}</h3>
+        <p class="ff-bonus-desc">${desc}</p>
         
         <div class="ff-bonus-pricing">
-          <span style="font-size: 12px; color: var(--ff-text-muted);">Real value:</span>
-          <span class="ff-bonus-val-strike">${bonus.priceReal}</span>
-          <span class="ff-bonus-val-free">${bonus.priceOffer}</span>
+          <span style="font-size: 12px; color: var(--ff-text-muted);">${realValLabel}</span>
+          <span class="ff-bonus-val-strike">${realPrice}</span>
+          <span class="ff-bonus-val-free">${freeLabel}</span>
         </div>
         
-        <button class="ff-btn-bonus" onclick="downloadBonus('${bonus.title}', '${bonus.fileName}')">
+        <button class="ff-btn-bonus" onclick="downloadBonus('${title.replace(/'/g, "\\'")}', '${bonus.fileName}')">
           <i class="fa-solid fa-download"></i>
-          <span>Access Free Bonus</span>
+          <span>${bonusBtnText}</span>
         </button>
       </div>
-    `).join('');
+      `;
+    }).join('');
   }
   
   // RENDER: Downloadable Resources
@@ -2755,29 +3678,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('ff-resources-grid');
     if (!grid) return;
     
-    grid.innerHTML = RESOURCES_DATA.map(res => `
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+    
+    grid.innerHTML = RESOURCES_DATA.map(res => {
+      const loc = (RESOURCES_I18N[res.id] && RESOURCES_I18N[res.id][lang]) || {};
+      const title = loc.title || res.title;
+      const desc = loc.desc || res.desc;
+      const downloadsLabel = dict.res_downloads || 'downloads';
+      const downloadBtnText = dict.res_btn_download || (lang === 'pt-BR' ? 'Baixar' : 'Download');
+      
+      return `
       <div class="ff-resource-card">
         <div class="ff-resource-head">
           <div class="ff-resource-icon ${res.type === 'Excel' ? 'ff-excel' : res.type === 'Checklist' ? 'ff-checklist' : ''}">
             <i class="${res.icon}"></i>
           </div>
           <div>
-            <h4 class="ff-resource-title">${res.title}</h4>
+            <h4 class="ff-resource-title">${title}</h4>
             <span style="font-size: 11px; font-weight: 700; color: var(--ff-primary); text-transform: uppercase;">${res.type} • ${res.size}</span>
           </div>
         </div>
         
-        <p class="ff-resource-desc">${res.desc}</p>
+        <p class="ff-resource-desc">${desc}</p>
         
         <div class="ff-resource-meta">
-          <span><i class="fa-solid fa-download"></i> ${res.downloads} downloads</span>
-          <button class="ff-btn-download" onclick="downloadResource('${res.title}')">
+          <span><i class="fa-solid fa-download"></i> ${res.downloads} ${downloadsLabel}</span>
+          <button class="ff-btn-download" onclick="downloadResource('${title.replace(/'/g, "\\'")}')">
             <i class="fa-solid fa-arrow-down-to-line"></i>
-            <span>Download</span>
+            <span>${downloadBtnText}</span>
           </button>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
   }
   
   // RENDER: VIP Community Feed
@@ -2879,7 +3813,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('ff-faq-list');
     if (!container) return;
     
-    container.innerHTML = FAQ_DATA.map((faq, idx) => `
+    const lang = AppState.currentLang || 'pt-BR';
+    const faqList = FAQ_DATA_I18N[lang] || FAQ_DATA;
+    
+    container.innerHTML = faqList.map((faq, idx) => `
       <div class="ff-faq-item ${idx === 0 ? 'ff-open' : ''}">
         <div class="ff-faq-question" onclick="this.parentElement.classList.toggle('ff-open')">
           <span>${faq.q}</span>
@@ -2897,13 +3834,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('ff-profile-saved-grid');
     if (!container) return;
     
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+    
     const savedClasses = CLASSES_DATA.filter(c => AppState.myList.has(c.id));
     if (savedClasses.length === 0) {
       container.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--ff-text-muted); background: var(--ff-bg-card); border-radius: var(--ff-radius-md);">
           <i class="fa-regular fa-bookmark" style="font-size: 32px; margin-bottom: 12px; opacity: 0.5;"></i>
-          <h4>You have no saved classes yet</h4>
-          <p style="font-size: 13px; margin-top: 4px;">Click the bookmark icon on any lesson to keep it easily accessible here.</p>
+          <h4>${dict.profile_no_saved_title || 'Você ainda não salvou nenhuma aula'}</h4>
+          <p style="font-size: 13px; margin-top: 4px;">${dict.profile_no_saved_desc || 'Clique no ícone de favoritos em qualquer card para ter acesso rápido aqui.'}</p>
         </div>
       `;
       return;
@@ -2953,12 +3893,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const favId = btn.getAttribute('data-fav-id');
         if (!favId) return;
         
+        const lang = AppState.currentLang || 'pt-BR';
+        const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+        
         if (AppState.myList.has(favId)) {
           AppState.myList.delete(favId);
-          showToast('Removed from My List.', 'fa-regular fa-bookmark');
+          showToast(dict.toast_removed_list || 'Removido da Minha Lista.', 'fa-regular fa-bookmark');
         } else {
           AppState.myList.add(favId);
-          showToast('✓ Saved to My List.', 'fa-solid fa-bookmark');
+          showToast(dict.toast_saved_list || '✓ Salvo na Minha Lista.', 'fa-solid fa-bookmark');
         }
         AppState.save();
         renderHomeCarousels();
@@ -2993,13 +3936,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!lesson || !playerModal) return;
     
     AppState.activeLessonId = lesson.id;
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+    
+    const localizedTitle = (MUSCLE_NAMES[lesson.folderName] && MUSCLE_NAMES[lesson.folderName][lang]) ? MUSCLE_NAMES[lesson.folderName][lang] : lesson.title;
+    const modTitle = (MODULES_LOCALIZED[lesson.moduleId] && MODULES_LOCALIZED[lesson.moduleId][lang]) ? MODULES_LOCALIZED[lesson.moduleId][lang].title : lesson.moduleName;
+    const catTitle = EQUIPMENT_NAMES[lesson.equipmentKey] ? (lang === 'pt-BR' ? EQUIPMENT_NAMES[lesson.equipmentKey].categoryPt : EQUIPMENT_NAMES[lesson.equipmentKey].categoryEn) : lesson.category;
     
     // Populate modal metadata
-    if (modalTitle) modalTitle.textContent = lesson.title;
-    if (modalCategory) modalCategory.textContent = `${lesson.moduleName} • ${lesson.category}`;
+    if (modalTitle) modalTitle.textContent = localizedTitle;
+    if (modalCategory) modalCategory.textContent = `${modTitle} • ${catTitle}`;
     if (modalRating) modalRating.textContent = lesson.rating;
-    if (modalDuration) modalDuration.textContent = lesson.duration;
-    if (modalDesc) modalDesc.textContent = lesson.desc;
+    if (modalDuration) modalDuration.textContent = dict.card_drive_folder || (lang === 'pt-BR' ? 'Pasta do Drive' : 'Drive Folder');
+    if (modalDesc) {
+      modalDesc.textContent = lang === 'pt-BR'
+        ? `Acesse a pasta ${lesson.folderName} no Google Drive com todos os GIFs de exercícios em alta resolução para visualização e download.`
+        : `Access the Google Drive ${lesson.folderName} folder with all high-resolution exercise GIFs for preview and download.`;
+    }
     
     // Media setup (GIF vs Video)
     if (lesson.cover && (lesson.cover.endsWith('.gif') || lesson.cover.endsWith('.webp') || lesson.cover.endsWith('.png'))) {
@@ -3030,13 +3983,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalBtnCopyDrive) {
       modalBtnCopyDrive.onclick = () => {
         navigator.clipboard.writeText(lesson.driveUrl);
-        showToast('Google Drive link copied to clipboard!', 'fa-solid fa-copy');
+        showToast(dict.toast_link_copied || 'Link do Google Drive copiado!', 'fa-solid fa-copy');
       };
     }
     
     // Key Takeaways
     if (modalKeypoints) {
-      modalKeypoints.innerHTML = lesson.keyTakeaways.map(p => `
+      let takeaways = [];
+      if (lang === 'pt-BR') {
+        const muscleLabel = MUSCLE_NAMES[lesson.folderName] ? MUSCLE_NAMES[lesson.folderName]['pt-BR'] : lesson.folderName;
+        const equipLabel = EQUIPMENT_NAMES[lesson.equipmentKey] ? EQUIPMENT_NAMES[lesson.equipmentKey]['pt-BR'] : lesson.equipment;
+        takeaways = [
+          `Grupo Muscular Alvo: ${muscleLabel} (${lesson.folderName}).`,
+          `Acesso Direto ao Drive: Visualize, reproduza e baixe todos os GIFs dos exercícios.`,
+          `Categoria de Equipamento: Exercícios com ${equipLabel}.`
+        ];
+      } else {
+        takeaways = lesson.keyTakeaways;
+      }
+
+      modalKeypoints.innerHTML = takeaways.map(p => `
         <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
           <i class="fa-solid fa-circle-check" style="color: var(--ff-primary); margin-top: 4px;"></i>
           <span>${p}</span>
@@ -3046,22 +4012,28 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Materials
     if (modalMaterials) {
-      modalMaterials.textContent = lesson.materials;
+      modalMaterials.textContent = lang === 'pt-BR' ? `Pasta do Google Drive • ${lesson.folderName}` : `Google Drive Folder • ${lesson.folderName}`;
     }
     
     // Next Lessons
     if (modalNextList) {
       const otherLessons = CLASSES_DATA.filter(c => c.id !== lesson.id).slice(0, 4);
-      modalNextList.innerHTML = otherLessons.map(next => `
+      modalNextList.innerHTML = otherLessons.map(next => {
+        const nextTitle = (MUSCLE_NAMES[next.folderName] && MUSCLE_NAMES[next.folderName][lang]) ? MUSCLE_NAMES[next.folderName][lang] : next.title;
+        const nextCat = EQUIPMENT_NAMES[next.equipmentKey] ? (lang === 'pt-BR' ? EQUIPMENT_NAMES[next.equipmentKey].categoryPt : EQUIPMENT_NAMES[next.equipmentKey].categoryEn) : next.category;
+        const nextDuration = dict.card_drive_folder || (lang === 'pt-BR' ? 'Pasta do Drive' : 'Drive Folder');
+
+        return `
         <div class="ff-notif-item" onclick="openPlayerModal('${next.id}')" style="display: flex; gap: 12px; align-items: center; padding: 10px; cursor: pointer;">
           <img src="${next.cover}" style="width: 70px; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--ff-radius-sm);" alt="">
           <div style="flex: 1;">
-            <div style="font-weight: 700; color: #fff; font-size: 13px;">${next.title}</div>
-            <div style="font-size: 11px; color: var(--ff-text-muted);">${next.duration} • ${next.category}</div>
+            <div style="font-weight: 700; color: #fff; font-size: 13px;">${nextTitle}</div>
+            <div style="font-size: 11px; color: var(--ff-text-muted);">${nextDuration} • ${nextCat}</div>
           </div>
           <i class="fa-solid fa-play" style="color: var(--ff-primary); font-size: 14px;"></i>
         </div>
-      `).join('');
+        `;
+      }).join('');
     }
     
     // User Personal Notes
@@ -3069,7 +4041,8 @@ document.addEventListener('DOMContentLoaded', () => {
       modalNotesTextarea.value = AppState.userNotes[lesson.id] || '';
     }
     
-    // Saved state
+    // Status and Saved button states
+    updateModalCompleteButton(lesson.id);
     updateModalFavButton(lesson.id);
     
     // Show Modal
@@ -3080,33 +4053,42 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateModalCompleteButton(lessonId) {
     if (!modalBtnComplete) return;
     const isCompleted = AppState.completedLessons.has(lessonId);
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+
     if (isCompleted) {
       modalBtnComplete.classList.add('ff-is-completed');
-      modalBtnComplete.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>Completed ✓</span>';
+      modalBtnComplete.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${dict.modal_status_completed || 'Concluído ✓'}</span>`;
     } else {
       modalBtnComplete.classList.remove('ff-is-completed');
-      modalBtnComplete.innerHTML = '<i class="fa-regular fa-circle-check"></i> <span>Mark as Completed</span>';
+      modalBtnComplete.innerHTML = `<i class="fa-regular fa-circle-check"></i> <span>${dict.modal_status_mark_completed || 'Marcar como Concluído'}</span>`;
     }
   }
   
   function updateModalFavButton(lessonId) {
     if (!modalBtnFav) return;
     const isSaved = AppState.myList.has(lessonId);
+    const lang = AppState.currentLang || 'pt-BR';
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+
     modalBtnFav.innerHTML = isSaved 
-      ? '<i class="fa-solid fa-bookmark" style="color: var(--ff-primary);"></i> <span>In My List</span>'
-      : '<i class="fa-regular fa-bookmark"></i> <span>Save</span>';
+      ? `<i class="fa-solid fa-bookmark" style="color: var(--ff-primary);"></i> <span>${dict.modal_btn_saved || 'Na Minha Lista'}</span>`
+      : `<i class="fa-regular fa-bookmark"></i> <span>${dict.modal_btn_save || 'Salvar'}</span>`;
   }
   
   // Complete Button inside Modal
   if (modalBtnComplete) {
     modalBtnComplete.addEventListener('click', () => {
       const lessonId = AppState.activeLessonId;
+      const lang = AppState.currentLang || 'pt-BR';
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+
       if (AppState.completedLessons.has(lessonId)) {
         AppState.completedLessons.delete(lessonId);
-        showToast('Class marked as pending.', 'fa-regular fa-circle');
+        showToast(dict.toast_class_pending || 'Aula marcada como pendente.', 'fa-regular fa-circle');
       } else {
         AppState.completedLessons.add(lessonId);
-        showToast('🎉 Class completed! Progress updated.', 'fa-solid fa-award');
+        showToast(dict.toast_class_completed || '🎉 Aula concluída! Progresso atualizado.', 'fa-solid fa-award');
       }
       AppState.save();
       updateModalCompleteButton(lessonId);
@@ -3120,12 +4102,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalBtnFav) {
     modalBtnFav.addEventListener('click', () => {
       const lessonId = AppState.activeLessonId;
+      const lang = AppState.currentLang || 'pt-BR';
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS['pt-BR'];
+
       if (AppState.myList.has(lessonId)) {
         AppState.myList.delete(lessonId);
-        showToast('Removed from My List.', 'fa-regular fa-bookmark');
+        showToast(dict.toast_removed_list || 'Removido da Minha Lista.', 'fa-regular fa-bookmark');
       } else {
         AppState.myList.add(lessonId);
-        showToast('✓ Saved to My List.', 'fa-solid fa-bookmark');
+        showToast(dict.toast_saved_list || '✓ Salvo na Minha Lista.', 'fa-solid fa-bookmark');
       }
       AppState.save();
       updateModalFavButton(lessonId);
@@ -3181,16 +4166,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // SIMULATED DOWNLOADS & TOAST FEEDBACK
   // ==========================================================================
   window.downloadBonus = function(title, fileName) {
-    showToast(`Starting download: ${title}`, 'fa-solid fa-cloud-arrow-down');
+    const lang = AppState.currentLang || 'pt-BR';
+    const startMsg = lang === 'pt-BR' ? `Iniciando download: ${title}` : `Starting download: ${title}`;
+    const doneMsg = lang === 'pt-BR' ? `Download concluído com sucesso: ${fileName}!` : `Successfully downloaded ${fileName}!`;
+    
+    showToast(startMsg, 'fa-solid fa-cloud-arrow-down');
     setTimeout(() => {
-      showToast(`Successfully downloaded ${fileName}!`, 'fa-solid fa-circle-check');
+      showToast(doneMsg, 'fa-solid fa-circle-check');
     }, 1500);
   };
   
   window.downloadResource = function(title) {
-    showToast(`Downloading: ${title}...`, 'fa-solid fa-file-arrow-down');
+    const lang = AppState.currentLang || 'pt-BR';
+    const startMsg = lang === 'pt-BR' ? `Baixando: ${title}...` : `Downloading: ${title}...`;
+    const doneMsg = lang === 'pt-BR' ? 'Arquivo pronto na sua pasta de downloads.' : 'File ready in your downloads folder.';
+    
+    showToast(startMsg, 'fa-solid fa-file-arrow-down');
     setTimeout(() => {
-      showToast(`File ready in your downloads folder.`, 'fa-solid fa-circle-check');
+      showToast(doneMsg, 'fa-solid fa-circle-check');
     }, 1400);
   };
   

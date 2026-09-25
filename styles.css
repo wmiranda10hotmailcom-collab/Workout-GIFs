@@ -267,16 +267,78 @@ body {
   box-shadow: 0 0 12px var(--ff-primary-glow);
 }
 
+.ff-lang-selector-wrap {
+  position: relative;
+  display: inline-block;
+}
+
 .ff-login-lang-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  gap: 8px;
+  padding: 7px 14px;
   border-radius: var(--ff-radius-full);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--ff-border-subtle);
   font-size: 13px;
+  font-weight: 600;
+  color: var(--ff-text-white);
+  cursor: pointer;
+  transition: all var(--ff-transition-fast);
+}
+
+.ff-login-lang-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(229, 9, 20, 0.5);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.25);
+}
+
+.ff-lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 175px;
+  background: rgba(18, 21, 30, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--ff-border-subtle);
+  border-radius: var(--ff-radius-md);
+  box-shadow: var(--ff-shadow-lg), 0 10px 25px rgba(0,0,0,0.6);
+  padding: 6px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: ffFadeInUp 0.2s ease;
+}
+
+.ff-lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: var(--ff-radius-sm);
+  border: none;
+  background: transparent;
   color: var(--ff-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--ff-transition-fast);
+}
+
+.ff-lang-option:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ff-text-white);
+}
+
+.ff-lang-option.ff-active {
+  background: rgba(229, 9, 20, 0.15);
+  color: #ffffff;
+  border-left: 3px solid var(--ff-primary);
+  font-weight: 700;
 }
 
 .ff-login-card {
@@ -865,6 +927,89 @@ body {
 .ff-dropdown-logout:hover {
   background: rgba(220, 38, 38, 0.15) !important;
   color: #fca5a5 !important;
+}
+
+/* Language Switcher in Profile Dropdown */
+.ff-dropdown-lang-row {
+  margin: 6px 0;
+  padding: 10px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--ff-border-subtle);
+  border-radius: var(--ff-radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ff-dropdown-lang-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ff-text-dim);
+}
+
+.ff-dropdown-lang-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.ff-lang-chip {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: var(--ff-radius-sm);
+  border: 1px solid var(--ff-border-subtle);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ff-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--ff-transition-fast);
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.ff-lang-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.ff-lang-chip.ff-active {
+  background: var(--ff-primary);
+  border-color: var(--ff-primary);
+  color: #ffffff;
+  box-shadow: 0 0 12px var(--ff-primary-glow);
+}
+
+/* Profile View Language Card */
+.ff-profile-lang-card {
+  background: var(--ff-bg-card);
+  border: 1px solid var(--ff-border-subtle);
+  border-radius: var(--ff-radius-md);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.ff-profile-lang-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.ff-profile-lang-buttons .ff-lang-chip {
+  flex: none;
+  padding: 8px 18px;
+  font-size: 13px;
 }
 
 /* Botón Hamburguesa Móvil */
